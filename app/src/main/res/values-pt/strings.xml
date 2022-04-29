@@ -18,14 +18,17 @@
     <string name="birthdate">Data de nacsimento</string>
     <string name="search">Procurar</string>
     <string name="available_routes">Trajetos Disponíveis</string>
-    <string name="forgot_password">Esqueci-me da palavra-passe</string>
+    <string name="forgot">Esqueci-me</string>
     <string name="send_email">Enviar email</string>
     <string name="contact">Contacto</string>
     <string name="have_account">Já tem conta</string>
     <string name="intercity">Intercidades</string>
     <string name="date">Data</string>
     <string name="save">Guardar</string>
-    <string name="dont_account">Não tem conta</string>
+    <string name="no_account">Não tem conta?</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_pass">Confirmar palavra-passe</string>
+    <string name="login_message">Por favor entre para continuar</string>
+    <string name="sign_up">Registar</string>
+    <string name="insert_email">Insira o seu email</string>
 </resources>
