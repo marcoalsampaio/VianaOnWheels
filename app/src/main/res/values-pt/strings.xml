@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome">Bem-vindo</string>
+    <string name="logout">Sair</string>
+    <string name="ticket">Bilhete</string>
+    <string name="create_account">Criar conta</string>
+    <string name="schedule">Horário</string>
+    <string name="estimated_time">Tempo previsto</string>
+    <string name="account">Perfil</string>
+    <string name="travel_history">Histórico de Viagens</string>
+    <string name="time">Tempo</string>
+    <string name="price">Preço</string>
+    <string name="localization">Localização</string>
+    <string name="destiny">Destino</string>
+    <string name="origin">Origem</string>
+    <string name="about_us">Sobre nós</string>
+    <string name="name">Nome</string>
+    <string name="birthdate">Data de nacsimento</string>
+    <string name="search">Procurar</string>
+    <string name="available_routes">Trajetos Disponíveis</string>
+    <string name="forgot_password">Esqueci-me da palavra-passe</string>
+    <string name="send_email">Enviar email</string>
+    <string name="contact">Contacto</string>
+    <string name="have_account">Já tem conta</string>
+    <string name="intercity">Intercidades</string>
+    <string name="date">Data</string>
+    <string name="save">Guardar</string>
+    <string name="dont_account">Não tem conta</string>
+    <string name="password">Palavra-passe</string>
+    <string name="confirm_pass">Confirmar palavra-passe</string>
+</resources>

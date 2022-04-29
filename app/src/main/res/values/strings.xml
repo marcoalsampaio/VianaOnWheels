@@ -1,3 +1,33 @@
 <resources>
-    <string name="app_name">VianaOnWheels</string>
+    <string name="app_name" translatable="false">VianaOnWheels</string>
+    <string name="welcome">Welcome</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="logout">Logout</string>
+    <string name="ticket">Ticket Office</string>
+    <string name="schedule">Schedule</string>
+    <string name="create_account">Create Account</string>
+    <string name="estimated_time">Estimated Time</string>
+    <string name="account">Account</string>
+    <string name="travel_history">Travel History</string>
+    <string name="time">Time</string>
+    <string name="price">Price</string>
+    <string name="localization">Localization</string>
+    <string name="destiny">Destiny</string>
+    <string name="origin">Origin</string>
+    <string name="about_us">About us</string>
+    <string name="name">Name</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="search">Search</string>
+    <string name="available_routes">Available Routes</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="send_email">Send email</string>
+    <string name="contact">Contact</string>
+    <string name="have_account">Already have an account</string>
+    <string name="intercity">Intercity</string>
+    <string name="date">Date</string>
+    <string name="save">Save</string>
+    <string name="dont_account">Don\'t have an account</string>
+    <string name="password">Password</string>
+    <string name="confirm_pass">Confirm Password</string>
 </resources>
