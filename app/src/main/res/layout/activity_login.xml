@@ -73,8 +73,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="0dp"
                 android:textSize="15sp"
-                android:textStyle="normal"
-                />
+                android:textStyle="normal" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
@@ -117,7 +116,7 @@
                 android:layout_above="@+id/iv_line"
                 android:layout_marginStart="40dp"
                 android:background="@android:color/transparent"
-                android:hint="@string/insert_email"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="0dp"
                 android:textSize="15sp"
