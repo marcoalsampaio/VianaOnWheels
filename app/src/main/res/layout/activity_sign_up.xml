@@ -19,7 +19,7 @@
         android:layout_marginStart="50dp"
         />
     <TextView
-        android:id="@+id/login_message"
+        android:id="@+id/sign_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/insert_data"
@@ -36,40 +36,43 @@
         android:layout_marginStart="50dp"
         android:layout_height="45dp"
         android:layout_marginTop="55dp"
-        android:layout_below="@+id/login_message">
+        android:layout_below="@+id/sign_message"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="35dp"
-                android:text="@string/name"
-                android:textColor="@color/black"
-                android:textSize="12sp" />
 
             <ImageView
                 android:id="@+id/iv_name"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_below="@+id/tv_name"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerVertical="true"
                 android:layout_marginStart="5dp"
-                android:layout_marginBottom="3dp"
                 android:src="@drawable/ic_user" />
 
-            <EditText
-                android:id="@+id/edt_name"
-                android:layout_width="280dp"
+            <ImageView
+                android:id="@+id/iv_line_name"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tv_name"
-                android:layout_marginStart="35dp"
+                android:layout_below="@+id/iv_name"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_line" />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/iv_line_name"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
                 android:hint="@string/name"
+                android:inputType="textEmailAddress"
                 android:padding="0dp"
                 android:textSize="15sp"
-                android:textStyle="normal" />
+                android:textStyle="normal"/>
 
 
         </RelativeLayout>
@@ -98,14 +101,6 @@
                 android:layout_marginStart="5dp"
                 android:src="@drawable/ic_email" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                android:textColor="@color/black"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="10dp"/>
-
             <ImageView
                 android:id="@+id/iv_line_email"
                 android:layout_width="match_parent"
@@ -114,6 +109,19 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_line" />
+
+            <EditText
+                android:id="@+id/edt_insert_email_sign"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/iv_line_email"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:padding="0dp"
+                android:textSize="15sp"
+                android:textStyle="normal"/>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -141,22 +149,28 @@
                 android:layout_marginStart="5dp"
                 android:src="@drawable/ic_padlock" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                android:textColor="@color/black"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="10dp"/>
 
             <ImageView
-                android:id="@+id/iv_linepass"
+                android:id="@+id/iv_line_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/iv_pass"
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_line" />
+
+            <EditText
+                android:id="@+id/edt_insert_pass_sign"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/iv_line_pass"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/password"
+                android:inputType="textEmailAddress"
+                android:padding="0dp"
+                android:textSize="15sp"
+                android:textStyle="normal" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -182,15 +196,8 @@
                 android:layout_height="30dp"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/ic_email" />
+                android:src="@drawable/ic_padlock" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/email"
-                android:textColor="@color/black"
-                android:layout_marginStart="45dp"
-                android:layout_marginTop="10dp"/>
 
             <ImageView
                 android:id="@+id/iv_line"
@@ -200,6 +207,19 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="5dp"
                 android:src="@drawable/ic_line" />
+
+            <EditText
+                android:id="@+id/edt_insert_pass_confirm"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/iv_line"
+                android:layout_marginStart="40dp"
+                android:background="@android:color/transparent"
+                android:hint="@string/confirm_pass"
+                android:inputType="textEmailAddress"
+                android:padding="0dp"
+                android:textSize="15sp"
+                android:textStyle="normal" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
