@@ -15,7 +15,7 @@
     <string name="destiny">Destiny</string>
     <string name="origin">Origin</string>
     <string name="about_us">About us</string>
-    <string name="name">Name</string>
+    <string name="name">Full Name</string>
     <string name="birthdate">Birthdate</string>
     <string name="search">Search</string>
     <string name="available_routes">Available Routes</string>
@@ -23,11 +23,14 @@
     <string name="forgot_password">Forgot password</string>
     <string name="send_email">Send email</string>
     <string name="contact">Contact</string>
-    <string name="have_account">Already have an account</string>
+    <string name="have_account">Already have an account?</string>
     <string name="intercity">Intercity</string>
     <string name="date">Date</string>
     <string name="save">Save</string>
     <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="insert_data">Please insert all info to continue</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
 </resources>
