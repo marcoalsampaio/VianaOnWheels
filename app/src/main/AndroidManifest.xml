@@ -10,10 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VianaOnWheels">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-        </activity>
-        <activity
             android:name=".SignUp"
             android:exported="true">
             <intent-filter>
@@ -23,5 +19,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
