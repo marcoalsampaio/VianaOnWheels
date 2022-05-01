@@ -28,4 +28,11 @@
     <string name="dont_account">Não tem conta</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_pass">Confirmar palavra-passe</string>
+    <string name="hc_date">"Data: "</string>
+    <string name="hc_company">Empresa</string>
+    <string name="hc_origin">Origem</string>
+    <string name="hc_destiny">Destino</string>
+    <string name="hc_price">"Preço: "</string>
+    <string name="hc_hour">Horas:</string>
+
 </resources>

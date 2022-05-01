@@ -30,4 +30,10 @@
     <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="hc_date">Date:</string>
+    <string name="hc_company">Company</string>
+    <string name="hc_origin">Origin</string>
+    <string name="hc_destiny">Destination</string>
+    <string name="hc_price">Price:</string>
+    <string name="hc_hour">Hour:</string>
 </resources>
