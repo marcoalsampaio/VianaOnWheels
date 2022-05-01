@@ -30,4 +30,7 @@
     <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="icities_search">Search</string>
+    <string name="icities_origins">Add Origin</string>
+    <string name="icities_destination">Add Destination</string>
 </resources>
