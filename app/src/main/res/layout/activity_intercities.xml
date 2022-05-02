@@ -12,7 +12,7 @@
         android:id="@+id/rl_info"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="50dp"
         android:layout_marginTop="130dp"
         android:layout_marginEnd="50dp"
@@ -21,14 +21,11 @@
  >
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_alignLeft="@+id/iv_line_email"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="0dp"
-            android:backgroundTint="@android:color/transparent"
-            android:text="Change"
-            android:textColor="@color/black" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_intercities_change" />
 
         <EditText
             android:id="@+id/edt_city_source"
@@ -70,7 +67,8 @@
         android:layout_width="170dp"
         android:layout_height="50dp"
         android:layout_below="@+id/rl_info"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentLeft="true"
         android:background="@drawable/button_border">
 
 
@@ -79,19 +77,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_selectdate"
-            android:layout_marginTop="0dp"
-            android:padding="0dp"
             android:text="27-01-2022"
             android:textAlignment="center"
             android:textSize="15sp"
-            android:textStyle="normal" />
+            android:textStyle="normal"
+            tools:ignore="NotSibling" />
 
         <EditText
             android:id="@+id/edt_selectdate"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:hint="Source"
+            android:hint="@string/icities_source_date"
             android:inputType="textPassword"
             android:padding="0dp"
             android:textAlignment="center"
@@ -106,12 +103,11 @@
         android:id="@+id/rl_destination"
         android:layout_below="@+id/rl_info"
         android:layout_width="170dp"
-        android:layout_marginStart="10dp"
         android:layout_height="50dp"
         android:background="@drawable/button_border"
         android:layout_alignParentRight="true"
         android:layout_alignRight="@id/rl_source"
-        android:layout_marginEnd="30dp">
+        android:layout_marginEnd="20dp">
 
 
         <TextView
@@ -119,7 +115,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_selectdate_destination"
-            android:="0dp"
             android:textAlignment="center"
             android:text="27-01-2022"
             android:padding="0dp"
@@ -131,10 +126,9 @@
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            android:hint="Source"
-            android:textAlignment="center"
+            android:hint="@string/icities_destination_date"
             android:inputType="textPassword"
-            android:padding="0dp"
+            android:textAlignment="center"
             android:textSize="15sp"
             android:textStyle="normal" />
 
@@ -150,7 +144,6 @@
         android:layout_marginTop="70dp"
         android:backgroundTint="@color/white"
         android:text="1 Adulto"
-
         android:textAlignment="center"
         android:textColor="@color/black" />
 
@@ -163,9 +156,10 @@
         android:layout_marginTop="40dp"
         android:backgroundTint="#FFB800"
         android:text="Procurar"
-
+        android:onClick="search"
         android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:textColor="@color/black"
+        tools:ignore="OnClick" />
 
 
 
