@@ -3,14 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_sign_up"
     tools:context=".MainActivity">
+
 
     <RelativeLayout
         android:id="@+id/rl_source"
-        android:layout_width="300dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="350dp"
+        android:layout_marginTop="70dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:background="@drawable/hc_itemlist"
         android:layout_marginStart="30dp">
 
 
@@ -21,8 +24,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="10dp"
             android:text="@string/hc_date"
-            android:textSize="15dp"
-            android:textAlignment="center" />
+            android:textSize="15dp" />
 
 
         <TextView
@@ -42,21 +44,19 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:text="@string/hc_company"
-            android:textSize="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/tv_origin"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_company"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/hc_origin"
-            android:textSize="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/tv_destiny"
@@ -78,10 +78,9 @@
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_origin"
-            android:layout_marginTop="10dp"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/hc_price"
-            android:textAlignment="center"
             android:textColor="@color/black" />
 
         <TextView
@@ -93,15 +92,21 @@
             android:layout_below="@id/tv_destiny"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:paddingBottom="10dp"
             android:text="3.80€"
             android:textAlignment="center"
             android:textColor="@color/black" />
 
-
-
-
-
-
     </RelativeLayout>
+
+    <ImageView
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_line"
+        android:layout_below="@id/rl_source"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginTop="15dp"
+        />
 
 </RelativeLayout>
