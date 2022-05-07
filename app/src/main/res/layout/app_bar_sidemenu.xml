@@ -10,14 +10,17 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:theme="@style/Theme.VianaOnWheels.AppBarOverlay">
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="#ddd"
-            app:popupTheme="@style/Theme.VianaOnWheels.PopupOverlay" />
+            android:background="#FFF"
+            app:titleTextColor="#000"
+
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
