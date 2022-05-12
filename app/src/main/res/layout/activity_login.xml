@@ -169,7 +169,7 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-   <!-- <TextView
+    <TextView
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:id="@+id/sign_up"
@@ -191,5 +191,5 @@
         android:text="@string/no_account"
         android:textColor="@color/black"
         android:textSize="12sp"
-        android:textStyle="bold" /> -->
+        android:textStyle="bold" />
 </RelativeLayout>
