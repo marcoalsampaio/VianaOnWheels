@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "974401502167",
+    "project_id": "vianaonwheels",
+    "storage_bucket": "vianaonwheels.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974401502167:android:824d47a6786c8c4bc92992",
+        "android_client_info": {
+          "package_name": "com.example.vianaonwheels"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974401502167-c7kbcgk2vstmfub9ov42useoaqeoemht.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn1tmPUOGPEwK6RXLNLJrMksdRMmw1cng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "974401502167-c7kbcgk2vstmfub9ov42useoaqeoemht.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

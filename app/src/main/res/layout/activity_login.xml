@@ -157,7 +157,8 @@
                 android:background="@android:color/transparent"
                 android:text="@string/login"
                 android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="login"/>
 
             <ImageView
                 android:layout_width="22dp"
