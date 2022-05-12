@@ -111,7 +111,7 @@
 
             <EditText
                 android:id="@+id/edt_insert_pass"
-                android:layout_width="250dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/iv_line"
                 android:layout_marginStart="40dp"
@@ -122,7 +122,7 @@
                 android:textSize="15sp"
                 android:textStyle="normal" />
 
-       <!--     <Button
+            <Button
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:layout_alignParentEnd="true"
@@ -132,7 +132,7 @@
                 android:text="@string/forgot"
                 android:textColor="@color/black"
                 android:textSize="11sp"
-                android:textStyle="bold" /> -->
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
