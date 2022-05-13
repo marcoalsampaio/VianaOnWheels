@@ -31,4 +31,9 @@
     <string name="insert_data">Por favor insira todos os dados</string>
     <string name="sign_up">Registo</string>
     <string name="sign_in">Entrar</string>
+    <string name="name_required">"O Nome é obrigatório "</string>
+    <string name="email_required">O Email é obrigatório</string>
+    <string name="pass_required">A Palavra-passe é obrigatório</string>
+    <string name="minimum_characters">A Palavra-passe tem que ter 8 caracteres no minimo</string>
+    <string name="dif_password">Palavra-passes diferentes</string>
 </resources>

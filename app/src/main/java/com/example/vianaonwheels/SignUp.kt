@@ -33,36 +33,36 @@ class SignUp : AppCompatActivity() {
     private fun  checkAllFieldsInput(): Boolean { //Strings
 
         if (edtName.length() == 0 && edtEmail.length() == 0 && edtPass.length() == 0 && edtConfirm.length() == 0){
-            edtName.error = "Name is required";
-            edtEmail.error = "Email is required";
-            edtPass.error = "Password is required";
-            edtConfirm.error = "Password is required";
+            edtName.error = getString(R.string.name_required)
+            edtEmail.error = getString(R.string.email_required)
+            edtPass.error = getString(R.string.pass_required)
+            edtConfirm.error = getString(R.string.pass_required)
         }
 
         if (edtName.length() == 0) {
-            edtName.error = "Name is required";
+            edtName.error = getString(R.string.name_required)
             return false;
         }
 
         if (edtEmail.length() == 0) {
-            edtEmail.error = "Email is required";
+            edtEmail.error = getString(R.string.email_required)
             return false;
         }
 
         if (edtPass.length() == 0) {
-            edtPass.error = "Password is required";
+            edtPass.error = getString(R.string.pass_required)
             return false;
         } else if (edtPass.length() < 8) {
-            edtPass.error = "Password must be minimum 8 characters";
+            edtPass.error = getString(R.string.minimum_characters)
             return false;
         }
 
         if(edtConfirm.length() == 0) {
-            edtConfirm.error = "Password is required";
+            edtConfirm.error = getString(R.string.pass_required)
             return false
         }else if (edtConfirm.text.equals(edtPass.text)) {
-            edtConfirm.error = "Password is not the same";
-            edtPass.error = "Password is not the same";
+            edtConfirm.error = getString(R.string.dif_password)
+            edtPass.error = getString(R.string.dif_password)
             return false;
         }
         // after all validation return true.
