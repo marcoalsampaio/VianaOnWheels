@@ -232,8 +232,7 @@
         app:cardCornerRadius="50dp"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="40dp"
-        android:layout_marginTop="40dp"
-        android:onClick="sign_up">
+        android:layout_marginTop="40dp">
 
         <RelativeLayout
             android:layout_width="120dp"
@@ -244,11 +243,11 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@android:color/transparent"
+                android:onClick="register"
                 android:text="@string/sign_up"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:onClick="register"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="22dp"
