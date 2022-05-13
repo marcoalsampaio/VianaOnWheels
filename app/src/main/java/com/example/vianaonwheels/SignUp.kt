@@ -71,7 +71,7 @@ class SignUp : AppCompatActivity() {
 
     fun register(view: View) {
         if(checkAllFieldsInput()){
-            val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString())
+            val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString(), null, null, null, null)
             db.collection("Cliente")
                 .add(newUser)
                 .addOnCompleteListener { task ->
