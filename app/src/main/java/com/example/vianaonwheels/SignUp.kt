@@ -1,9 +1,13 @@
 package com.example.vianaonwheels
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.EditText
+import com.example.vianaonwheels.models.Cliente
+import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUp : AppCompatActivity() {
 
@@ -11,11 +15,13 @@ class SignUp : AppCompatActivity() {
     lateinit var edtEmail: EditText
     lateinit var edtPass: EditText
     lateinit var edtConfirm: EditText
-
+    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
+
+        db = FirebaseFirestore.getInstance()
 
         edtName = findViewById(R.id.sign_up_name)
         edtEmail = findViewById(R.id.edt_insert_email_sign)
@@ -53,7 +59,8 @@ class SignUp : AppCompatActivity() {
 
         if(edtConfirm.length() == 0) {
             edtConfirm.error = "Password is required";
-        }else if (edtConfirm != edtPass) {
+            return false
+        }else if (edtConfirm.text.equals(edtPass.text)) {
             edtConfirm.error = "Password is not the same";
             edtPass.error = "Password is not the same";
             return false;
@@ -63,6 +70,26 @@ class SignUp : AppCompatActivity() {
     }
 
     fun sign_up(view: View) {
-        checkAllFieldsInput()
+
+        if(checkAllFieldsInput()){
+            val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString())
+            db.collection("Cliente")
+                .add(newUser)
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful){
+                        //Redirect
+                        Log.d(TAG, "Sucesso")
+                    }else{
+                        Log.d(TAG, "Erro")
+                    }
+                }.addOnFailureListener {
+                    Log.w(TAG, "Erro")
+                }
+        }
+
+    }
+
+    fun goLogin(view: View) {
+        //Voltar para login
     }
 }
