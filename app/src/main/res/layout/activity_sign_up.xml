@@ -248,7 +248,7 @@
                 android:textAllCaps="true"
                 android:textColor="@color/white"
                 android:textStyle="bold"
-                android:onClick="sign_up"/>
+                android:onClick="register"/>
 
             <ImageView
                 android:layout_width="22dp"

@@ -69,8 +69,7 @@ class SignUp : AppCompatActivity() {
         return true;
     }
 
-    fun sign_up(view: View) {
-
+    fun register(view: View) {
         if(checkAllFieldsInput()){
             val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString())
             db.collection("Cliente")
@@ -86,7 +85,6 @@ class SignUp : AppCompatActivity() {
                     Log.w(TAG, "Erro")
                 }
         }
-
     }
 
     fun goLogin(view: View) {
