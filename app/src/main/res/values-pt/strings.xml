@@ -31,4 +31,8 @@
     <string name="login_message">Por favor entre para continuar</string>
     <string name="sign_up">Registar</string>
     <string name="insert_email">Insira o seu email</string>
+    <string name="pass_required">A Palavra-passe é obrigatória</string>
+    <string name="email_required">O Email é obrigatório</string>
+    <string name="wrong_cred">Credenciais erradas</string>
+    <string name="warning">Tente de novo daqui a pouco, desculpe</string>
 </resources>

@@ -4,17 +4,14 @@ import android.annotation.SuppressLint
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.vianaonwheels.models.Cliente
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.*
 
 
 class Login : AppCompatActivity() {
-    private lateinit var db: FirebaseFirestore;
+    private lateinit var db: FirebaseFirestore
 
     private lateinit var email: EditText
     private lateinit var pass: EditText
@@ -23,12 +20,12 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        db= FirebaseFirestore.getInstance();
+        db= FirebaseFirestore.getInstance()
         email = findViewById(R.id.edt_insert_email)
         pass = findViewById(R.id.edt_insert_pass)
     }
 
-    fun login(view: View) {
+    fun login() {
          //Encriptar dps!!! ?? se tiver tempo
         if(checkAllFieldsInput()){
             db.collection("Cliente")
@@ -40,35 +37,35 @@ class Login : AppCompatActivity() {
                         for (d in task.result!!){
                             Log.d(TAG,d.id) //Ver Resto!!!!! Passsar ID para proxima atividade
                         }
-                        email.error = "Wrong Credentials";
-                        pass.error = "Wrong Credentials";
+                        email.error = getString(R.string.wrong_cred)
+                        pass.error = getString(R.string.wrong_cred)
                     }else{
-                        Toast.makeText(this, "Try later", Toast.LENGTH_LONG)
+                        Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
                     }
                 }.addOnFailureListener {
-                    Toast.makeText(this, "Try later", Toast.LENGTH_LONG)
+                    Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
                 }
         }
     }
     private fun  checkAllFieldsInput(): Boolean { //Strings
 
         if (email.length() == 0 && pass.length() == 0){
-            email.error = "Email is required";
-            pass.error = "Password is required";
-            return false;
+            email.error = getString(R.string.email_required)
+            pass.error = getString(R.string.pass_required)
+            return false
         }
         if (email.length() == 0){
-            email.error = "Email is required";
-            return false;
+            email.error = getString(R.string.email_required)
+            return false
         }
 
         if (pass.length() == 0){
-            pass.error = "Password is required";
-            return false;
+            pass.error = getString(R.string.pass_required)
+            return false
         }
 
         // after all validation return true.
-        return true;
+        return true
     }
 
 
