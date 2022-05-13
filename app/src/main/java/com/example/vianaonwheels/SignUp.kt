@@ -41,20 +41,20 @@ class SignUp : AppCompatActivity() {
 
         if (edtName.length() == 0) {
             edtName.error = getString(R.string.name_required)
-            return false;
+            return false
         }
 
         if (edtEmail.length() == 0) {
             edtEmail.error = getString(R.string.email_required)
-            return false;
+            return false
         }
 
         if (edtPass.length() == 0) {
             edtPass.error = getString(R.string.pass_required)
-            return false;
+            return false
         } else if (edtPass.length() < 8) {
             edtPass.error = getString(R.string.minimum_characters)
-            return false;
+            return false
         }
 
         if(edtConfirm.length() == 0) {
@@ -63,13 +63,13 @@ class SignUp : AppCompatActivity() {
         }else if (edtConfirm.text.equals(edtPass.text)) {
             edtConfirm.error = getString(R.string.dif_password)
             edtPass.error = getString(R.string.dif_password)
-            return false;
+            return false
         }
         // after all validation return true.
-        return true;
+        return true
     }
 
-    fun register(view: View) {
+    fun register() {
         if(checkAllFieldsInput()){
             val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString(), null, null, null, null)
             db.collection("Cliente")
