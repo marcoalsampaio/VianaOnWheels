@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.vianaonwheels">
 
     <application
@@ -10,10 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VianaOnWheels">
         <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
             android:name=".IntercitiesSearch"
             android:exported="false" />
         <activity
             android:name=".Intercities"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
