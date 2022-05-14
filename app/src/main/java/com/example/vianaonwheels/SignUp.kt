@@ -1,13 +1,16 @@
 package com.example.vianaonwheels
 
+import android.app.AlertDialog
 import android.content.ContentValues.TAG
-import androidx.appcompat.app.AppCompatActivity
+import android.content.DialogInterface
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import com.example.vianaonwheels.models.Cliente
+import androidx.appcompat.app.AppCompatActivity
+import com.example.vianaonwheels.models.User
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class SignUp : AppCompatActivity() {
 
@@ -69,20 +72,43 @@ class SignUp : AppCompatActivity() {
         return true
     }
 
-    fun register() {
+    fun register(view: View) {
+
+        val dialogBuilder = AlertDialog.Builder(this)
+
         if(checkAllFieldsInput()){
-            val newUser = Cliente(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString(), null, null, null, null)
-            db.collection("Cliente")
-                .add(newUser)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful){
-                        //Redirect
-                        Log.d(TAG, "Sucesso")
-                    }else{
-                        Log.d(TAG, "Erro")
+            var collectionUser = db.collection("User")
+
+            collectionUser.whereEqualTo("email", edtEmail.text.toString())
+                .get().addOnCompleteListener { task ->
+                    if(task.isSuccessful){
+                        if(!task.result.isEmpty) {
+                            edtEmail.error = getString(R.string.exist_email)
+                        }else{
+                            val newUser = User(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString(), null, null, null, null)
+                            collectionUser.add(newUser)
+                                .addOnCompleteListener { task ->
+                                    if (task.isSuccessful){
+                                        dialogBuilder.setPositiveButton(getString(R.string.ok), DialogInterface.OnClickListener {
+                                                dialog, id ->  Log.d(TAG, "Enter")
+
+                                        })
+
+                                        // create dialog box
+                                        val alert = dialogBuilder.create()
+                                        // set title for alert dialog box
+                                        alert.setTitle(getString(R.string.registed))
+                                        // show alert dialog
+                                        alert.show()
+                                        //Redirect
+                                    }else{
+                                        Log.d(TAG, "Erro")
+                                    }
+                                }.addOnFailureListener {
+                                    Log.w(TAG, "Erro")
+                                }
+                        }
                     }
-                }.addOnFailureListener {
-                    Log.w(TAG, "Erro")
                 }
         }
     }

@@ -36,4 +36,6 @@
     <string name="pass_required">A Palavra-passe é obrigatório</string>
     <string name="minimum_characters">A Palavra-passe tem que ter 8 caracteres no minimo</string>
     <string name="dif_password">Palavra-passes diferentes</string>
+    <string name="exist_email">Email invalido</string>
+    <string name="registed">Registado</string>
 </resources>

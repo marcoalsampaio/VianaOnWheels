@@ -38,4 +38,7 @@
     <string name="pass_required">Password is required</string>
     <string name="minimum_characters">Password must be minimum 8 characters</string>
     <string name="dif_password">Password is not the same</string>
+    <string name="exist_email">Invalid email</string>
+    <string name="registed">Registed</string>
+    <string name="ok" translatable="false">Ok</string>
 </resources>
