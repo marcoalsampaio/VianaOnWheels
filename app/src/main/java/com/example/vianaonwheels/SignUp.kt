@@ -77,7 +77,7 @@ class SignUp : AppCompatActivity() {
         val dialogBuilder = AlertDialog.Builder(this)
 
         if(checkAllFieldsInput()){
-            var collectionUser = db.collection("User")
+            val collectionUser = db.collection("User")
 
             collectionUser.whereEqualTo("email", edtEmail.text.toString())
                 .get().addOnCompleteListener { task ->
@@ -87,12 +87,12 @@ class SignUp : AppCompatActivity() {
                         }else{
                             val newUser = User(edtName.text.toString(), edtEmail.text.toString(), edtPass.text.toString(), null, null, null, null)
                             collectionUser.add(newUser)
-                                .addOnCompleteListener { task ->
-                                    if (task.isSuccessful){
-                                        dialogBuilder.setPositiveButton(getString(R.string.ok), DialogInterface.OnClickListener {
-                                                dialog, id ->  Log.d(TAG, "Enter")
+                                .addOnCompleteListener { taskRegister ->
+                                    if (taskRegister.isSuccessful){
+                                        dialogBuilder.setPositiveButton(getString(R.string.ok)) { _, _ ->
+                                            Log.d(TAG, "Enter")
 
-                                        })
+                                        }
 
                                         // create dialog box
                                         val alert = dialogBuilder.create()
