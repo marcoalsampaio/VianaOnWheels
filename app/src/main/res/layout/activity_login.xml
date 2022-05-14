@@ -170,17 +170,17 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
-        />
+        android:text="@string/sign_up"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:onClick="register"/>
 
     <TextView
         android:id="@+id/no_account"
