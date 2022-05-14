@@ -199,7 +199,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/sign_up"
         android:layout_centerHorizontal="true"
-        android:text="@string/no_account"
+        android:text="@string/dont_account"
         android:textColor="@color/black"
         android:textSize="12sp"
         android:textStyle="bold" />

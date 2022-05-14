@@ -13,6 +13,8 @@ class Intercities : AppCompatActivity() {
     }
 
     fun search(view: View) {
-        startActivity(Intent(this@Intercities, IntercitiesSearch::class.java))
+        val intent = Intent(this, IntercitiesSearch::class.java)
+        startActivity(intent)
+
     }
 }
