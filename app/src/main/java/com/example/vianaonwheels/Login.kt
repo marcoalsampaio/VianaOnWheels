@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -74,5 +75,7 @@ class Login : AppCompatActivity() {
     //verificar credenciais
     //apresentar mensagemada
     // Enviar ID?? para outra ativide
+
+    fun register(view: View) {}
 }
 
