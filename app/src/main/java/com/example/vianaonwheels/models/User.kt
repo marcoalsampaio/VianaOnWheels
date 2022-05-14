@@ -2,7 +2,7 @@ package com.example.vianaonwheels.models
 
 import java.util.*
 
-data class Cliente(
+data class User(
     val name: String,
     val age: Int,
     val nif: Int,

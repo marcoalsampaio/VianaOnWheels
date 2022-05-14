@@ -29,7 +29,7 @@ class Login : AppCompatActivity() {
     fun login() {
          //Encriptar dps!!! ?? se tiver tempo
         if(checkAllFieldsInput()){
-            db.collection("Cliente")
+            db.collection("User")
                 .whereEqualTo("Email", email.text.toString())
                 .whereEqualTo("Password", pass.text.toString())
                 .get()
@@ -76,6 +76,8 @@ class Login : AppCompatActivity() {
     //apresentar mensagemada
     // Enviar ID?? para outra ativide
 
-    fun register(view: View) {}
+    fun register(view: View) {
+
+    }
 }
 
