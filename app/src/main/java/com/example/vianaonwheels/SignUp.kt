@@ -1,12 +1,18 @@
 package com.example.vianaonwheels
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
-import android.content.DialogInterface
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vianaonwheels.models.User
 import com.google.firebase.firestore.FirebaseFirestore
@@ -68,6 +74,11 @@ class SignUp : AppCompatActivity() {
             edtPass.error = getString(R.string.dif_password)
             return false
         }
+
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(edtEmail.text.toString()).matches()) {
+            edtEmail.error = getString(R.string.exist_email)
+            return false
+        }
         // after all validation return true.
         return true
     }
@@ -90,8 +101,9 @@ class SignUp : AppCompatActivity() {
                                 .addOnCompleteListener { taskRegister ->
                                     if (taskRegister.isSuccessful){
                                         dialogBuilder.setPositiveButton(getString(R.string.ok)) { _, _ ->
-                                            Log.d(TAG, "Enter")
-
+                                            val intent = Intent(this, Login::class.java)
+                                            startActivity(intent)
+                                            overridePendingTransition(R.anim.out_in,R.anim.in_out)
                                         }
 
                                         // create dialog box
@@ -114,6 +126,25 @@ class SignUp : AppCompatActivity() {
     }
 
     fun goLogin(view: View) {
-        //Voltar para login
+        val intent = Intent(this, Login::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun showPass(view: View) {
+        val show = findViewById<ImageView>(R.id.show)
+        if(show.tooltipText.toString() == getString(R.string.show)){
+            show.background = getDrawable(R.drawable.ic_hide)
+            show.tooltipText = getString(R.string.hide)
+            edtPass.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            edtConfirm.transformationMethod = HideReturnsTransformationMethod.getInstance()
+        }else{
+            show.background = getDrawable(R.drawable.ic_show)
+            show.tooltipText = getString(R.string.show)
+            edtPass.transformationMethod = PasswordTransformationMethod.getInstance()
+            edtConfirm.transformationMethod = PasswordTransformationMethod.getInstance()
+        }
     }
 }

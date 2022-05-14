@@ -11,13 +11,12 @@
         android:id="@+id/login_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/login"
-        android:layout_marginTop="175dp"
-        android:textStyle="bold"
-        android:textSize="36sp"
-        android:textColor="@android:color/black"
         android:layout_marginStart="50dp"
-        />
+        android:layout_marginTop="120dp"
+        android:text="@string/login"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/login_message"
         android:layout_width="wrap_content"
@@ -36,10 +35,10 @@
         android:layout_height="45dp"
         android:layout_below="@+id/login_message"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="120dp"
         android:longClickable="true"
         app:cardBackgroundColor="@android:color/transparent"
-        app:cardElevation="0dp" >
+        app:cardElevation="0dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -111,7 +110,7 @@
 
             <EditText
                 android:id="@+id/edt_insert_pass"
-                android:layout_width="250dp"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/iv_line"
                 android:layout_marginStart="40dp"
@@ -121,6 +120,17 @@
                 android:padding="0dp"
                 android:textSize="15sp"
                 android:textStyle="normal" />
+
+            <ImageView
+                android:id="@+id/show"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/ic_show"
+                android:layout_marginEnd="10dp"
+                android:onClick="showPass"
+                android:tooltipText="@string/show" />
 
        <!--     <Button
                 android:layout_width="60dp"
@@ -155,10 +165,10 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:background="@android:color/transparent"
+                android:onClick="login"
                 android:text="@string/login"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:onClick="login"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="22dp"

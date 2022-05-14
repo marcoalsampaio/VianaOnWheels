@@ -42,10 +42,9 @@
     <string name="registed">Registed</string>
     <string name="ok" translatable="false">Ok</string>
     <string name="login_message">Please sign in to continue</string>
-    <string name="sign_up">SIGN UP</string>
     <string name="insert_email">Insert the email</string>
-    <string name="pass_required">Password is required</string>
-    <string name="email_required">Email is required</string>
     <string name="wrong_cred">Wrong credentials</string>
     <string name="warning">Try again later, sorry</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
 </resources>

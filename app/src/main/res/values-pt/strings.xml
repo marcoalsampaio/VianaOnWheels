@@ -42,4 +42,6 @@
     <string name="dif_password">Palavra-passes diferentes</string>
     <string name="exist_email">Email invalido</string>
     <string name="registed">Registado</string>
+    <string name="show">Mostrar</string>
+    <string name="hide">Esconder</string>
 </resources>
