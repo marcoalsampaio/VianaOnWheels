@@ -15,21 +15,32 @@
     <string name="destiny">Destiny</string>
     <string name="origin">Origin</string>
     <string name="about_us">About us</string>
-    <string name="name">Name</string>
+    <string name="name">Full Name</string>
     <string name="birthdate">Birthdate</string>
     <string name="search">Search</string>
     <string name="available_routes">Available Routes</string>
     <string name="email" translatable="false">Email</string>
-    <string name="forgot">Forgot</string>
+    <string name="forgot_password">Forgot password</string>
     <string name="send_email">Send email</string>
     <string name="contact">Contact</string>
-    <string name="have_account">Already have an account</string>
+    <string name="have_account">Already have an account?</string>
     <string name="intercity">Intercity</string>
     <string name="date">Date</string>
     <string name="save">Save</string>
     <string name="no_account">Don\'t have an account?</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="insert_data">Please insert all info to continue</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="name_required">Name is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="pass_required">Password is required</string>
+    <string name="minimum_characters">Password must be minimum 8 characters</string>
+    <string name="dif_password">Password is not the same</string>
+    <string name="exist_email">Invalid email</string>
+    <string name="registed">Registed</string>
+    <string name="ok" translatable="false">Ok</string>
     <string name="login_message">Please sign in to continue</string>
     <string name="sign_up">SIGN UP</string>
     <string name="insert_email">Insert the email</string>

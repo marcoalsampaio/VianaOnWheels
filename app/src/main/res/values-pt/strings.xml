@@ -18,10 +18,10 @@
     <string name="birthdate">Data de nacsimento</string>
     <string name="search">Procurar</string>
     <string name="available_routes">Trajetos Disponíveis</string>
-    <string name="forgot">Esqueci-me</string>
+    <string name="forgot_password">Esqueci-me da palavra-passe</string>
     <string name="send_email">Enviar email</string>
     <string name="contact">Contacto</string>
-    <string name="have_account">Já tem conta</string>
+    <string name="have_account">Já tem conta?</string>
     <string name="intercity">Intercidades</string>
     <string name="date">Data</string>
     <string name="save">Guardar</string>
@@ -35,4 +35,11 @@
     <string name="email_required">O Email é obrigatório</string>
     <string name="wrong_cred">Credenciais erradas</string>
     <string name="warning">Tente de novo daqui a pouco, desculpe</string>
+    <string name="insert_data">Por favor insira todos os dados</string>
+    <string name="sign_in">Entrar</string>
+    <string name="name_required">"O Nome é obrigatório "</string>
+    <string name="minimum_characters">A Palavra-passe tem que ter 8 caracteres no mínimo</string>
+    <string name="dif_password">Palavra-passes diferentes</string>
+    <string name="exist_email">Email invalido</string>
+    <string name="registed">Registado</string>
 </resources>

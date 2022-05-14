@@ -3,12 +3,12 @@ package com.example.vianaonwheels.models
 import java.util.*
 
 data class User(
-    val name: String,
-    val age: Int,
-    val nif: Int,
-    val email: String,
-    val password: String,
-    val birth_date: Date,
-    val img: String,
-    val phone_number: Int
-)
+    var name: String,
+    var email: String,
+    var pass: String,
+    var img: String?,
+    var birthDate: Date?,
+    var phoneNumber: Int?,
+    var nif: Int?
+    )
+
