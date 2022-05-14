@@ -52,4 +52,11 @@
     <string name="warning">Try again later, sorry</string>
     <string name="show">Show</string>
     <string name="hide">Hide</string>
+    <string name="hc_date">Date:</string>
+    <string name="hc_company">Company</string>
+    <string name="hc_origin">Origin</string>
+    <string name="hc_destiny">Destination</string>
+    <string name="hc_price">Price:</string>
+    <string name="hc_hour">Hour:</string>
+
 </resources>
