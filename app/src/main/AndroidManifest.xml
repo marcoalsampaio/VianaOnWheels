@@ -30,6 +30,11 @@
         <activity
             android:name=".horarios"
             android:exported="false">
+            android:name=".Main_Page"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
