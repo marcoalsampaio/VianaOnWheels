@@ -30,4 +30,33 @@
     <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
+    <string name="icities_search">Search</string>
+    <string name="icities_origins">Add Origin</string>
+    <string name="icities_destination">Add Destination</string>
+    <string name="icities_source_date">Source</string>
+    <string name="icities_destination_date">Destination</string>
+    <string name="insert_data">Please insert all info to continue</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign in</string>
+    <string name="name_required">Name is required</string>
+    <string name="email_required">Email is required</string>
+    <string name="pass_required">Password is required</string>
+    <string name="minimum_characters">Password must be minimum 8 characters</string>
+    <string name="dif_password">Password is not the same</string>
+    <string name="exist_email">Invalid email</string>
+    <string name="registed">Registed</string>
+    <string name="ok" translatable="false">Ok</string>
+    <string name="login_message">Please sign in to continue</string>
+    <string name="insert_email">Insert the email</string>
+    <string name="wrong_cred">Wrong credentials</string>
+    <string name="warning">Try again later, sorry</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="hc_date">Date:</string>
+    <string name="hc_company">Company</string>
+    <string name="hc_origin">Origin</string>
+    <string name="hc_destiny">Destination</string>
+    <string name="hc_price">Price:</string>
+    <string name="hc_hour">Hour:</string>
+
 </resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Intercities"
+    android:background="@drawable/ic_sign_up">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_info"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_border"
+ >
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ic_intercities_change" />
+
+        <EditText
+            android:id="@+id/edt_city_source"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/icities_origins"
+            android:textAlignment="center" />
+
+        <ImageView
+            android:id="@+id/iv_line_email"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_city_source"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/ic_line" />
+
+
+        <EditText
+            android:id="@+id/edt_city_destination"
+            android:layout_width="240dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/iv_line_email"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:background="@android:color/transparent"
+            android:hint="@string/icities_destination"
+            android:textAlignment="center" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_source"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/rl_info"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/button_border">
+
+
+        <TextView
+            android:id="@+id/tv1_go"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_selectdate"
+            android:text="27-01-2022"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="normal"
+            tools:ignore="NotSibling" />
+
+        <EditText
+            android:id="@+id/edt_selectdate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/icities_source_date"
+            android:inputType="textPassword"
+            android:padding="0dp"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_destination"
+        android:layout_below="@+id/rl_info"
+        android:layout_width="170dp"
+        android:layout_height="50dp"
+        android:background="@drawable/button_border"
+        android:layout_alignParentRight="true"
+        android:layout_alignRight="@id/rl_source"
+        android:layout_marginEnd="20dp">
+
+
+        <TextView
+            android:id="@+id/tv1_destination"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edt_selectdate_destination"
+            android:textAlignment="center"
+            android:text="27-01-2022"
+            android:padding="0dp"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/edt_selectdate_destination"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:hint="@string/icities_destination_date"
+            android:inputType="textPassword"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="normal" />
+
+    </RelativeLayout>
+
+
+    <Button
+        android:id="@+id/bt_persons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/rl_destination"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/white"
+        android:text="1 Adulto"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/bt_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bt_persons"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#FFB800"
+        android:text="Procurar"
+        android:onClick="search"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        tools:ignore="OnClick" />
+
+
+
+</RelativeLayout>
