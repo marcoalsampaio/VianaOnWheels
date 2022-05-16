@@ -87,7 +87,8 @@
                 android:text="@string/send_email"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:onClick="sendEmail"/>
 
             <ImageView
                 android:layout_width="22dp"
