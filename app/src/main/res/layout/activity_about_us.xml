@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/ic_rectangle"
         android:padding="20dp"
-        android:text="Who we are: \nObjectives: \nMotivation: "
+        android:text="@string/aboutUs_text"
         android:textColor="#333"
         android:textSize="30sp"
         android:textStyle="bold"

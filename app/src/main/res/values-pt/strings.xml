@@ -28,4 +28,5 @@
     <string name="dont_account">Não tem conta</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_pass">Confirmar palavra-passe</string>
+    <string name="aboutUs_text">"Quem somos: Objetivos: Motivações: "</string>
 </resources>
