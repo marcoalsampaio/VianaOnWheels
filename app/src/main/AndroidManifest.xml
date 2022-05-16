@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VianaOnWheels">
         <activity
+            android:name=".Perfil"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
@@ -27,7 +30,6 @@
         <activity
             android:name=".horarios"
             android:exported="false">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
