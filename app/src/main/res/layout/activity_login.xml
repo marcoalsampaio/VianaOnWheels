@@ -71,6 +71,8 @@
                 android:hint="@string/insert_email"
                 android:inputType="textEmailAddress"
                 android:padding="0dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/cinza_claro"
                 android:textSize="15sp"
                 android:textStyle="normal" />
         </RelativeLayout>
@@ -118,6 +120,8 @@
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="0dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/cinza_claro"
                 android:textSize="15sp"
                 android:textStyle="normal" />
 
