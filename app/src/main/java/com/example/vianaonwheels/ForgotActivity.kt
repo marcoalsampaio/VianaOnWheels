@@ -2,6 +2,7 @@ package com.example.vianaonwheels
 
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -68,6 +69,9 @@ class ForgotActivity : AppCompatActivity() {
                          dialogBuilder.setPositiveButton(/*getString(R.string.ok)*/"OK") { _, _ ->
                              Log.d(TAG, "Enter")
                              //Redirect to Login
+                             val intent = Intent(this, Login::class.java)
+                             startActivity(intent)
+                             overridePendingTransition(R.anim.out_in,R.anim.in_out)
                          }
                         // create dialog box
                         val alert = dialogBuilder.create()

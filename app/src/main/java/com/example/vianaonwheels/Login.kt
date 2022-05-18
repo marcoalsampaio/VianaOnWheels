@@ -104,5 +104,11 @@ class Login : AppCompatActivity() {
             pass.transformationMethod = PasswordTransformationMethod.getInstance()
         }
     }
+
+    fun goForgot(view: View) {
+        val intent = Intent(this, ForgotActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.`in`,R.anim.out)
+    }
 }
 

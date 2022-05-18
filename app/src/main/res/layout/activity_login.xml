@@ -146,11 +146,12 @@
         android:layout_alignParentEnd="true"
         android:background="@android:color/transparent"
         android:padding="0dp"
-        android:text="@string/forgot"
+        android:text="@string/forgot_password"
         android:textColor="@color/black"
         android:textSize="10sp"
         android:layout_marginEnd="50dp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:onClick="goForgot"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
