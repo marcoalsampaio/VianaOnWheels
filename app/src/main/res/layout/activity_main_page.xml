@@ -77,25 +77,29 @@
                 android:layout_height="200dp"
                 app:cardCornerRadius="25dp"
                 app:cardBackgroundColor="#CFCFCF"
-                android:layout_margin="10dp"></androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:onClick="goMap"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 app:cardCornerRadius="25dp"
                 app:cardBackgroundColor="#CFCFCF"
-                android:layout_margin="10dp"></androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:onClick="goCalender"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 app:cardCornerRadius="25dp"
                 app:cardBackgroundColor="#CFCFCF"
-                android:layout_margin="10dp"></androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:onClick="goCamera"/>
             <androidx.cardview.widget.CardView
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 app:cardCornerRadius="25dp"
                 app:cardBackgroundColor="#CFCFCF"
-                android:layout_margin="10dp"></androidx.cardview.widget.CardView>
+                android:layout_margin="10dp"
+                android:onClick="goHistory"/>
         </LinearLayout>
     </HorizontalScrollView>
 </RelativeLayout>
