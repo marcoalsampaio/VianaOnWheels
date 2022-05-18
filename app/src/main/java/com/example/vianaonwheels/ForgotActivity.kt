@@ -3,11 +3,14 @@ package com.example.vianaonwheels
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.example.vianaonwheels.api.EndPoints
 import com.example.vianaonwheels.api.OutputPost
 import com.example.vianaonwheels.api.ServiceBuilder
@@ -97,6 +100,15 @@ class ForgotActivity : AppCompatActivity() {
             return false
         }
         return true
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun backLogin(view: View) {
+        findViewById<AppCompatButton>(R.id.back_login)
+            .setBackgroundColor(getColor(R.color.cinza_transparent))
+        val intent = Intent(this, Login::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
     }
 
 }

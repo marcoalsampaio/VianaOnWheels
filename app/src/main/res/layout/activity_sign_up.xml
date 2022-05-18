@@ -278,19 +278,19 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <TextView
+  <!--  <TextView
         android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
+        android:onClick="goLogin"
         android:text="@string/sign_in"
         android:textAllCaps="true"
         android:textColor="@color/black"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:onClick="goLogin"/>
+        android:textStyle="bold" />-->
 
     <TextView
         android:id="@+id/no_account"
@@ -301,8 +301,25 @@
         android:text="@string/have_account"
         android:textColor="@color/black"
         android:textSize="12sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_up"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:onClick="goLogin"
+        android:padding="1dp"
+        android:gravity="center"
+        android:text="@string/sign_in"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
 
 
 

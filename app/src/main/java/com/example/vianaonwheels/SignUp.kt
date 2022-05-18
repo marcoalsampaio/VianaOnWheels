@@ -12,8 +12,10 @@ import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.example.vianaonwheels.models.User
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -125,7 +127,10 @@ class SignUp : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun goLogin(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+            .setBackgroundColor(getColor(R.color.cinza_transparent))
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)

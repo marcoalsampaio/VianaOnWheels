@@ -58,5 +58,6 @@
     <string name="hc_destiny">Destination</string>
     <string name="hc_price">Price:</string>
     <string name="hc_hour">Hour:</string>
+    <string name="back">Back</string>
 
 </resources>

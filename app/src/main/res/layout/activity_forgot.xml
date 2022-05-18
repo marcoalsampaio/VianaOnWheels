@@ -99,4 +99,23 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_login"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        android:onClick="backLogin"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="@string/back"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
+
 </RelativeLayout>

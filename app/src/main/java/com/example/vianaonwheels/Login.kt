@@ -12,6 +12,7 @@ import android.view.View
 import android.widget.ImageView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.firestore.FirebaseFirestore
 const val EXTRA_USERID = ""
 
@@ -82,14 +83,6 @@ class Login : AppCompatActivity() {
     //apresentar mensagemada
     // Enviar ID?? para outra ativide
 
-    fun register(view: View) {
-        val intent = Intent(this, SignUp::class.java)
-        startActivity(intent)
-        overridePendingTransition(R.anim.`in`,R.anim.out)
-    }
-
-
-
     @SuppressLint("UseCompatLoadingForDrawables")
     @RequiresApi(Build.VERSION_CODES.O)
     fun showPass(view: View) {
@@ -105,8 +98,20 @@ class Login : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.M)
     fun goForgot(view: View) {
+        findViewById<AppCompatButton>(R.id.forgot)
+            .setBackgroundColor(getColor(R.color.cinza_transparent))
         val intent = Intent(this, ForgotActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.`in`,R.anim.out)
+    }
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun register(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+            .setBackgroundColor(getColor(R.color.cinza_transparent))
+        val intent = Intent(this, SignUp::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.`in`,R.anim.out)
     }

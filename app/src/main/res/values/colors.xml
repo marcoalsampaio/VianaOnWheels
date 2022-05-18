@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cinza_branco">#FCFCFC</color>
     <color name="cinza_claro">#A3A3A3</color>
+    <color name="cinza_escuro">#292929</color>
+    <color name="cinza_transparent">#72888888</color>
 </resources>
