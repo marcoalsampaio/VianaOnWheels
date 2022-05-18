@@ -21,11 +21,11 @@
     <string name="forgot_password">Esqueci-me da palavra-passe</string>
     <string name="send_email">Enviar email</string>
     <string name="contact">Contacto</string>
-    <string name="have_account">Já tem conta</string>
+    <string name="have_account">Já tem conta?</string>
     <string name="intercity">Intercidades</string>
     <string name="date">Data</string>
     <string name="save">Guardar</string>
-    <string name="dont_account">Não tem conta</string>
+    <string name="dont_account">Não tem conta?</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_pass">Confirmar palavra-passe</string>
     <string name="icities_search">Procurar</string>

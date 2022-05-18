@@ -102,7 +102,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/back_login"
-        android:layout_width="60dp"
+        android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
