@@ -38,6 +38,9 @@
             android:name=".horarios"
             android:exported="true"/>
         <activity
+            android:name=".Main_Page"
+            android:exported="true"/>
+        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>

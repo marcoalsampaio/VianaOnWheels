@@ -43,7 +43,7 @@ class Login : AppCompatActivity() {
                         pass.error = getString(R.string.wrong_cred)
                     }else{
                         for (d in task.result!!){
-                            val intent = Intent(this, HistoricActivity::class.java).apply { //Mudar Class!!!!!!!!!
+                            val intent = Intent(this, Main_Page::class.java).apply { //Mudar Class!!!!!!!!!
                                 putExtra(EXTRA_USERID, d.id)
                             }
                             startActivity(intent)
