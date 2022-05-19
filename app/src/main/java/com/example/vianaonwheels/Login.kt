@@ -40,10 +40,10 @@ class Login : AppCompatActivity() {
                 .get()
                 .addOnCompleteListener{ task ->
                     if(task.result.isEmpty) {
-                        email.error = getString(R.string.wrong_cred)
-                        pass.error = getString(R.string.wrong_cred)
                         pass.text.clear()
                         email.text.clear()
+                        email.error = getString(R.string.wrong_cred)
+                        pass.error = getString(R.string.wrong_cred)
                     }else{
                         for (d in task.result!!){
                             val intent = Intent(this, MainPage::class.java).apply { //Mudar Class!!!!!!!!!
