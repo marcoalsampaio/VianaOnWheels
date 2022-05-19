@@ -19,9 +19,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VianaOnWheels">
         <activity
-            android:name=".AboutUs"
-            android:exported="false" />
-        <activity
             android:name=".Perfil"
             android:exported="false" />
         <activity
