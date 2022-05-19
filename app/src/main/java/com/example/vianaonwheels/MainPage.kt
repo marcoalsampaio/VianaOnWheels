@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 
-class Main_Page : AppCompatActivity() {
+class MainPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
@@ -20,7 +20,7 @@ class Main_Page : AppCompatActivity() {
         startActivity(intent)
     }
     fun goCalender(view: View) {
-        val intent = Intent(this, horarios::class.java)
+        val intent = Intent(this, Horarios::class.java)
         startActivity(intent)
     }
     fun goMap(view: View) {

@@ -37,13 +37,13 @@
             android:name=".HistoricActivity"
             android:exported="false" />
         <activity
-            android:name=".horarios"
+            android:name=".Horarios"
             android:exported="true"/>
         <activity
             android:name=".ForgotActivity"
             android:exported="true"/>
         <activity
-            android:name=".Main_Page"
+            android:name=".MainPage"
             android:exported="true"/>
         <activity
             android:name=".Login"

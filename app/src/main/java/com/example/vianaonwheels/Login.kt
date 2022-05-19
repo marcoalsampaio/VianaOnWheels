@@ -42,11 +42,15 @@ class Login : AppCompatActivity() {
                     if(task.result.isEmpty) {
                         email.error = getString(R.string.wrong_cred)
                         pass.error = getString(R.string.wrong_cred)
+                        pass.text.clear()
+                        email.text.clear()
                     }else{
                         for (d in task.result!!){
-                            val intent = Intent(this, Main_Page::class.java).apply { //Mudar Class!!!!!!!!!
+                            val intent = Intent(this, MainPage::class.java).apply { //Mudar Class!!!!!!!!!
                                 putExtra(EXTRA_USERID, d.id)
                             }
+                            pass.text.clear()
+                            email.text.clear()
                             startActivity(intent)
                         }
                     }
