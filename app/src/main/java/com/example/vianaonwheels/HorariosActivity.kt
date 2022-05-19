@@ -1,11 +1,11 @@
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.example.vianaonwheels.R
+package com.example.vianaonwheels
 
-class Horarios : AppCompatActivity() {
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+
+class HorariosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_horarios)
     }
-
 }
