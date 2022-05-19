@@ -15,7 +15,7 @@ class SideMenuPages : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sidemenu_pages)
 
         nDrawerLayout = findViewById(R.id.drawerLayout)
         navView= findViewById(R.id.navView)
