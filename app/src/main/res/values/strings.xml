@@ -59,6 +59,7 @@
     <string name="hc_price">Price:</string>
     <string name="hc_hour">Hour:</string>
     <string name="back">Back</string>
-
+    <string name="Delete_Account">Delete Account</string>
+    <string name="menu" translatable="false">Menu</string>
     <string name="aboutUs_text">Who we are: Objectives: Motivation:</string>
 </resources>
