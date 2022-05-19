@@ -14,10 +14,26 @@
         <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_right_arrow.xml" value="0.1875" />
         <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.33043478260869563" />
         <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_sidemenu.xml" value="0.1" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_arrow.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_dots_y_svgrepo_com.xml" value="0.1435" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_email.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_leftarrow.xml" value="0.1435" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_menu_camera.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_sign_up.xml" value="0.103" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_user.xml" value="0.1225" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.11684782608695653" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_qr_code.xml" value="0.1" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_sidemenu.xml" value="0.2" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/app_bar_sidemenu.xml" value="0.1" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/content_sidemenu.xml" value="0.22" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/nav_header_sidemenu.xml" value="0.15" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/topbar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/menu/sidemenu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>
