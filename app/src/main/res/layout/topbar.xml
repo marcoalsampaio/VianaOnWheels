@@ -2,8 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
-    android:id="@+id/toolbar">
+    android:id="@+id/toolbar"
+    tools:context=".SideMenuPages">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +16,9 @@
             android:id="@+id/backIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_leftarrow"></ImageView>
+            android:src="@drawable/ic_leftarrow"
+            android:onClick="backIcon"
+            />
 
         <TextView
             android:id="@+id/tituloPagina"
@@ -23,14 +27,16 @@
             android:layout_centerHorizontal="true"
             android:text="Page Name"
             android:textColor="@color/black"
-            android:textSize="20sp"></TextView>
+            android:textSize="20sp"
+            />
 
         <ImageView
             android:id="@+id/menuIcon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:src="@drawable/ic_dots_y_svgrepo_com"></ImageView>
+            android:src="@drawable/ic_dots_y_svgrepo_com"
+            android:onClick="menuIcon"/>
     </RelativeLayout>
 
 </RelativeLayout>

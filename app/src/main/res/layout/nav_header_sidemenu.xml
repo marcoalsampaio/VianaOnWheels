@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_backgroundsidemenu">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/ic_backgroundsidemenu"
+    tools:context=".SideMenuPages">
 
 
 
@@ -29,6 +30,7 @@
         android:layout_below="@+id/textView"
         android:layout_marginTop="20sp"
         android:textSize="20dp"
+        android:onClick="aboutUS"
         style="?android:attr/borderlessButtonStyle"/>
 
     <Button
@@ -41,6 +43,7 @@
         android:text="@string/Delete_Account"
         android:textColor="#FF0000"
         android:textSize="20dp"
+        android:onClick="deleteAcc"
         style="?android:attr/borderlessButtonStyle"/>
 
     <Button
@@ -53,6 +56,7 @@
         android:text="@string/logout"
         android:textColor="@color/black"
         android:textSize="20dp"
+        android:onClick="logout"
         style="?android:attr/borderlessButtonStyle" />
 
 
