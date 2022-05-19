@@ -105,7 +105,7 @@ class ForgotActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     fun backLogin(view: View) {
         findViewById<AppCompatButton>(R.id.back_login)
-            .setBackgroundColor(getColor(R.color.cinza_transparent))
+            .setBackgroundColor(getColor(R.color.cinza_transparent_45))
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)

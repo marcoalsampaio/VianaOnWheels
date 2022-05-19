@@ -62,4 +62,8 @@
     <string name="Delete_Account">Delete Account</string>
     <string name="menu" translatable="false">Menu</string>
     <string name="aboutUs_text">Who we are: Objectives: Motivation:</string>
+    <string name="pageAlreadyOpen">You are already in this page!</string>
+    <string name="account_deleted">Account successfully deleted!</string>
+    <string name="error_deleting">Error on deleting the account!</string>
+    <string name="homePage" translatable="false">Home</string>
 </resources>

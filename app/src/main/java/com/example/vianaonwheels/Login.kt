@@ -16,8 +16,9 @@ import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.firestore.FirebaseFirestore
 const val EXTRA_USERID = ""
 
+
+lateinit var db: FirebaseFirestore
 class Login : AppCompatActivity() {
-    private lateinit var db: FirebaseFirestore
 
     private lateinit var email: EditText
     private lateinit var pass: EditText
@@ -105,7 +106,7 @@ class Login : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     fun goForgot(view: View) {
         findViewById<AppCompatButton>(R.id.forgot)
-            .setBackgroundColor(getColor(R.color.cinza_transparent))
+            .setBackgroundColor(getColor(R.color.cinza_transparent_45))
         val intent = Intent(this, ForgotActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.`in`,R.anim.out)
@@ -114,7 +115,7 @@ class Login : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     fun register(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
-            .setBackgroundColor(getColor(R.color.cinza_transparent))
+            .setBackgroundColor(getColor(R.color.cinza_transparent_45))
         val intent = Intent(this, SignUp::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.`in`,R.anim.out)

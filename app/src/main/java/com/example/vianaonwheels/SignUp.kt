@@ -26,7 +26,6 @@ class SignUp : AppCompatActivity() {
     lateinit var edtEmail: EditText
     lateinit var edtPass: EditText
     lateinit var edtConfirm: EditText
-    private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -130,7 +129,7 @@ class SignUp : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     fun goLogin(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
-            .setBackgroundColor(getColor(R.color.cinza_transparent))
+            .setBackgroundColor(getColor(R.color.cinza_transparent_45))
         val intent = Intent(this, Login::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
