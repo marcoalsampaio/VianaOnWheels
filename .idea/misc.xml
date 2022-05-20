@@ -5,7 +5,10 @@
       <map>
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_historic.xml" value="0.11684782608695653" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_horarios.xml" value="0.1" />
+        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_intercities.xml" value="0.17552083333333332" />
+        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_main_page.xml" value="0.1" />
+        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_maps.xml" value="0.15989583333333332" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_qr_scanner.xml" value="0.15833333333333333" />
       </map>
     </option>

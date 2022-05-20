@@ -44,7 +44,7 @@ class MainPage : AppCompatActivity() {
         startActivity(intent)
     }
     fun goCalender(view: View) {
-        val intent = Intent(this, HorariosActivity::class.java)
+        val intent = Intent(this, Maps::class.java)
         startActivity(intent)
     }
     fun goMap(view: View) {
