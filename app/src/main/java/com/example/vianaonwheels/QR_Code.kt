@@ -16,11 +16,13 @@ class QR_Code : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_qr_code)
 
+        var DadosNoQR: String;
+        DadosNoQR= "editText!!";
         imageView = findViewById(R.id.imageView)
         val qrCodeWriter = QRCodeWriter()
         try {
             val bitMatrix: BitMatrix =
-                qrCodeWriter.encode("editText!!", BarcodeFormat.QR_CODE, 200, 200)
+                qrCodeWriter.encode(DadosNoQR, BarcodeFormat.QR_CODE, 200, 200)
             val bitmap = Bitmap.createBitmap(200, 200, Bitmap.Config.RGB_565)
             for (x in 0..199) {
                 for (y in 0..199) {
