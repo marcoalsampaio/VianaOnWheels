@@ -8,7 +8,7 @@ import com.example.vianaonwheels.models.ToUse
 import java.util.*
 import kotlin.collections.ArrayList
 
-class ToUseAdapter(private val touse: ArrayList<ToUse>): RecyclerView.Adapter<ToUseViewHolder>() {
+class ToUseAdapter(private val tickets: ArrayList<ToUse>): RecyclerView.Adapter<ToUseViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToUseViewHolder {
         return ToUseViewHolder(
             LayoutInflater
@@ -22,22 +22,30 @@ class ToUseAdapter(private val touse: ArrayList<ToUse>): RecyclerView.Adapter<To
     }
 
     override fun onBindViewHolder(holder: ToUseViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        return holder.bind(tickets[position])
     }
 
     override fun getItemCount(): Int {
-        return touse.size
+        return tickets.size
     }
 
 }
 
-
-
 class ToUseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-    val price = itemView.findViewById<TextView>(R.id.tv_price_touse)
-    val dates = itemView.findViewById<TextView>(R.id.tv_date_touse)
-    val hours = itemView.findViewById<TextView>(R.id.tv_hours_touse)
-    val company = itemView.findViewById<TextView>(R.id.tv_company_touse)
-    val destiny = itemView.findViewById<TextView>(R.id.tv_destiny_touse)
-    val origin = itemView.findViewById<TextView>(R.id.tv_origin_touse)
+    fun bind(ticket: ToUse) {
+        price.text = ticket.price.toString()
+        dates.text = ticket.dates.toString()
+        hours.text = ticket.hours.toString()
+        company.text = ticket.company
+        destiny.text = ticket.destiny
+        origin.text = ticket.origin
+
+    }
+
+    private val price = itemView.findViewById<TextView>(R.id.tv_price_touse)
+    private val dates = itemView.findViewById<TextView>(R.id.tv_date_touse)
+    private val hours = itemView.findViewById<TextView>(R.id.tv_hours_touse)
+    private val company = itemView.findViewById<TextView>(R.id.tv_company_touse)
+    private val destiny = itemView.findViewById<TextView>(R.id.tv_destiny_touse)
+    private val origin = itemView.findViewById<TextView>(R.id.tv_origin_touse)
 }
