@@ -1,27 +1,40 @@
 package com.example.vianaonwheels.adapters
 
 import android.view.*
+import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.R
 import com.example.vianaonwheels.models.ToUse
-import java.util.*
 import kotlin.collections.ArrayList
 
 class ToUseAdapter(private val tickets: ArrayList<ToUse>): RecyclerView.Adapter<ToUseViewHolder>() {
+
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ToUseViewHolder {
-        return ToUseViewHolder(
-            LayoutInflater
-                .from(parent.context)
-                .inflate(
-                    R.layout.touse_line,
-                    parent,
-                    false
-                )
-        )
+
+        val itemView = LayoutInflater
+            .from(parent.context)
+            .inflate(
+                R.layout.touse_line,
+                parent,
+                false
+            )
+
+        return ToUseViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ToUseViewHolder, position: Int) {
+
         return holder.bind(tickets[position])
     }
 
@@ -29,13 +42,24 @@ class ToUseAdapter(private val tickets: ArrayList<ToUse>): RecyclerView.Adapter<
         return tickets.size
     }
 
+    fun getItem(position: Int): ToUse {
+        return tickets[position]
+    }
+
 }
 
-class ToUseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+class ToUseViewHolder(itemView: View, listener: ToUseAdapter.onItemClickListener): RecyclerView.ViewHolder(itemView) {
+
+    init {
+        itemView.setOnClickListener{
+            listener.onItemClick(adapterPosition)
+        }
+    }
+
     fun bind(ticket: ToUse) {
-        price.text = ticket.price.toString()
-        dates.text = ticket.dates.toString()
-        hours.text = ticket.hours.toString()
+        price.text = ticket.price
+        dates.text = ticket.dates
+        hours.text = ticket.hours
         company.text = ticket.company
         destiny.text = ticket.destiny
         origin.text = ticket.origin
@@ -49,3 +73,4 @@ class ToUseViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
     private val destiny = itemView.findViewById<TextView>(R.id.tv_destiny_touse)
     private val origin = itemView.findViewById<TextView>(R.id.tv_origin_touse)
 }
+
