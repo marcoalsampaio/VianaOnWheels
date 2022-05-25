@@ -34,5 +34,9 @@
     <string name="hc_destiny">Destino</string>
     <string name="hc_price">"Preço: "</string>
     <string name="hc_hour">Horas:</string>
-
+    <string name="f_date_hour">Data/Hora</string>
+    <string name="f_company">Empresa</string>
+    <string name="f_origin">Origem</string>
+    <string name="f_destiny">Destino</string>
+    <string name="f_price">Preço</string>
 </resources>

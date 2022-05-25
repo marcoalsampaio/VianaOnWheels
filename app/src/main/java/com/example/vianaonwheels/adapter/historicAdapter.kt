@@ -5,14 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
-import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vianaonwheels.models.Historic
 import com.example.vianaonwheels.R
-import org.w3c.dom.Text
+import com.example.vianaonwheels.models.Historic
 import java.util.*
-import java.util.Collections.list
-import kotlin.collections.ArrayList
 
 class HistoricAdapter(private val list: ArrayList<Historic>): RecyclerView.Adapter<HistoricAdapter.HistoricViewHolder>() {
 
@@ -33,12 +29,16 @@ class HistoricAdapter(private val list: ArrayList<Historic>): RecyclerView.Adapt
         private val destinationItemView: TextView = itemView.findViewById(R.id.tv_destiny)
         private val priceItemView: TextView = itemView.findViewById(R.id.tv_priceValue)
         fun bind(company: String?, date_hour: Date?, origin: String?, destination: String, price: Double) {
-            companyItemView.text = company
-            dateItemView.text = date_hour.toString()
-            hourItemView.text = date_hour.toString()
-            originItemView.text = origin
-            destinationItemView.text = destination
-            priceItemView.text = price.toString()
+            val cal = Calendar.getInstance()
+            cal.time = date_hour
+            val hora = cal.get(Calendar.HOUR_OF_DAY).toString() + ':' + cal.get(Calendar.MINUTE).toString()
+            val data = cal.get(Calendar.DAY_OF_MONTH).toString() + '/' + cal.get(Calendar.MONTH).toString() + '/' + cal.get(Calendar.YEAR).toString()
+            companyItemView.text = companyItemView.text.toString() + ' ' + company
+            dateItemView.text =' ' +  dateItemView.text.toString() + data
+            hourItemView.text = hourItemView.text.toString() + ' ' + hora
+            originItemView.text = originItemView.text.toString() +  ' ' + origin
+            destinationItemView.text = destinationItemView.text.toString() + ' ' + destination
+            priceItemView.text = price.toString() + '€'
 
 
         }

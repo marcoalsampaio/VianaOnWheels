@@ -4,16 +4,15 @@
     android:layout_width="350dp"
     android:layout_marginBottom="10dp"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
     android:background="@drawable/hc_itemlist"
-    android:layout_marginStart="30dp">
+    >
 
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/hc_date"
         android:textSize="15dp" />
@@ -23,32 +22,32 @@
         android:id="@+id/tv_hours"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
+        android:layout_marginStart="110dp"
         android:layout_marginTop="10dp"
         android:layout_toRightOf="@+id/tv_date"
         android:text="@string/hc_hour" />
 
     <TextView
         android:id="@+id/tv_company"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_date"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/hc_company"
         android:textColor="@color/black"
-        android:textSize="10dp" />
+        android:textSize="13dp" />
 
     <TextView
         android:id="@+id/tv_origin"
-        android:layout_width="70dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_company"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="@string/hc_origin"
         android:textColor="@color/black"
-        android:textSize="10dp" />
+        android:textSize="13dp" />
 
     <TextView
         android:id="@+id/tv_destiny"
@@ -61,7 +60,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:text="@string/hc_destiny"
-        android:textSize="10dp"
+        android:textSize="13dp"
         android:textAlignment="center"
         android:textColor="@color/black" />
 

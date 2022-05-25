@@ -36,4 +36,9 @@
     <string name="hc_destiny">Destination</string>
     <string name="hc_price">Price:</string>
     <string name="hc_hour">Hour:</string>
+    <string name="f_date_hour">Date_Hour</string>
+    <string name="f_company">Company</string>
+    <string name="f_origin">Origin</string>
+    <string name="f_destiny">Destination</string>
+    <string name="f_price">Price</string>
 </resources>
