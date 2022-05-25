@@ -29,6 +29,9 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".ToUseActivity"
+            android:exported="false" />
+        <activity
             android:name=".HorariosActivity"
             android:exported="false" />
         <activity

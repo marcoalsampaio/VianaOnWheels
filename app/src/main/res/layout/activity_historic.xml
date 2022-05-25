@@ -10,11 +10,11 @@
     <RelativeLayout
         android:id="@+id/rl_source"
         android:layout_width="350dp"
-        android:layout_marginTop="70dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/hc_itemlist"
-        android:layout_marginStart="30dp">
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/hc_itemlist">
 
 
         <TextView
@@ -63,15 +63,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_company"
-            android:layout_marginTop="10dp"
             android:layout_alignRight="@+id/tv_origin"
             android:layout_alignParentRight="true"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:text="@string/hc_destiny"
-            android:textSize="10dp"
             android:textAlignment="center"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="10dp" />
 
         <TextView
             android:id="@+id/tv_price"
@@ -87,9 +87,9 @@
             android:id="@+id/tv_priceValue"
             android:layout_width="70dp"
             android:layout_height="wrap_content"
+            android:layout_below="@id/tv_destiny"
             android:layout_alignRight="@id/tv_price"
             android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_destiny"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:paddingBottom="10dp"
@@ -105,7 +105,6 @@
         android:background="@drawable/ic_line"
         android:layout_below="@id/rl_source"
         android:layout_centerHorizontal="true"
-
         android:layout_marginTop="15dp"
         />
 

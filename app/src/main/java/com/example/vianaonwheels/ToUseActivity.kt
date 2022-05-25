@@ -1,0 +1,59 @@
+package com.example.vianaonwheels
+
+import android.content.ContentValues.TAG
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.vianaonwheels.adapters.ToUseAdapter
+import com.example.vianaonwheels.models.ToUse
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
+import kotlin.collections.ArrayList
+
+class ToUseActivity : AppCompatActivity() {
+    var tickets =  ArrayList<ToUse>()
+
+    private lateinit var ticketsAdapter: ToUseAdapter //lateinit para iniciar dps a variavel
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_to_use)
+
+        db= FirebaseFirestore.getInstance()
+        val rvTickets = findViewById<RecyclerView>(R.id.rvToUseItem)
+
+        db.collection("Tickets")
+            .whereEqualTo("email", "marcosampaio@ipvc.pt")
+            .whereEqualTo("usado", "n")
+            .get()
+            .addOnSuccessListener{ documents ->
+                if(documents.isEmpty) {
+                    Toast.makeText(this@ToUseActivity, "Sem Bilhetes por Usar", Toast.LENGTH_LONG).show()
+                }else{
+                    for (d in documents){
+                        tickets.add(ToUse(
+                            d.data["price"].toString(),  d.data["dates"].toString(),
+                            d.data["hours"].toString(), d.data["company"].toString(), d.data["destiny"].toString(), d.data["origem"].toString()))
+                    }
+                    ticketsAdapter = ToUseAdapter(tickets)
+                    ticketsAdapter.setOnItemClickListener(object: ToUseAdapter.onItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            Toast.makeText(this@ToUseActivity, "Clicaste $position", Toast.LENGTH_LONG).show()
+                            //Intent QR Code send ticket data
+                            Log.d(TAG,ticketsAdapter.getItem(position).toString() )
+
+                        }
+                    })
+                    rvTickets.adapter = ticketsAdapter
+                    rvTickets.layoutManager = LinearLayoutManager(this)
+
+                }
+            }.addOnFailureListener {
+                Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
+            }
+    }
+}
