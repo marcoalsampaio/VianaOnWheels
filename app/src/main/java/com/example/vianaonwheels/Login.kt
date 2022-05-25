@@ -1,11 +1,13 @@
 package com.example.vianaonwheels
 
 import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
+import android.util.Log
 import android.widget.EditText
 import android.widget.Toast
 import android.view.View
@@ -15,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.google.firebase.firestore.FirebaseFirestore
 const val EXTRA_USERID = ""
-
+const val EXTRA_USEREMAIL = ""
 
 lateinit var db: FirebaseFirestore
 class Login : AppCompatActivity() {
@@ -49,6 +51,7 @@ class Login : AppCompatActivity() {
                         for (d in task.result!!){
                             val intent = Intent(this, MainPage::class.java).apply { //Mudar Class!!!!!!!!!
                                 putExtra(EXTRA_USERID, d.id)
+                                putExtra(EXTRA_USERID, email.text.toString())
                             }
                             pass.text.clear()
                             email.text.clear()

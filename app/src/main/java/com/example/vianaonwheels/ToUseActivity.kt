@@ -15,19 +15,21 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class ToUseActivity : AppCompatActivity() {
-    var tickets =  ArrayList<ToUse>()
-
+    private val tickets =  ArrayList<ToUse>()
+    private lateinit var userEmail: String
     private lateinit var ticketsAdapter: ToUseAdapter //lateinit para iniciar dps a variavel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_to_use)
 
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
+
         db= FirebaseFirestore.getInstance()
         val rvTickets = findViewById<RecyclerView>(R.id.rvToUseItem)
-
+        Log.d(TAG, "Email$userEmail")
         db.collection("Tickets")
-            .whereEqualTo("email", "marcosampaio@ipvc.pt")
+            .whereEqualTo("email", userEmail)
             .whereEqualTo("usado", "n")
             .get()
             .addOnSuccessListener{ documents ->

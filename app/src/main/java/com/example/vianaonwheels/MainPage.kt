@@ -2,6 +2,7 @@ package com.example.vianaonwheels
 
 import android.app.AlertDialog
 import android.content.ContentValues
+import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,17 +16,21 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 
 lateinit var userID : String;
+
 class MainPage : AppCompatActivity() {
     //TopBar
     private lateinit var nDrawerLayout: DrawerLayout;
     private lateinit var navView: NavigationView;
     private lateinit var tituloPagina: TextView;
+    private lateinit var userEmail : String;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_page)
 
         userID = intent.getStringExtra(EXTRA_USERID).toString()
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString() //Email
+
         nDrawerLayout = findViewById(R.id.drawerLayout)
         navView= findViewById(R.id.navView)
 
@@ -44,7 +49,10 @@ class MainPage : AppCompatActivity() {
         startActivity(intent)
     }
     fun goCalender(view: View) {
-        val intent = Intent(this, HorariosActivity::class.java)
+        //val intent = Intent(this, HorariosActivity::class.java)
+        val intent = Intent(this, ToUseActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
     fun goMap(view: View) {
