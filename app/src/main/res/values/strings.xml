@@ -66,4 +66,5 @@
     <string name="account_deleted">Account successfully deleted!</string>
     <string name="error_deleting">Error on deleting the account!</string>
     <string name="homePage" translatable="false">Home</string>
+    <string name="ticketQR">QR Code - Bilhete</string>
 </resources>

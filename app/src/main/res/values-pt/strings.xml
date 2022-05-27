@@ -61,4 +61,5 @@
     <string name="pageAlreadyOpen">Já se encontra nessa página!</string>
     <string name="account_deleted">Conta eliminada com sucesso!</string>
     <string name="error_deleting">Erro ao eliminar a conta!</string>
+    <string name="ticketQR">QR Code - Ticket</string>
 </resources>
