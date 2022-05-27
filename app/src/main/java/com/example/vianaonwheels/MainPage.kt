@@ -49,7 +49,10 @@ class MainPage : AppCompatActivity() {
         startActivity(intent)
     }
     fun goCalender(view: View) {
-        //val intent = Intent(this, HorariosActivity::class.java)
+        val intent = Intent(this, HorariosActivity::class.java)
+
+    }
+    fun goTickets(view: View) {
         val intent = Intent(this, ToUseActivity::class.java).apply {
             putExtra(EXTRA_USEREMAIL, userEmail)
         }
@@ -97,4 +100,6 @@ class MainPage : AppCompatActivity() {
     fun menuIcon(view: View) {
         nDrawerLayout.openDrawer(navView)
     }
+
+
 }

@@ -44,8 +44,10 @@ class ToUseActivity : AppCompatActivity() {
                     ticketsAdapter = ToUseAdapter(tickets)
                     ticketsAdapter.setOnItemClickListener(object: ToUseAdapter.onItemClickListener{
                         override fun onItemClick(position: Int) {
-                            Toast.makeText(this@ToUseActivity, "Clicaste $position", Toast.LENGTH_LONG).show()
                             //Intent QR Code send ticket data
+                            val ticketAPI = ticketsAdapter.getItem(position)
+                            val ticketData = ""+ticketAPI.price+
+                            //goToQR(ticketsAdapter.getItem(position).toString())
                             Log.d(TAG,ticketsAdapter.getItem(position).toString() )
 
                         }
@@ -57,5 +59,12 @@ class ToUseActivity : AppCompatActivity() {
             }.addOnFailureListener {
                 Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
             }
+    }
+
+    fun goToQR(ticket: String){
+        val intent = Intent(this, ToUseActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, ticket)
+        }
+        startActivity(intent)
     }
 }
