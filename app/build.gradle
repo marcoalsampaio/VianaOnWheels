@@ -60,4 +60,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.1.2'
     implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
+    //Qr generator
+    implementation 'com.google.zxing:core:3.2.1'
 }
