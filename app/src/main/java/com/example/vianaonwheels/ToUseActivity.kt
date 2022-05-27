@@ -13,7 +13,7 @@ import com.example.vianaonwheels.models.ToUse
 import com.google.firebase.firestore.FirebaseFirestore
 import java.util.*
 import kotlin.collections.ArrayList
-
+const val EXTRA_TICKET = ""
 class ToUseActivity : AppCompatActivity() {
     private val tickets =  ArrayList<ToUse>()
     private lateinit var userEmail: String
@@ -46,9 +46,14 @@ class ToUseActivity : AppCompatActivity() {
                         override fun onItemClick(position: Int) {
                             //Intent QR Code send ticket data
                             val ticketAPI = ticketsAdapter.getItem(position)
-                            val ticketData = ""+ticketAPI.price+
-                            //goToQR(ticketsAdapter.getItem(position).toString())
-                            Log.d(TAG,ticketsAdapter.getItem(position).toString() )
+                            val ticketData = """
+                                |Price:${ticketAPI.price};
+                                |Origin:${ticketAPI.origin};
+                                |Destiny:${ticketAPI.destiny};
+                                |Company:${ticketAPI.company};
+                                |Date:${ticketAPI.dates};
+                                |Hours:${ticketAPI.hours};""".trimMargin()
+                            goToQR(ticketData)
 
                         }
                     })
@@ -62,8 +67,8 @@ class ToUseActivity : AppCompatActivity() {
     }
 
     fun goToQR(ticket: String){
-        val intent = Intent(this, ToUseActivity::class.java).apply {
-            putExtra(EXTRA_USEREMAIL, ticket)
+        val intent = Intent(this, QR_Code::class.java).apply {
+            putExtra(EXTRA_TICKET, ticket)
         }
         startActivity(intent)
     }
