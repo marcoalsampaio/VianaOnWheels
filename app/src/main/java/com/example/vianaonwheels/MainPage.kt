@@ -46,11 +46,11 @@ class MainPage : AppCompatActivity() {
         //atribuição dos valores
         user_name = findViewById(R.id.TV_mainName)
         user_name.setText()
-        user_birth = findViewById(R.id.user_birth)
+        user_birth = findViewById(R.id.TV_mainBirth)
         user_birth.setText()
-        user_mail = findViewById(R.id.user_mail)
+        user_mail = findViewById(R.id.TV_mail)
         user_mail.setText()
-        user_contact = findViewById(R.id.user_contact)
+        user_contact = findViewById(R.id.TV_contacto)
         user_contact.setText()
 
     }
