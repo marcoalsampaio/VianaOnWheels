@@ -23,6 +23,12 @@ class MainPage : AppCompatActivity() {
     private lateinit var navView: NavigationView;
     private lateinit var tituloPagina: TextView;
     private lateinit var userEmail : String;
+    //mainPage Profile
+    private lateinit var user_name: TextView;
+    private lateinit var user_birth: TextView;
+    private lateinit var user_mail: TextView;
+    private lateinit var user_contact: TextView;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,15 @@ class MainPage : AppCompatActivity() {
         tituloPagina= findViewById(R.id.tituloPagina)
         tituloPagina.setText(R.string.homePage)
 
+        //atribuição dos valores
+        user_name = findViewById(R.id.TV_mainName)
+        user_name.setText()
+        user_birth = findViewById(R.id.user_birth)
+        user_birth.setText()
+        user_mail = findViewById(R.id.user_mail)
+        user_mail.setText()
+        user_contact = findViewById(R.id.user_contact)
+        user_contact.setText()
 
     }
 
