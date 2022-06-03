@@ -32,4 +32,6 @@
     <string name="confirm_pass">Confirm Password</string>
     <string name="buy_ticket">Buy Ticket</string>
     <string name="tab" translatable="false">\u0009\u0009\u0009\u0009</string>
+    <string name="qtd">Quantity:</string>
+    <string name="precoUnit">Price Unit.:</string>
 </resources>

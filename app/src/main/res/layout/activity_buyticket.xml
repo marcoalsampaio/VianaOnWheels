@@ -7,35 +7,35 @@
     tools:context=".BuyTicket"
     android:background="@drawable/ic_inter">
 
-    <TextView
-        android:id="@+id/cardBuy"
-        android:layout_width="370dp"
-        android:layout_height="300dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/ic_whiterectangle"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:paddingTop="90dp"
-        android:paddingStart="70dp"
-        android:lineSpacingExtra="20dp"
-        android:text="dados">
-    </TextView>
-
-    <TextView
-        android:id="@+id/btnBuyTicket"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cardBuy"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_btnbuy"
-        android:gravity="center"
-        android:paddingBottom="7dp"
-        android:text="@string/buy_ticket"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:onClick="buyTicket"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ticketsRV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll1"
+        tools:listitem="@layout/buyticket_line"
+        android:layout_marginTop="50dp"
         />
 
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/btnBuyTicket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rvTodoItems"
+            android:background="@drawable/ic_btnbuy"
+            android:gravity="center"
+            android:paddingBottom="7dp"
+            android:text="@string/buy_ticket"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:onClick="buyTicket"
+            android:layout_weight="1"/>
+    </LinearLayout>
 </RelativeLayout>
+
+
