@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:background="@drawable/ic_frame_2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Perfil">
@@ -68,17 +68,31 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:padding="10dp"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/gradient_color"
         android:layout_below="@id/card"
-        android:layout_alignRight="@id/card"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#FF5C00"
-        android:text="@string/save"
-        app:cornerRadius="50dp">
 
-    </Button>
+        android:layout_alignRight="@id/card">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            />
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"/>
+    </RelativeLayout>
+
 </RelativeLayout>

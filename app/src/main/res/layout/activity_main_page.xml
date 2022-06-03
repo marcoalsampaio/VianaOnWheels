@@ -28,6 +28,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             >
+            <ImageView
+                android:id="@+id/iv_editProfil"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_baseline_edit_24"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:onClick="edit_userData"
+                />
             <androidx.cardview.widget.CardView
                 android:id="@+id/profil_image"
                 android:layout_marginTop="10dp"

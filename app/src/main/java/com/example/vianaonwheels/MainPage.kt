@@ -123,5 +123,12 @@ class MainPage : AppCompatActivity() {
         nDrawerLayout.openDrawer(navView)
     }
 
+    fun edit_userData(view: View) {
+        val intent = Intent(this, Perfil::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
+        startActivity(intent)
+    }
+
 
 }
