@@ -42,7 +42,7 @@ class MainPage : AppCompatActivity() {
 
         tituloPagina= findViewById(R.id.tituloPagina)
         tituloPagina.setText(R.string.homePage)
-
+        //user data
         user_name = findViewById(R.id.TV_mainName)
         user_birth = findViewById(R.id.TV_mainBirth)
         user_mail = findViewById(R.id.TV_mail)
