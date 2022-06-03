@@ -35,6 +35,8 @@ class MainPage : AppCompatActivity() {
         setContentView(R.layout.activity_main_page)
 
         userID = intent.getStringExtra(EXTRA_USERID).toString()
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString() //Email
+
         nDrawerLayout = findViewById(R.id.drawerLayout)
         navView= findViewById(R.id.navView)
 
@@ -47,6 +49,19 @@ class MainPage : AppCompatActivity() {
         user_mail = findViewById(R.id.TV_mail)
         user_contact = findViewById(R.id.TV_contacto)
 
+        //get user data
+        db.collection("User").whereEqualTo("email", userEmail).get()
+            .addOnSuccessListener{ documents ->
+                for (document in documents) {
+                    user_name.text = document.data["name"].toString()
+                    user_mail.text=document.data["email"].toString()
+                    user_contact.text=document.data["phoneNumber"].toString()
+                    user_birth.text=document.data["birthDate"].toString()
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.w(TAG, "Error getting user data: ", exception)
+            }
     }
 
     fun goHistory(view: View) {
