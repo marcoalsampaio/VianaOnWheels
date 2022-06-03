@@ -48,6 +48,7 @@ class MainPage : AppCompatActivity() {
         user_mail = findViewById(R.id.TV_mail)
         user_contact = findViewById(R.id.TV_contacto)
 
+        //get user data
         db.collection("User").whereEqualTo("email", userEmail).get()
             .addOnSuccessListener{ documents ->
                 for (document in documents) {
