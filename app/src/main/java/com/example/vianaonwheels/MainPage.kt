@@ -43,30 +43,23 @@ class MainPage : AppCompatActivity() {
         tituloPagina= findViewById(R.id.tituloPagina)
         tituloPagina.setText(R.string.homePage)
 
-        load_user()
-
-    }
-
-    fun load_user(view: View){
         user_name = findViewById(R.id.TV_mainName)
         user_birth = findViewById(R.id.TV_mainBirth)
         user_mail = findViewById(R.id.TV_mail)
         user_contact = findViewById(R.id.TV_contacto)
 
-        val ref = db.collection("User").whereEqualTo("email", userEmail).get()
+        db.collection("User").whereEqualTo("email", userEmail).get()
             .addOnSuccessListener{ documents ->
                 for (document in documents) {
-                    user_name.setText(document.data["name"].toString())
-                    user_birth.setText(document.data["birthDate"].toString())
-                    user_mail.setText(document.data["email"].toString())
-                    user_contact.setText(document.data["phoneNumber"].toString())
+                    user_name.text = document.data["name"].toString()
+                    user_mail.text=document.data["email"].toString()
+                    user_contact.text=document.data["phoneNumber"].toString()
+                    user_birth.text=document.data["birthDate"].toString()
                 }
             }
             .addOnFailureListener {exception ->
                 Log.w(TAG, "Error getting user data: ", exception)
             }
-
-    }
     }
 
     fun goHistory(view: View) {
