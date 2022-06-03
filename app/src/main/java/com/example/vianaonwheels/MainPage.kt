@@ -74,7 +74,7 @@ class MainPage : AppCompatActivity() {
     }
     fun goCalender(view: View) {
         val intent = Intent(this, HorariosActivity::class.java)
-
+        startActivity(intent)
     }
     fun goTickets(view: View) {
         val intent = Intent(this, ToUseActivity::class.java).apply {
