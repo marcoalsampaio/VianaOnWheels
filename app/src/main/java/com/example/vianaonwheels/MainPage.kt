@@ -41,6 +41,11 @@ class MainPage : AppCompatActivity() {
         tituloPagina= findViewById(R.id.tituloPagina)
         tituloPagina.setText(R.string.homePage)
 
+        //user data
+        user_name = findViewById(R.id.TV_mainName)
+        user_birth = findViewById(R.id.TV_mainBirth)
+        user_mail = findViewById(R.id.TV_mail)
+        user_contact = findViewById(R.id.TV_contacto)
 
     }
 
@@ -54,6 +59,12 @@ class MainPage : AppCompatActivity() {
     }
     fun goCalender(view: View) {
         val intent = Intent(this, HorariosActivity::class.java)
+
+    }
+    fun goTickets(view: View) {
+        val intent = Intent(this, ToUseActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
     fun goMap(view: View) {
@@ -98,4 +109,13 @@ class MainPage : AppCompatActivity() {
     fun menuIcon(view: View) {
         nDrawerLayout.openDrawer(navView)
     }
+
+    fun edit_userData(view: View) {
+        val intent = Intent(this, Perfil::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
+        startActivity(intent)
+    }
+
+
 }
