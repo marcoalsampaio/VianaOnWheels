@@ -3,23 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.199" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_frame_2.xml" value="0.199" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_hc_filter.xml" value="0.199" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_hide.xml" value="0.199" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_intercities_change.xml" value="0.199" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/drawable/ic_splash.xml" value="0.199" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_historic.xml" value="0.11684782608695653" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_horarios.xml" value="0.1" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_intercities.xml" value="0.17552083333333332" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_main_page.xml" value="0.264" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_maps.xml" value="0.15989583333333332" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_perfil.xml" value="0.22604166666666667" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_intercities.xml" value="0.17552083333333332" />
-        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.17552083333333332" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_main_page.xml" value="0.1" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_maps.xml" value="0.15989583333333332" />
+        <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_perfil.xml" value="0.23731884057971014" />
         <entry key="..\:/hugo_files/VianaOnWheels/app/src/main/res/layout/activity_qr_scanner.xml" value="0.15833333333333333" />
       </map>
     </option>

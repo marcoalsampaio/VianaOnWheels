@@ -72,8 +72,8 @@ class MainPage : AppCompatActivity() {
         val intent = Intent(this, QR_scanner::class.java)
         startActivity(intent)
     }
-    fun goCalender(view: View) {
-        val intent = Intent(this, HorariosActivity::class.java)
+    fun goMap(view: View) {
+        val intent = Intent(this, MapsActivity::class.java)
         startActivity(intent)
     }
     fun goTickets(view: View) {
@@ -82,10 +82,7 @@ class MainPage : AppCompatActivity() {
         }
         startActivity(intent)
     }
-    fun goMap(view: View) {
-       /* val intent = Intent(this, AboutUsActivity::class.java)
-        startActivity(intent)*/
-    }
+
     fun aboutUS(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, AboutUsActivity::class.java)
