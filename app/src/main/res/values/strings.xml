@@ -30,8 +30,10 @@
     <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
-    <string name="buy_ticket">Buy Ticket</string>
+    <string name="buy_ticket">Buy Tickets</string>
     <string name="tab" translatable="false">\u0009\u0009\u0009\u0009</string>
-    <string name="qtd">Quantity:</string>
+    <string name="qtd">Qty:</string>
     <string name="precoUnit">Price Unit.:</string>
+    <string name="Total_price_buytickets">Total Price:</string>
+    <string name="precoLine">Price:</string>
 </resources>

@@ -28,7 +28,9 @@
     <string name="dont_account">Não tem conta</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_pass">Confirmar palavra-passe</string>
-    <string name="buy_ticket">Comprar Bilhete</string>
-    <string name="qtd">Quantidade:</string>
+    <string name="buy_ticket">Comprar Bilhetes</string>
+    <string name="qtd">Qtd:</string>
     <string name="precoUnit">Preço Unit.:</string>
+    <string name="Total_price_buytickets">Preço Total:</string>
+    <string name="precoLine">Preço:</string>
 </resources>

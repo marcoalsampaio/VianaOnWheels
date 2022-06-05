@@ -7,6 +7,7 @@ class ticketToBuy(
     val partidaHora: String,
     val destino: String,
     val destinoHora: String,
-    val quantidade: Number,
-    val precoUnitario: String) {
+    val quantidade: Int,
+    val precoUnitario: Double,
+    val precoTotalLinha: Double) {
 }
