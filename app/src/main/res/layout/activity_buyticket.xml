@@ -53,13 +53,13 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/ic_btnbuy"
+        android:background="@drawable/gradient_color"
         android:layout_marginBottom="10dp"
         android:gravity="center"
-        android:paddingBottom="7dp"
         android:text="@string/buy_ticket"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         android:onClick="buyTicket"/>
 </RelativeLayout>
 
