@@ -35,4 +35,8 @@
     <string name="icities_destination">Add Destination</string>
     <string name="icities_source_date">Source</string>
     <string name="icities_destination_date">Destination</string>
+    <string name="inter_jovem">Young</string>
+    <string name="inter_adultos">Adults</string>
+    <string name="inter_senior">Seniors</string>
+    <string name="inter_tickets">Select a ticket</string>
 </resources>

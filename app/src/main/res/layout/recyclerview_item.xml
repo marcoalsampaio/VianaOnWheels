@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_source"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:layout_marginStart="30dp"
+    android:background="@drawable/button_border">
+
+
+    <TextView
+        android:id="@+id/tv_hourB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:text="9:50h"
+        android:textAlignment="center" />
+
+
+    <TextView
+        android:id="@+id/tv_hourE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/tv_hourB"
+        android:text="12:00h" />
+
+    <TextView
+        android:id="@+id/tv_BPlace"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_hourB"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Viana do Castelo"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_EPlace"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_hourE"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/tv_BPlace"
+        android:text="Porto"
+        android:textAlignment="center"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_BPlace"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#FFC700"
+        android:text="+"
+        android:onClick="teste"
+        android:textColor="@color/black" />
+
+
+    <TextView
+        android:id="@+id/tv_time_dist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_BPlace"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="10dp"
+        android:text="04h 55m, 334km/h"
+        android:textAlignment="center"
+        android:textSize="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/connections"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_time_dist"
+        android:layout_marginStart="100dp"
+        android:paddingBottom="10dp"
+        android:text="1 connection"
+        android:textSize="10dp"
+
+        />
+
+
+</RelativeLayout>
+
+

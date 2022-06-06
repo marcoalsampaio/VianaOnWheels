@@ -33,4 +33,8 @@
     <string name="icities_destination">Adicione Destino</string>
     <string name="icities_source_date">Origem</string>
     <string name="icities_destination_date">Destino</string>
+    <string name="inter_jovem">Jovens</string>
+    <string name="inter_senior">Séniores</string>
+    <string name="inter_adultos">Adultos</string>
+    <string name="inter_tickets">Selecione um bilhete</string>
 </resources>

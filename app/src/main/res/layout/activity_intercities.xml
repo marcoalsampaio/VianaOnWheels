@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,15 +26,15 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/ic_intercities_change" />
 
-        <EditText
+        <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/edt_city_source"
-            android:layout_width="240dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_alignParentRight="true"
+            android:textAlignment="center"
             android:layout_marginEnd="20dp"
             android:background="@android:color/transparent"
-            android:hint="@string/icities_origins"
-            android:textAlignment="center" />
+            android:hint="@string/icities_origins"/>
 
         <ImageView
             android:id="@+id/iv_line_email"
@@ -49,9 +48,9 @@
             android:src="@drawable/ic_line" />
 
 
-        <EditText
+        <AutoCompleteTextView xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/edt_city_destination"
-            android:layout_width="240dp"
+            android:layout_width="200dp"
             android:layout_height="50dp"
             android:layout_below="@+id/iv_line_email"
             android:layout_alignParentRight="true"
@@ -62,6 +61,7 @@
     </RelativeLayout>
 
 
+
     <RelativeLayout
         android:id="@+id/rl_source"
         android:layout_width="170dp"
@@ -69,7 +69,8 @@
         android:layout_below="@+id/rl_info"
         android:layout_marginStart="20dp"
         android:layout_alignParentLeft="true"
-        android:background="@drawable/button_border">
+        android:background="@drawable/button_border"
+        android:onClick="selectGoHour">
 
 
         <TextView
@@ -77,7 +78,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_selectdate"
-            android:text="27-01-2022"
             android:textAlignment="center"
             android:textSize="15sp"
             android:textStyle="normal"
@@ -107,7 +107,8 @@
         android:background="@drawable/button_border"
         android:layout_alignParentRight="true"
         android:layout_alignRight="@id/rl_source"
-        android:layout_marginEnd="20dp">
+        android:layout_marginEnd="20dp"
+        android:onClick="selectBackHour">
 
 
         <TextView
@@ -116,7 +117,6 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/edt_selectdate_destination"
             android:textAlignment="center"
-            android:text="27-01-2022"
             android:padding="0dp"
             android:textSize="15sp"
             android:textStyle="normal" />
@@ -134,33 +134,226 @@
 
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/rl_destination">
 
-    <Button
-        android:id="@+id/bt_persons"
+        <Button
+            android:id="@+id/bt_persons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="@color/white"
+            android:onClick="choosePeople"
+            android:text="@string/inter_tickets"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bt_persons"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/gradient_color"
+            android:layout_centerHorizontal="true"
+            android:onClick="search"
+            android:text="Procurar"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/ticket_choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:layout_below="@+id/rl_destination"
-        android:layout_marginTop="70dp"
-        android:backgroundTint="@color/white"
-        android:text="1 Adulto"
-        android:textAlignment="center"
-        android:textColor="@color/black" />
+        android:background="@drawable/button_border"
+        android:orientation="vertical"
+        android:visibility="invisible">
 
-    <Button
-        android:id="@+id/bt_search"
+        <TextView
+            android:id="@+id/adulto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="10dp"
+            android:text="Adulto"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/jovem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adulto"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="19dp"
+            android:text="Jovem"
+            android:textSize="17dp" />
+
+        <TextView
+            android:id="@+id/senior"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jovem"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="10dp"
+            android:text="Senior"
+            android:textSize="17dp" />
+
+
+        <Button
+            android:id="@+id/adMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/jo_et"
+            android:background="@drawable/ic_baseline_remove_24" />
+
+        <TextView
+            android:id="@+id/ad_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/joMax"
+            android:text="0"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/adMax"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_baseline_add_24" />
+
+
+        <Button
+            android:id="@+id/joMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/adulto"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/jo_et"
+            android:background="@drawable/ic_baseline_remove_24" />
+
+        <TextView
+            android:id="@+id/jo_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/adulto"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/joMax"
+            android:text="0"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/joMax"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/adulto"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_baseline_add_24" />
+
+
+        <Button
+            android:id="@+id/seMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/jovem"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_toLeftOf="@id/se_et"
+            android:background="@drawable/ic_baseline_remove_24" />
+
+        <TextView
+            android:id="@+id/se_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/jovem"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@id/seMax"
+            android:text="0"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/seMax"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_below="@id/jovem"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_baseline_add_24" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/senior"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:onClick="choosePeople"
+            android:text="Confirmar" />
+    </RelativeLayout>
+
+    <DatePicker
+        android:id="@+id/datePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bt_persons"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="#FFB800"
-        android:text="Procurar"
-        android:onClick="search"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        tools:ignore="OnClick" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:datePickerMode="calendar"
+        android:background="@color/white"
+        android:visibility="invisible"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_check_date"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"
+        android:layout_below="@id/datePicker"
+        android:onClick="getTickets"
+        android:layout_margin="16dp" />
 
 
 </RelativeLayout>
+
