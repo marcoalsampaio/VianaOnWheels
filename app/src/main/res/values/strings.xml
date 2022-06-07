@@ -68,4 +68,10 @@
     <string name="homePage" translatable="false">Home</string>
     <string name="title_activity_maps">Maps</string>
     <string name="ticketQR">QR Code - Bilhete</string>
+    <string name="buy_ticket">Buy Tickets</string>
+    <string name="tab" translatable="false">\u0009\u0009\u0009\u0009</string>
+    <string name="qtd">Qty:</string>
+    <string name="precoUnit">Price Unit.:</string>
+    <string name="Total_price_buytickets">Total Price:</string>
+    <string name="precoLine">Price:</string>
 </resources>
