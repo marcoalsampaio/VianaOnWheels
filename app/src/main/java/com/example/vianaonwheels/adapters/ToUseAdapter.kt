@@ -59,7 +59,7 @@ class ToUseViewHolder(itemView: View, listener: ToUseAdapter.onItemClickListener
     fun bind(ticket: ToUse) {
         price.text = ticket.price
         dates.text = ticket.dates
-        hours.text = ticket.hours
+        hours.text = ticket.origin_hour
         company.text = ticket.company
         destiny.text = ticket.destiny
         origin.text = ticket.origin

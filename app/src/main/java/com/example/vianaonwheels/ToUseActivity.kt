@@ -30,16 +30,16 @@ class ToUseActivity : AppCompatActivity() {
         Log.d(TAG, "Email$userEmail")
         db.collection("Tickets")
             .whereEqualTo("email", userEmail)
-            .whereEqualTo("usado", "n")
+            .whereEqualTo("used", "n")
             .get()
             .addOnSuccessListener{ documents ->
                 if(documents.isEmpty) {
                     Toast.makeText(this@ToUseActivity, "Sem Bilhetes por Usar", Toast.LENGTH_LONG).show()
                 }else{
                     for (d in documents){
-                        tickets.add(ToUse(
-                            d.data["price"].toString(),  d.data["dates"].toString(),
-                            d.data["hours"].toString(), d.data["company"].toString(), d.data["destiny"].toString(), d.data["origem"].toString()))
+                        tickets.add(ToUse(d.data["price"].toString(),d.data["dates"].toString(),d.data["origin_hour"].toString(),
+                            d.data["company"].toString(),d.data["destiny"].toString(),d.data["origin"].toString(),
+                            d.data["qtd"].toString(),d.data["destiny_hour"].toString()))
                     }
                     ticketsAdapter = ToUseAdapter(tickets)
                     ticketsAdapter.setOnItemClickListener(object: ToUseAdapter.onItemClickListener{
@@ -52,7 +52,9 @@ class ToUseActivity : AppCompatActivity() {
                                 |Destiny:${ticketAPI.destiny};
                                 |Company:${ticketAPI.company};
                                 |Date:${ticketAPI.dates};
-                                |Hours:${ticketAPI.hours};""".trimMargin()
+                                |Origin_Hour:${ticketAPI.origin_hour};
+                                |Destiny_Hour:${ticketAPI.destiny_hour};
+                                |qtd:${ticketAPI.qtd};""".trimMargin()
                             goToQR(ticketData)
 
                         }
