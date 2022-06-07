@@ -64,4 +64,7 @@ dependencies {
     implementation 'com.github.yuriy-budiyev:code-scanner:2.1.2'
     //Qr generator
     implementation 'com.google.zxing:core:3.2.1'
+
+
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
 }

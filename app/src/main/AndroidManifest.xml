@@ -82,6 +82,9 @@
             android:name=".AboutUsActivity"
             android:exported="true" />
         <activity
+            android:name=".BuyTicket"
+            android:exported="true"/>
+        <activity
             android:name=".Login"
             android:exported="true">
            <!-- <intent-filter>

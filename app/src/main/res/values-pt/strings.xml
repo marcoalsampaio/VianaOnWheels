@@ -62,4 +62,9 @@
     <string name="account_deleted">Conta eliminada com sucesso!</string>
     <string name="error_deleting">Erro ao eliminar a conta!</string>
     <string name="ticketQR">QR Code - Ticket</string>
+    <string name="buy_ticket">Comprar Bilhetes</string>
+    <string name="qtd">Qtd:</string>
+    <string name="precoUnit">Preço Unit.:</string>
+    <string name="Total_price_buytickets">Preço Total:</string>
+    <string name="precoLine">Preço:</string>
 </resources>
