@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.R
 import com.example.vianaonwheels.models.ticketToBuy
-import kotlinx.android.synthetic.main.buyticket_line.view.*
 
 class buyTicketAdapter(
     private val ticketsToBuy: ArrayList<ticketToBuy>,
@@ -81,13 +80,13 @@ class buyTicketAdapter(
 }
 
 class ticketToBuyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
-    val partida = itemView.partida
-    val partidaHora = itemView.partidaHora
-    val destino = itemView.destino
-    val destinoHora = itemView.destinoHora
-    val quantidade = itemView.quantidade
-    val precoUnitario = itemView.precoUnitario
-    val Mais = itemView.Mais
-    val Menos = itemView.Menos
-    val precoTotalLinha = itemView.precoTotalLinha
+    val partida = itemView.findViewById<TextView>(R.id.partida)
+    val partidaHora = itemView.findViewById<TextView>(R.id.partidaHora)
+    val destino = itemView.findViewById<TextView>(R.id.destino)
+    val destinoHora = itemView.findViewById<TextView>(R.id.destinoHora)
+    val quantidade = itemView.findViewById<TextView>(R.id.quantidade)
+    val precoUnitario = itemView.findViewById<TextView>(R.id.precoUnitario)
+    val Mais = itemView.findViewById<TextView>(R.id.Mais)
+    val Menos = itemView.findViewById<TextView>(R.id.Menos)
+    val precoTotalLinha = itemView.findViewById<TextView>(R.id.precoTotalLinha)
 }

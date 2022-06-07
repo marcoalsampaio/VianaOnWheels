@@ -7,20 +7,22 @@ import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.adapters.buyTicketAdapter
 import com.example.vianaonwheels.models.ticketToBuy
-import kotlinx.android.synthetic.main.activity_buyticket.*
 
 class BuyTicket : AppCompatActivity() {
 
     private lateinit var ticketsList : ArrayList<ticketToBuy>
     private lateinit var totalTV : TextView
+    private lateinit var ticketsRV : RecyclerView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_buyticket)
         totalTV = findViewById(R.id.Total)
+        ticketsRV = findViewById(R.id.ticketsRV)
 
         ticketsList = ArrayList<ticketToBuy>()
 
@@ -33,14 +35,6 @@ class BuyTicket : AppCompatActivity() {
 
     }
 
-     fun setTotalPrice(){
-        var precoTotal = 0.00;
-         totalTV = findViewById(R.id.Total)
-        for (i in ticketsList){
-            precoTotal += i.precoTotalLinha
-        }
-        totalTV.text= precoTotal.toString()
-    }
     fun buyTicket(view: View) {
 
     }
