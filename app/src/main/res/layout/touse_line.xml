@@ -16,22 +16,22 @@
                     android:id="@+id/tv_date_touse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
+                    android:layout_marginStart="20dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/hc_date"
-                    android:textSize="15dp"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
 
 
                 <TextView
                     android:id="@+id/tv_hours_touse"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="130dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginTop="10dp"
-                    android:layout_toRightOf="@+id/tv_date_touse"
+                    android:layout_marginEnd="20dp"
                     android:text="@string/hc_hour"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/tv_company_touse"
@@ -85,12 +85,22 @@
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_destiny_touse"
-                    android:layout_alignRight="@id/tv_price_touse"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="70dp"
                     android:layout_marginTop="10dp"
                     android:paddingBottom="10dp"
                     android:text="3.80€"
+                    android:textAlignment="center"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_qtdValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_destiny_touse"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:text="2"
                     android:textAlignment="center"
                     android:textColor="@color/black" />
         </RelativeLayout>

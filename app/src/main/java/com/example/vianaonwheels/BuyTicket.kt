@@ -51,7 +51,7 @@ class BuyTicket : AppCompatActivity() {
 
         ticketsList = ArrayList<ticketToBuy>()
 
-        for (i in 0 until 3){
+        for (i in 0 until 10){
             ticketsList.add(ticketToBuy("22/10/2022", "Av Minho","Porto de gaia", "10:00", "Maia", "11:00", 1, 10.22, 10.22))
         }
 
@@ -73,7 +73,9 @@ class BuyTicket : AppCompatActivity() {
             ticketsList.clear()
             Toast.makeText(this,  getString(R.string.compradosSucesso), Toast.LENGTH_LONG).show()
 
-            val intent = Intent(this, MainPage::class.java)
+            val intent = Intent(this, MainPage::class.java).apply {
+                putExtra(EXTRA_USEREMAIL, userEmail)
+            }
             startActivity(intent)
             overridePendingTransition(R.anim.out_in,R.anim.in_out)
 
@@ -111,12 +113,16 @@ class BuyTicket : AppCompatActivity() {
     fun logout(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
+        finish()
     }
     fun backIcon(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
-        val intent = Intent(this, MainPage::class.java)
+        val intent = Intent(this, MainPage::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out) }
     fun menuIcon(view: View) {

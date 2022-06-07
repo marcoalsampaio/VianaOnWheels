@@ -58,6 +58,9 @@
             android:name=".QR_scanner"
             android:exported="false" />
         <activity
+            android:name=".QR_Code"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity

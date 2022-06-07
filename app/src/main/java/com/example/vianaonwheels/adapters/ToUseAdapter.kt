@@ -1,5 +1,7 @@
 package com.example.vianaonwheels.adapters
 
+import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.view.*
 import android.widget.AdapterView
 import android.widget.TextView
@@ -57,20 +59,22 @@ class ToUseViewHolder(itemView: View, listener: ToUseAdapter.onItemClickListener
     }
 
     fun bind(ticket: ToUse) {
-        price.text = ticket.price
-        dates.text = ticket.dates
-        hours.text = ticket.origin_hour
+        price.text = ticket.price+"€"
+        dates.text = itemView.context.getString(R.string.date)+":"+ticket.dates
+        hours.text = itemView.context.getString(R.string.hc_hour)+":"+ticket.origin_hour
         company.text = ticket.company
         destiny.text = ticket.destiny
         origin.text = ticket.origin
+        qtd.text = itemView.context.getString(R.string.qtd)+":"+ticket.qtd
 
     }
 
-    private val price = itemView.findViewById<TextView>(R.id.tv_price_touse)
+    private val price = itemView.findViewById<TextView>(R.id.tv_priceValue)
     private val dates = itemView.findViewById<TextView>(R.id.tv_date_touse)
     private val hours = itemView.findViewById<TextView>(R.id.tv_hours_touse)
     private val company = itemView.findViewById<TextView>(R.id.tv_company_touse)
     private val destiny = itemView.findViewById<TextView>(R.id.tv_destiny_touse)
     private val origin = itemView.findViewById<TextView>(R.id.tv_origin_touse)
+    private val qtd = itemView.findViewById<TextView>(R.id.tv_qtdValue)
 }
 

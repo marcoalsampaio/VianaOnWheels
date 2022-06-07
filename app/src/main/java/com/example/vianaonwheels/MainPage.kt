@@ -121,8 +121,10 @@ class MainPage : AppCompatActivity() {
     fun logout(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
+        finish()
     }
     fun menuIcon(view: View) {
         nDrawerLayout.openDrawer(navView)
