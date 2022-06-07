@@ -26,6 +26,8 @@ class buyTicketAdapter(
 
     override fun onBindViewHolder(holder: ticketToBuyViewHolder, position: Int) {
         val currentTicketToBuy = ticketsToBuy[position]
+        holder.data.text = currentTicketToBuy.data
+        holder.company.text = currentTicketToBuy.company
         holder.partida.text = currentTicketToBuy.partida
         holder.partidaHora.text = currentTicketToBuy.partidaHora
         holder.destino.text = currentTicketToBuy.destino
@@ -61,12 +63,14 @@ class buyTicketAdapter(
     }
 
     private fun plusOne(index: Int, currentTicketToBuy: ticketToBuy){
-        ticketsToBuy[index] = ticketToBuy(currentTicketToBuy.partida, currentTicketToBuy.partidaHora, currentTicketToBuy.destino, currentTicketToBuy.destinoHora, currentTicketToBuy.quantidade+1,currentTicketToBuy.precoUnitario, currentTicketToBuy.precoUnitario * (currentTicketToBuy.quantidade+1))
+        ticketsToBuy[index].quantidade = ticketsToBuy[index].quantidade+1
+        ticketsToBuy[index].precoTotalLinha = ticketsToBuy[index].quantidade  *ticketsToBuy[index].precoUnitario
         calculateTotal()
         notifyDataSetChanged()
     }
     private fun minusOne(index: Int, currentTicketToBuy: ticketToBuy){
-        ticketsToBuy[index] = ticketToBuy(currentTicketToBuy.partida, currentTicketToBuy.partidaHora, currentTicketToBuy.destino, currentTicketToBuy.destinoHora, currentTicketToBuy.quantidade-1,currentTicketToBuy.precoUnitario,currentTicketToBuy.precoUnitario * (currentTicketToBuy.quantidade-1))
+        ticketsToBuy[index].quantidade = ticketsToBuy[index].quantidade-1
+        ticketsToBuy[index].precoTotalLinha = ticketsToBuy[index].quantidade  *ticketsToBuy[index].precoUnitario
         calculateTotal()
         notifyDataSetChanged()
     }
@@ -80,6 +84,8 @@ class buyTicketAdapter(
 }
 
 class ticketToBuyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    val data = itemView.findViewById<TextView>(R.id.data)
+    val company = itemView.findViewById<TextView>(R.id.company)
     val partida = itemView.findViewById<TextView>(R.id.partida)
     val partidaHora = itemView.findViewById<TextView>(R.id.partidaHora)
     val destino = itemView.findViewById<TextView>(R.id.destino)

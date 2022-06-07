@@ -82,6 +82,12 @@ class MainPage : AppCompatActivity() {
         }
         startActivity(intent)
     }
+    fun goCart(view: View) {
+        val intent = Intent(this, BuyTicket::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
+        startActivity(intent)
+    }
 
     fun aboutUS(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
@@ -128,6 +134,7 @@ class MainPage : AppCompatActivity() {
         }
         startActivity(intent)
     }
+
 
 
 }
