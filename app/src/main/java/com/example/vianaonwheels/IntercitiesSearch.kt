@@ -16,6 +16,7 @@ import com.example.vianaonwheels.models.Trips
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import org.w3c.dom.Text
 import java.util.*
 
 
@@ -28,6 +29,8 @@ class IntercitiesSearch : AppCompatActivity() {
     private lateinit var destinyCity: String
     private lateinit var dateGo: String
     private lateinit var dateBack: String
+    private lateinit var fab: FloatingActionButton
+    private var checkGoDone = false
     companion object {
         val cart: ArrayList<CartItems> = ArrayList()
     }
@@ -38,6 +41,16 @@ class IntercitiesSearch : AppCompatActivity() {
 
         val intent = intent
 
+
+        fab = findViewById(R.id.fabVolta)
+        val cartCountItemView = findViewById<TextView>(R.id.cart_count)
+        cartCountItemView.text = cart.size.toString()
+        val cartPriceItemView = findViewById<TextView>(R.id.total_price)
+        var total_preco = 0.0
+        for(item in cart){
+            total_preco += item.preco
+        }
+        cartPriceItemView.text = total_preco.toString()
         // receive the value by getStringExtra() method
         // and key must be same which is send by first activity
         joTickets = intent.getStringExtra("n_jo_tickets").toString()
@@ -47,11 +60,12 @@ class IntercitiesSearch : AppCompatActivity() {
         destinyCity = intent.getStringExtra("destiny_city").toString()
         dateGo = intent.getStringExtra("date_origin").toString()
         dateBack = intent.getStringExtra("date_destiny").toString()
-        Toast.makeText(this, dateGo, Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, dateBack, Toast.LENGTH_SHORT).show()
         val dateSelected = findViewById<TextView>(R.id.tv_date)
         dateSelected.text = dateGo
 
         getInfo(dateGo, originCity, destinyCity)
+
     }
 
 
@@ -89,10 +103,11 @@ class IntercitiesSearch : AppCompatActivity() {
     }
 
     fun getInfo(dateGo: String?, originCity: String?, destinyCity: String?){
-
+        val cartCount = findViewById<TextView>(R.id.cart_count)
+        val priceCart = findViewById<TextView>(R.id.total_price)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val tickets: ArrayList<Trips> = ArrayList()
-        if (dateGo != null) {
+        if (dateGo != null && !checkGoDone) {
             db.collection("Intercities")
                 .whereEqualTo("origin", originCity)
                 .whereEqualTo("destiny", destinyCity)
@@ -111,7 +126,36 @@ class IntercitiesSearch : AppCompatActivity() {
                         ))
                     }
 
-                    val adapter = IntercitiesAdapter(tickets)
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+                }
+                .addOnFailureListener { exeception ->
+                    Log.d("DataNotRecieve", "teste$exeception")
+
+                }
+        }
+        if( dateBack.isNotEmpty() && checkGoDone){
+            db.collection("Intercities")
+                .whereEqualTo("origin", destinyCity)
+                .whereEqualTo("destiny", originCity)
+                .whereEqualTo("Date", dateBack)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        tickets.add(Trips(document.data["basePrice"].toString().toFloat(),
+                            document.data["beginHour"].toString(),
+                            document.data["endHour"].toString(),
+                            document.data["company"].toString(),
+                            document.data["connections"].toString().toInt(),
+                            document.data["destiny"].toString(),
+                            document.data["totalKms"].toString().toInt(),
+                            document.data["origin"].toString()
+                        ))
+                    }
+
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
                     recyclerView.adapter = adapter
 
                     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -124,8 +168,42 @@ class IntercitiesSearch : AppCompatActivity() {
     }
 
 
-    fun addTicketCart(view: View){
+    fun chooseTicket(view: View) {
+        val cartCount = findViewById<TextView>(R.id.cart_count)
+        val priceCart = findViewById<TextView>(R.id.total_price)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val tickets: ArrayList<Trips> = ArrayList()
+        if (dateBack != null) {
+            db.collection("Intercities")
+                .whereEqualTo("origin", destinyCity)
+                .whereEqualTo("destiny", originCity)
+                .whereEqualTo("Date", dateBack)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        tickets.add(Trips(document.data["basePrice"].toString().toFloat(),
+                            document.data["beginHour"].toString(),
+                            document.data["endHour"].toString(),
+                            document.data["company"].toString(),
+                            document.data["connections"].toString().toInt(),
+                            document.data["destiny"].toString(),
+                            document.data["totalKms"].toString().toInt(),
+                            document.data["origin"].toString()
+                        ))
+                    }
 
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+                }
+                .addOnFailureListener { exeception ->
+                    Log.d("DataNotRecieve", "teste$exeception")
+
+                }
+        }
+        fab.isVisible = false
+        checkGoDone = true
     }
 }
 
