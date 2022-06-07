@@ -11,6 +11,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="40dp"
             android:background="@drawable/hc_itemlist">
+
                 <TextView
                     android:id="@+id/tv_date_touse"
                     android:layout_width="wrap_content"
@@ -18,7 +19,8 @@
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="10dp"
                     android:text="@string/hc_date"
-                    android:textSize="15dp" />
+                    android:textSize="15dp"
+                    android:textColor="@color/black"/>
 
 
                 <TextView
@@ -28,7 +30,8 @@
                     android:layout_marginStart="130dp"
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@+id/tv_date_touse"
-                    android:text="@string/hc_hour" />
+                    android:text="@string/hc_hour"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/tv_company_touse"
@@ -95,9 +98,8 @@
         <ImageView
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/ic_line"
             android:layout_below="@id/rl_touse"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            />
+            android:background="@drawable/ic_line" />
 </RelativeLayout>

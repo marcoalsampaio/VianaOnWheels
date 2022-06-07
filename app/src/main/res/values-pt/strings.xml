@@ -67,4 +67,7 @@
     <string name="precoUnit">Preço Unit.:</string>
     <string name="Total_price_buytickets">Preço Total:</string>
     <string name="precoLine">Preço:</string>
+    <string name="carrinho">Carrinho de Compras</string>
+    <string name="semBilhetes">Sem bilhetes para comprar!</string>
+    <string name="compradosSucesso">Bilhetes comprados com sucesso!</string>
 </resources>
