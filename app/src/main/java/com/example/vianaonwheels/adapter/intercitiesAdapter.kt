@@ -16,10 +16,11 @@ import com.example.vianaonwheels.models.Trips
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemView: TextView, val cartPrice: TextView, val cart: ArrayList<CartItems>, val fab: FloatingActionButton, val dateBack: String): RecyclerView.Adapter<IntercitiesAdapter.IntercitiesViewHolder>() {
+class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemView: TextView, val cartPrice: TextView, val cart: ArrayList<CartItems>): RecyclerView.Adapter<IntercitiesAdapter.IntercitiesViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IntercitiesViewHolder {
+
         return IntercitiesViewHolder.create(parent)
     }
 
@@ -32,19 +33,26 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         holder.destinyItemView.text = current.destiny
         holder.connectionsItemView.text = current.connections.toString() + " conexão"
 
-        holder.buttonItemView.setOnClickListener {
+        for(item in cart){
+            if (item.ida == current.beginHour && item.destino == current.destiny && item.origem == current.origin){
+                holder.buttonItemView.isVisible = false
+                holder.buttonRemoveItemView.isVisible = true
+            }
+        }
 
-            addItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences)
+        holder.buttonItemView.setOnClickListener {
+            addItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences, holder)
+
             holder.buttonItemView.isVisible = false
             holder.buttonRemoveItemView.isVisible = true
-            fab.isVisible = cart.size > 0  && dateBack.isNotEmpty()
+
         }
         holder.buttonRemoveItemView.setOnClickListener {
 
-            removeItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences, current)
+            removeItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences, current, holder, position)
             holder.buttonRemoveItemView.isVisible = false
             holder.buttonItemView.isVisible = true
-            fab.isVisible = cart.size > 0 && dateBack.isNotEmpty()
+
         }
 
     }
@@ -65,34 +73,34 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         return list.size
     }
 
-    fun addItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences){
+    fun addItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, holder: IntercitiesViewHolder){
 
         cart.add(CartItems(beginHour, origin, destiny, basePrice, preferences.getInt("ad_tickets", -1), preferences.getInt("jo_tickets", -1), preferences.getInt("se_tickets", -1)))
-        cartCountItemView.text = "Cart: ${cart.size}"
+        cartCountItemView.text = holder.itemView.context.getString(R.string.icities_search_cart) +  cart.size
         var totalPrice = 0.0
         for(item in cart){
             totalPrice += item.preco.toDouble()
         }
-        cartPrice.text = totalPrice.toString()
+        cartPrice.text = holder.itemView.context.getString(R.string.icities_search_price) + totalPrice.toString() + "€"
     }
 
-    fun removeItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, trip: Trips){
-        for(item in cart){
-            if (item.ida === trip.beginHour && item.destino === trip.destiny && item.origem === trip.origin){
-                cart.remove(item)
+    fun removeItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, trip: Trips, holder: IntercitiesViewHolder, position: Int){
+
+
+        val iterator = cart.iterator()
+        while(iterator.hasNext()){
+            val item = iterator.next()
+            if(item.ida == trip.beginHour && item.destino == trip.destiny && item.origem == trip.origin){
+                iterator.remove()
             }
         }
-        cartCountItemView.text = "Cart: ${cart.size}"
-        var totalPrice = 0.0
+        cartCountItemView.text = holder.itemView.context.getString(R.string.icities_search_cart) +  cart.size
+        var totalPrice = 0.00
         for(item in cart){
             totalPrice += item.preco.toDouble()
         }
-        cartPrice.text = totalPrice.toString() + "€"
+        cartPrice.text = holder.itemView.context.getString(R.string.icities_search_price) + totalPrice.toString() + "€"
     }
-
-
-
-
 
     class IntercitiesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val preferences = itemView.context.getSharedPreferences("TICKETS_COUNT", Context.MODE_PRIVATE)

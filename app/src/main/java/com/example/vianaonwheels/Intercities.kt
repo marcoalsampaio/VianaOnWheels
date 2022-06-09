@@ -3,6 +3,7 @@ package com.example.vianaonwheels
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
@@ -109,7 +110,7 @@ class Intercities : AppCompatActivity() {
                     Toast.makeText(this, R.string.inter_tickets, Toast.LENGTH_SHORT).show()
                 }
             }else{
-                Toast.makeText(this, R.string.inter_tickets, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, R.string.inter_trip, Toast.LENGTH_SHORT).show()
             }
 
 
@@ -129,13 +130,13 @@ class Intercities : AppCompatActivity() {
         if(et_jo.text.toString().toInt() > 0 || et_ad.text.toString().toInt() > 0 || et_se.text.toString().toInt() > 0){
             ticketsButton.text = ""
             if (et_jo.text.toString().toInt() > 0){
-                ticketsButton.text = ticketsButton.text.toString() + et_jo.text.toString() + " " + getString(R.string.inter_jovem)
+                ticketsButton.text = ticketsButton.text.toString() + et_jo.text.toString() + " " + getString(R.string.inter_jovem) + " "
             }
             if (et_ad.text.toString().toInt() > 0){
-                ticketsButton.text = ticketsButton.text.toString() + et_ad.text.toString() + " " + getString(R.string.inter_adultos)
+                ticketsButton.text = ticketsButton.text.toString() + et_ad.text.toString() + " " + getString(R.string.inter_adultos) + " "
             }
             if (et_se.text.toString().toInt() > 0){
-                ticketsButton.text = ticketsButton.text.toString() + et_se.text.toString() + " " + getString(R.string.inter_senior)
+                ticketsButton.text = ticketsButton.text.toString() + et_se.text.toString() + " " + getString(R.string.inter_senior) + " "
             }
         }else{
                 ticketsButton.text =  getString(R.string.inter_tickets)
@@ -223,6 +224,14 @@ class Intercities : AppCompatActivity() {
         val adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, countries)
         textView.setAdapter(adapter)
         textView2.setAdapter(adapter)
+    }
+
+    fun invertLocations(view: View) {
+        val source = findViewById<AutoCompleteTextView>(R.id.edt_city_source)
+        val destination = findViewById<AutoCompleteTextView>(R.id.edt_city_destination)
+        var helper: Editable = source.text
+        source.text = destination.text
+        destination.text = helper
     }
 
 }

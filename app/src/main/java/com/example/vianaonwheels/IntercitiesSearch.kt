@@ -1,8 +1,10 @@
 package com.example.vianaonwheels
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
@@ -16,7 +18,7 @@ import com.example.vianaonwheels.models.Trips
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import org.w3c.dom.Text
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -29,7 +31,7 @@ class IntercitiesSearch : AppCompatActivity() {
     private lateinit var destinyCity: String
     private lateinit var dateGo: String
     private lateinit var dateBack: String
-    private lateinit var fab: FloatingActionButton
+    private lateinit var fab: Button
     private var checkGoDone = false
     companion object {
         val cart: ArrayList<CartItems> = ArrayList()
@@ -40,17 +42,15 @@ class IntercitiesSearch : AppCompatActivity() {
         setContentView(R.layout.activity_intercieties_search)
 
         val intent = intent
-
-
         fab = findViewById(R.id.fabVolta)
         val cartCountItemView = findViewById<TextView>(R.id.cart_count)
-        cartCountItemView.text = cart.size.toString()
+        cartCountItemView.text = getString(R.string.icities_search_cart)  + cart.size.toString()
         val cartPriceItemView = findViewById<TextView>(R.id.total_price)
         var total_preco = 0.0
         for(item in cart){
             total_preco += item.preco
         }
-        cartPriceItemView.text = total_preco.toString()
+        cartPriceItemView.text = getString(R.string.icities_search_price) + total_preco.toString() + "€"
         // receive the value by getStringExtra() method
         // and key must be same which is send by first activity
         joTickets = intent.getStringExtra("n_jo_tickets").toString()
@@ -63,8 +63,12 @@ class IntercitiesSearch : AppCompatActivity() {
         Toast.makeText(this, dateBack, Toast.LENGTH_SHORT).show()
         val dateSelected = findViewById<TextView>(R.id.tv_date)
         dateSelected.text = dateGo
+        if (dateBack.isEmpty() && cart.size == 0){
+            fab.isVisible = false
+        }
 
-        getInfo(dateGo, originCity, destinyCity)
+
+        getInfo()
 
     }
 
@@ -88,7 +92,7 @@ class IntercitiesSearch : AppCompatActivity() {
 
             dateSelected.text = dayOfWeek + ", " + day + " " + monthOfYear + " " + year
             val newDate = "$day-$month-$year"
-            getInfo(newDate, originCity, destinyCity)
+            getInfo()
             Toast.makeText(this, "$dayOfWeek, $day $monthOfYear $year", Toast.LENGTH_SHORT).show()
         }
     }
@@ -102,7 +106,7 @@ class IntercitiesSearch : AppCompatActivity() {
         //PESQUISAR BILHETES COM O INICIO NA DATA ESTIPULADA E ORIGEM E DESTINO QUE O UTILIZADOR ESCOLHEU
     }
 
-    fun getInfo(dateGo: String?, originCity: String?, destinyCity: String?){
+    fun getInfo(){
         val cartCount = findViewById<TextView>(R.id.cart_count)
         val priceCart = findViewById<TextView>(R.id.total_price)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
@@ -126,7 +130,7 @@ class IntercitiesSearch : AppCompatActivity() {
                         ))
                     }
 
-                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart)
                     recyclerView.adapter = adapter
 
                     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -135,8 +139,7 @@ class IntercitiesSearch : AppCompatActivity() {
                     Log.d("DataNotRecieve", "teste$exeception")
 
                 }
-        }
-        if( dateBack.isNotEmpty() && checkGoDone){
+        }else if(dateBack != null && checkGoDone){
             db.collection("Intercities")
                 .whereEqualTo("origin", destinyCity)
                 .whereEqualTo("destiny", originCity)
@@ -155,7 +158,7 @@ class IntercitiesSearch : AppCompatActivity() {
                         ))
                     }
 
-                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart)
                     recyclerView.adapter = adapter
 
                     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -165,11 +168,37 @@ class IntercitiesSearch : AppCompatActivity() {
 
                 }
         }
+
     }
 
 
     fun chooseTicket(view: View) {
-        val cartCount = findViewById<TextView>(R.id.cart_count)
+        checkGoDone = !checkGoDone
+        val date = findViewById<TextView>(R.id.tv_date)
+
+
+        if(!checkGoDone){
+            fab.text = getString(R.string.icities_search_back)
+            getInfo()
+            /*val cal = Calendar.getInstance()
+            val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+            cal.time = sdf.parse(dateGo) // all done
+            val dayOfWeek = cal.getDisplayName( Calendar.DAY_OF_WEEK ,Calendar.LONG, Locale.getDefault());
+            val monthOfYear = cal.getDisplayName( Calendar.MONTH ,Calendar.LONG, Locale.getDefault());*/
+            date.text = dateGo
+
+        }
+        if(checkGoDone){
+            fab.text = getString(R.string.icities_search_go)
+            getInfo()
+            /*val cal = Calendar.getInstance()
+            val sdf = SimpleDateFormat("yyyy-mm-dd", Locale.getDefault())
+            cal.time = sdf.parse(dateBack) // all done
+            val dayOfWeek = cal.getDisplayName( Calendar.DAY_OF_WEEK ,Calendar.LONG, Locale.getDefault());
+            val monthOfYear = cal.getDisplayName( Calendar.MONTH ,Calendar.LONG, Locale.getDefault());*/
+            date.text = dateBack
+        }
+        /*val cartCount = findViewById<TextView>(R.id.cart_count)
         val priceCart = findViewById<TextView>(R.id.total_price)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val tickets: ArrayList<Trips> = ArrayList()
@@ -192,7 +221,7 @@ class IntercitiesSearch : AppCompatActivity() {
                         ))
                     }
 
-                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart, fab, dateBack)
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart)
                     recyclerView.adapter = adapter
 
                     recyclerView.layoutManager = LinearLayoutManager(this)
@@ -203,7 +232,15 @@ class IntercitiesSearch : AppCompatActivity() {
                 }
         }
         fab.isVisible = false
-        checkGoDone = true
+        checkGoDone = true*/
+    }
+
+    fun openCart(view: View) {
+
+        //val intent = Intent(applicationContext, BuyTicket::class.java)
+        intent.putExtra("cart", cart)
+        startActivity(intent);
+
     }
 }
 
