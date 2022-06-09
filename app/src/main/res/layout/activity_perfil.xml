@@ -84,7 +84,7 @@
             android:text="@string/save"
             android:textColor="@color/white"
             android:textStyle="bold"
-            />
+            android:onClick="saveUser"/>
 
         <ImageView
             android:layout_width="22dp"

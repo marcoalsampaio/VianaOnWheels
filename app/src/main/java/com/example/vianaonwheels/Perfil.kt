@@ -4,6 +4,7 @@ import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 
@@ -38,6 +39,10 @@ class Perfil : AppCompatActivity() {
             .addOnFailureListener {exception ->
                 Log.w(ContentValues.TAG, "Error getting user data: ", exception)
             }
+    }
+
+    fun saveUser(view: View) {
+
     }
 
 }
