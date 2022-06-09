@@ -80,8 +80,7 @@ class MainPage : AppCompatActivity() {
         startActivity(intent)
     }
     fun goMap(view: View) {
-        //val intent = Intent(this, MapsActivity ::class.java)
-        val intent = Intent(this, Intercities::class.java)
+        val intent = Intent(this, MapsActivity ::class.java)
         startActivity(intent)
     }
     fun goTickets(view: View) {

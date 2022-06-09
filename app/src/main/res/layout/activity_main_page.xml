@@ -134,8 +134,7 @@
                             android:layout_width="120dp"
                             android:layout_height="120dp"
                             android:layout_alignParentTop="true"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true"
+                            android:layout_centerInParent="true"
                             android:layout_marginTop="30dp"
                             android:src="@drawable/ic_baseline_map_24" />
 
@@ -289,6 +288,42 @@
                             android:layout_alignParentBottom="true"
                             android:layout_marginBottom="10dp"/>
                     </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    android:onClick="goIntercities"
+                    app:cardBackgroundColor="#BFCFCFCF"
+                    app:cardElevation="0dp"
+                    app:cardCornerRadius="25dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_inter"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
+                            android:src="@drawable/ic_baseline_directions_bus_24" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/intercity"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            tools:ignore="MissingConstraints"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
+                    </RelativeLayout>
+
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </HorizontalScrollView>
