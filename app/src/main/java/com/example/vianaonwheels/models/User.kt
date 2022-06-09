@@ -7,7 +7,7 @@ data class User(
     var email: String,
     var pass: String,
     var img: String?,
-    var birthDate: Date?,
+    var birthDate: String?,
     var phoneNumber: Int?,
     var nif: Int?
     )
