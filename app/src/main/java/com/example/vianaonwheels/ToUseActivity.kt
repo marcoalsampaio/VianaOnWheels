@@ -56,7 +56,7 @@ class ToUseActivity : AppCompatActivity() {
                     for (d in documents){
                         tickets.add(ToUse(d.id, d.data["price"].toString(),d.data["dates"].toString(),d.data["origin_hour"].toString(),
                             d.data["company"].toString(),d.data["destiny"].toString(),d.data["origin"].toString(),
-                            d.data["qtd"].toString(),d.data["destiny_hour"].toString()))
+                            d.data["qtd"].toString(),d.data["destiny_hour"].toString(), d.data["used"].toString()))
                     }
                     ticketsAdapter = ToUseAdapter(tickets)
                     ticketsAdapter.setOnItemClickListener(object: ToUseAdapter.onItemClickListener{

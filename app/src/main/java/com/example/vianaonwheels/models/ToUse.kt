@@ -11,5 +11,6 @@ data class ToUse(
     val destiny: String,
     val origin: String,
     val qtd: String,
-    val destiny_hour: String
+    val destiny_hour: String,
+    val used: String
 )

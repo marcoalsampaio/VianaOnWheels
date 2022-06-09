@@ -1,6 +1,7 @@
 package com.example.vianaonwheels
 
 import android.content.ContentValues.TAG
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
@@ -26,8 +27,8 @@ class QR_Code : AppCompatActivity() {
         setContentView(R.layout.activity_qr_code)
         db= FirebaseFirestore.getInstance()
         val dadosNoQR = intent.getStringExtra(EXTRA_TICKET).toString()
-
-        db.collection("Tickets").document(dadosNoQR).get().addOnSuccessListener { document ->
+        val collectionTicket = db.collection("Tickets")
+        collectionTicket.document(dadosNoQR).get().addOnSuccessListener { document ->
             if (document != null){
                 imageView = findViewById(R.id.imageView)
                 val multiFormatWriter = MultiFormatWriter();
@@ -51,16 +52,16 @@ class QR_Code : AppCompatActivity() {
         }.addOnFailureListener { exception ->
             Log.d(TAG, "get failed with ", exception)
         }
+        collectionTicket.document(dadosNoQR).update("used", "s").addOnCompleteListener { taskRegister ->
+            if (taskRegister.isSuccessful){
+                Toast.makeText(this, getString(R.string.ok), Toast.LENGTH_LONG).show()
+            }else{
+                Log.d(TAG, "Erro")
+            }
+        }.addOnFailureListener {
+            Log.w(TAG, "Erro")
+        }
+        }
 
     }
-}
 
-/*"""
-                                |Price:${ticketAPI.price};
-                                |Origin:${ticketAPI.origin};
-                                |Destiny:${ticketAPI.destiny};
-                                |Company:${ticketAPI.company};
-                                |Date:${ticketAPI.dates};
-                                |Origin_Hour:${ticketAPI.origin_hour};
-                                |Destiny_Hour:${ticketAPI.destiny_hour};
-                                |qtd:${ticketAPI.qtd};""".trimMargin()*/
