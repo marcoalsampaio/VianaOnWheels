@@ -1,7 +1,6 @@
 package com.example.vianaonwheels
 
 import android.content.ContentValues
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -9,14 +8,14 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.Toast
-
+import androidx.appcompat.app.AppCompatActivity
+import com.example.vianaonwheels.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.example.vianaonwheels.databinding.ActivityMapsBinding
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -51,6 +50,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // access the spinner
         val spinner = findViewById<Spinner>(R.id.spinnerOrigem)
+        val spinnerDestino = findViewById<Spinner>(R.id.spinnerDestino)
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, arraylist)
@@ -59,7 +59,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             spinner.onItemSelectedListener = object :
                 AdapterView.OnItemSelectedListener {
                 override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
-                    Toast.makeText(this@MapsActivity, "teste", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@MapsActivity, "origem", Toast.LENGTH_SHORT).show()
+                }
+
+                override fun onNothingSelected(parent: AdapterView<*>) {
+                    // write code to perform some action
+                }
+            }
+        }
+
+        if (spinnerDestino != null) {
+            val adapter = ArrayAdapter(this,
+                android.R.layout.simple_spinner_item, arraylist)
+            spinnerDestino.adapter = adapter
+
+            spinnerDestino.onItemSelectedListener = object :
+                AdapterView.OnItemSelectedListener {
+                override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                    Toast.makeText(this@MapsActivity, "destino", Toast.LENGTH_SHORT).show()
+
                 }
 
                 override fun onNothingSelected(parent: AdapterView<*>) {
@@ -70,13 +88,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     }
 
-
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val viana = LatLng(41.69472614654766, -8.832658596566215)
+        mMap.addMarker(MarkerOptions().position(viana).title("Viana"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(viana))
+    }
+
+    fun searchBus(view: View) {
+        val spinner = findViewById<Spinner>(R.id.spinnerOrigem)
+
+        val text: String = spinner.getSelectedItem().toString()
+
+        db.collection("BusInfo").whereEqualTo("name", text).get()
+            .addOnSuccessListener{ documents ->
+                for (document in documents) {
+                    var geoPoint= document.getGeoPoint("paragem")
+                    var point= LatLng(geoPoint!!.latitude, geoPoint!!.longitude)
+                    mMap.addMarker(MarkerOptions().position(point).title("Viana"))
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.w(ContentValues.TAG, "Error getting user data: ", exception)
+            }
+
+
+
     }
 }
