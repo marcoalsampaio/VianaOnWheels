@@ -124,18 +124,22 @@
                     app:cardBackgroundColor="#BFCFCFCF"
                     app:cardElevation="0dp"
                     app:cardCornerRadius="25dp">
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:cardBackgroundColor="#BFCFCFCF">
+
                         <ImageView
                             android:id="@+id/iv_map"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            android:src="@drawable/ic_baseline_map_24"
-                            android:layout_margin="35dp"
-                            />
+                            android:layout_marginStart="35dp"
+                            android:layout_marginTop="35dp"
+                            android:layout_marginEnd="35dp"
+                            android:layout_marginBottom="35dp"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/ic_baseline_map_24" />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -143,8 +147,11 @@
                             android:textSize="25sp"
                             android:text="@string/title_activity_maps"
                             tools:ignore="MissingConstraints"
-                            android:textColor="@color/black"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"
+                            />
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -156,7 +163,7 @@
                     app:cardElevation="0dp"
                     app:cardCornerRadius="25dp">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -175,8 +182,10 @@
                             android:text="QR Code"
                             android:textColor="@color/black"
                             android:textSize="25sp"
-                            tools:ignore="MissingConstraints" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            tools:ignore="MissingConstraints"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
+                    </RelativeLayout>
 
                 </androidx.cardview.widget.CardView>
 
@@ -188,7 +197,7 @@
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="#BFCFCFCF"
                     app:cardCornerRadius="25dp">
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
@@ -207,8 +216,10 @@
                             android:textSize="25sp"
                             android:text="@string/travel_history"
                             tools:ignore="MissingConstraints"
-                            android:textColor="@color/black"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
                 <androidx.cardview.widget.CardView
                     android:layout_width="200dp"
@@ -218,7 +229,7 @@
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="#BFCFCFCF"
                     app:cardCornerRadius="25dp">
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
@@ -236,8 +247,10 @@
                             android:textSize="25sp"
                             android:text="@string/ticket"
                             tools:ignore="MissingConstraints"
-                            android:textColor="@color/black"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -248,7 +261,7 @@
                     app:cardElevation="0dp"
                     app:cardBackgroundColor="#BFCFCFCF"
                     app:cardCornerRadius="25dp">
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <ImageView
@@ -266,8 +279,10 @@
                             android:textSize="25sp"
                             android:text="@string/carrinho"
                             tools:ignore="MissingConstraints"
-                            android:textColor="@color/black"/>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                            android:textColor="@color/black"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="10dp"/>
+                    </RelativeLayout>
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
         </HorizontalScrollView>
