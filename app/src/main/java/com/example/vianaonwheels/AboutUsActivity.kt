@@ -60,7 +60,6 @@ class AboutUsActivity : AppCompatActivity() {
                 Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
     }
     fun logout(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
@@ -68,7 +67,6 @@ class AboutUsActivity : AppCompatActivity() {
         finish()
     }
     fun backIcon(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, MainPage::class.java).apply{
             putExtra(EXTRA_USEREMAIL, userEmail)
         }

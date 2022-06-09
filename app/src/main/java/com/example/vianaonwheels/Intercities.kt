@@ -261,7 +261,6 @@ class Intercities : AppCompatActivity() {
 
 
     fun aboutUS(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, AboutUsActivity::class.java)
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
@@ -290,7 +289,6 @@ class Intercities : AppCompatActivity() {
                 Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
     }
     fun logout(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
@@ -298,12 +296,11 @@ class Intercities : AppCompatActivity() {
         finish()
     }
 
-    fun backIcon(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
-            Intent(this, MainPage::class.java).apply {
-                putExtra(EXTRA_USEREMAIL, userEmail)
-            }
 
+    fun backIcon(view: View) {
+        val intent = Intent(this, MainPage::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out) }
 
