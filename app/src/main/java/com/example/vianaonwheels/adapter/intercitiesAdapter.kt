@@ -34,14 +34,14 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         holder.connectionsItemView.text = current.connections.toString() + " conexão"
 
         for(item in cart){
-            if (item.ida == current.beginHour && item.destino == current.destiny && item.origem == current.origin){
+            if (item.ida == current.date && item.destino == current.destiny && item.origem == current.origin && item.company == current.company && item.beginHour == current.beginHour && item.endHour == current.endHour){
                 holder.buttonItemView.isVisible = false
                 holder.buttonRemoveItemView.isVisible = true
             }
         }
 
         holder.buttonItemView.setOnClickListener {
-            addItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences, holder)
+            addItem(current.date, current.origin, current.destiny, current.basePrice, holder.preferences, holder, current.endHour, current.company, current.beginHour)
 
             holder.buttonItemView.isVisible = false
             holder.buttonRemoveItemView.isVisible = true
@@ -49,7 +49,7 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         }
         holder.buttonRemoveItemView.setOnClickListener {
 
-            removeItem(current.beginHour, current.origin, current.destiny, current.basePrice, holder.preferences, current, holder, position)
+            removeItem(current, holder, position)
             holder.buttonRemoveItemView.isVisible = false
             holder.buttonItemView.isVisible = true
 
@@ -73,9 +73,9 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         return list.size
     }
 
-    fun addItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, holder: IntercitiesViewHolder){
+    fun addItem(date: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, holder: IntercitiesViewHolder,  endHour: String, company: String, beginHour: String){
 
-        cart.add(CartItems(beginHour, origin, destiny, basePrice, preferences.getInt("ad_tickets", -1), preferences.getInt("jo_tickets", -1), preferences.getInt("se_tickets", -1)))
+        cart.add(CartItems(date, origin, destiny, basePrice, preferences.getInt("ad_tickets", -1), preferences.getInt("jo_tickets", -1), preferences.getInt("se_tickets", -1), beginHour, endHour, company ))
         cartCountItemView.text = holder.itemView.context.getString(R.string.icities_search_cart) +  cart.size
         var totalPrice = 0.0
         for(item in cart){
@@ -84,13 +84,13 @@ class IntercitiesAdapter(private val list: ArrayList<Trips>, val cartCountItemVi
         cartPrice.text = holder.itemView.context.getString(R.string.icities_search_price) + totalPrice.toString() + "€"
     }
 
-    fun removeItem(beginHour: String, origin: String, destiny: String, basePrice: Float, preferences: SharedPreferences, trip: Trips, holder: IntercitiesViewHolder, position: Int){
+    fun removeItem( trip: Trips, holder: IntercitiesViewHolder, position: Int){
 
 
         val iterator = cart.iterator()
         while(iterator.hasNext()){
             val item = iterator.next()
-            if(item.ida == trip.beginHour && item.destino == trip.destiny && item.origem == trip.origin){
+            if(item.ida == trip.date && item.destino == trip.destiny && item.origem == trip.origin && item.company == trip.company && item.beginHour == trip.beginHour && item.endHour == trip.endHour){
                 iterator.remove()
             }
         }

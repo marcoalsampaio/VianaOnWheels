@@ -1,14 +1,21 @@
 package com.example.vianaonwheels
 
+import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.util.*
@@ -17,6 +24,13 @@ import java.util.*
 class Intercities : AppCompatActivity() {
     private var db =  Firebase.firestore
     private var cities : ArrayList<String>? = null
+
+    private lateinit var userEmail : String
+    //TopBar
+    private lateinit var nDrawerLayout: DrawerLayout;
+    private lateinit var navView: NavigationView;
+    private lateinit var tituloPagina: TextView;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intercities)
@@ -26,6 +40,15 @@ class Intercities : AppCompatActivity() {
         val adMin = findViewById<Button>(R.id.adMinus);
         val joMin = findViewById<Button>(R.id.joMinus);
         val seMin = findViewById<Button>(R.id.seMinus);
+
+
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
+
+        nDrawerLayout = findViewById(R.id.drawerLayout)
+        navView= findViewById(R.id.navView)
+
+        tituloPagina= findViewById(R.id.tituloPagina)
+        tituloPagina.setText("Inter-Cities")
 
         cities = getCities()
 
@@ -232,6 +255,61 @@ class Intercities : AppCompatActivity() {
         var helper: Editable = source.text
         source.text = destination.text
         destination.text = helper
+    }
+
+
+
+
+    fun aboutUS(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+        val intent = Intent(this, AboutUsActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+    }
+    fun deleteAcc(view: View) {
+        val dialogBuilder = AlertDialog.Builder(this)
+
+        com.example.vianaonwheels.db = FirebaseFirestore.getInstance()
+        com.example.vianaonwheels.db.collection("User").document(userID).delete()
+            .addOnSuccessListener { Log.d(ContentValues.TAG, getString(R.string.account_deleted))
+                //Mensagem após Eliminar Conta
+                dialogBuilder.setPositiveButton(/*getString(R.string.ok)*/"OK") { _, _ ->
+                    //Redirect to Login
+                    val intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.out_in,R.anim.in_out)
+                }
+                // create dialog box
+                val alert = dialogBuilder.create()
+                // set title for alert dialog box
+                alert.setTitle(getString(R.string.account_deleted))
+                // show alert dialog
+                alert.show()
+            }
+            .addOnFailureListener { e -> Log.w(ContentValues.TAG, getString(R.string.error_deleting), e)
+                Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
+    }
+    fun logout(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+        val intent = Intent(this, Login::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+        finish()
+    }
+
+    fun backIcon(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+            Intent(this, MainPage::class.java).apply {
+                putExtra(EXTRA_USEREMAIL, userEmail)
+            }
+
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out) }
+
+
+    fun menuIcon(view: View) {
+        nDrawerLayout.openDrawer(navView)
     }
 
 }

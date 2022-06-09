@@ -1,5 +1,7 @@
 package com.example.vianaonwheels
 
+import android.app.AlertDialog
+import android.content.ContentValues
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -9,19 +11,22 @@ import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatButton
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.adapter.IntercitiesAdapter
 import com.example.vianaonwheels.models.CartItems
 import com.example.vianaonwheels.models.Trips
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.text.SimpleDateFormat
 import java.util.*
 
-
+val cart: ArrayList<CartItems> = ArrayList()
 class IntercitiesSearch : AppCompatActivity() {
     private var db =  Firebase.firestore
     private lateinit var joTickets: String
@@ -33,13 +38,28 @@ class IntercitiesSearch : AppCompatActivity() {
     private lateinit var dateBack: String
     private lateinit var fab: Button
     private var checkGoDone = false
-    companion object {
-        val cart: ArrayList<CartItems> = ArrayList()
-    }
+
+
+    private lateinit var userEmail : String
+    //TopBar
+    private lateinit var nDrawerLayout: DrawerLayout;
+    private lateinit var navView: NavigationView;
+    private lateinit var tituloPagina: TextView;
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intercieties_search)
+
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
+
+        nDrawerLayout = findViewById(R.id.drawerLayout)
+        navView= findViewById(R.id.navView)
+
+        tituloPagina= findViewById(R.id.tituloPagina)
+        tituloPagina.text = "Teste"
+
 
         val intent = intent
         fab = findViewById(R.id.fabVolta)
@@ -119,7 +139,9 @@ class IntercitiesSearch : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
-                        tickets.add(Trips(document.data["basePrice"].toString().toFloat(),
+                        tickets.add(Trips(
+                            document.data["Date"].toString(),
+                            document.data["basePrice"].toString().toFloat(),
                             document.data["beginHour"].toString(),
                             document.data["endHour"].toString(),
                             document.data["company"].toString(),
@@ -147,7 +169,9 @@ class IntercitiesSearch : AppCompatActivity() {
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
-                        tickets.add(Trips(document.data["basePrice"].toString().toFloat(),
+                        tickets.add(Trips(
+                            document.data["Date"].toString(),
+                            document.data["basePrice"].toString().toFloat(),
                             document.data["beginHour"].toString(),
                             document.data["endHour"].toString(),
                             document.data["company"].toString(),
@@ -236,11 +260,67 @@ class IntercitiesSearch : AppCompatActivity() {
     }
 
     fun openCart(view: View) {
+        for(item in cart){
+            Log.d("Teste", item.origem)
+        }
+        val intent = Intent(this, BuyTicket::class.java)
+        intent.putExtra("intercities", "true")
+        startActivity(intent)
 
-        //val intent = Intent(applicationContext, BuyTicket::class.java)
-        intent.putExtra("cart", cart)
-        startActivity(intent);
+    }
 
+
+
+    fun aboutUS(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+        val intent = Intent(this, AboutUsActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+    }
+    fun deleteAcc(view: View) {
+        val dialogBuilder = AlertDialog.Builder(this)
+
+        com.example.vianaonwheels.db = FirebaseFirestore.getInstance()
+        com.example.vianaonwheels.db.collection("User").document(userID).delete()
+            .addOnSuccessListener { Log.d(ContentValues.TAG, getString(R.string.account_deleted))
+                //Mensagem após Eliminar Conta
+                dialogBuilder.setPositiveButton(/*getString(R.string.ok)*/"OK") { _, _ ->
+                    //Redirect to Login
+                    val intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.out_in,R.anim.in_out)
+                }
+                // create dialog box
+                val alert = dialogBuilder.create()
+                // set title for alert dialog box
+                alert.setTitle(getString(R.string.account_deleted))
+                // show alert dialog
+                alert.show()
+            }
+            .addOnFailureListener { e -> Log.w(ContentValues.TAG, getString(R.string.error_deleting), e)
+                Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
+    }
+    fun logout(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+        val intent = Intent(this, Login::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+        finish()
+    }
+
+    fun backIcon(view: View) {
+        findViewById<AppCompatButton>(R.id.sign_up)
+        Intent(this, Intercities::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
+
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out) }
+
+
+    fun menuIcon(view: View) {
+        nDrawerLayout.openDrawer(navView)
     }
 }
 

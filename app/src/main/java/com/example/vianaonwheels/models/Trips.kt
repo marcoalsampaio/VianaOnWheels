@@ -8,6 +8,7 @@ import com.google.firebase.ktx.Firebase
 import java.util.*;
 
 public class Trips(
+    var date: String,
     var basePrice: Float,
     var beginHour: String,
     var endHour: String,

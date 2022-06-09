@@ -33,8 +33,6 @@
     <string name="icities_search">Search</string>
     <string name="icities_origins">Add Origin</string>
     <string name="icities_destination">Add Destination</string>
-    <string name="icities_source_date">Source</string>
-    <string name="icities_destination_date">Destination</string>
     <string name="insert_data">Please insert all info to continue</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>

@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IntercitiesSearch"
-    android:background="@drawable/ic_sign_up">
+    android:id="@+id/drawerLayout"
+    tools:context=".IntercitiesSearch">
 
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_sign_up"
+
+    >
+
+    <include layout="@layout/topbar" />
 
     <TextView
         android:id="@+id/tv_date"
         android:layout_width="200dp"
-        android:padding="10dp"
         android:layout_height="40dp"
-        android:textAlignment="center"
-        android:background="@drawable/button_border"
-        android:textColor="@color/black"
-        android:layout_marginStart="25dp"
         android:layout_above="@id/recyclerview"
-        android:layout_marginBottom="30dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="25dp"
+        android:background="@drawable/button_border"
         android:onClick="openCalendar"
-        />
+        android:textAlignment="center"
+        android:textColor="@color/black" />
 
 
     <RelativeLayout
@@ -47,6 +52,7 @@
         android:layout_below="@+id/rl_info"
         android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="30dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -56,11 +62,10 @@
         android:id="@+id/datePicker2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:datePickerMode="calendar"
+        android:layout_centerInParent="true"
         android:background="@color/white"
-        android:visibility="invisible"/>
+        android:datePickerMode="calendar"
+        android:visibility="invisible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab2"
@@ -124,3 +129,15 @@
     </RelativeLayout>
 
 </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header_sidemenu"
+        android:background="@drawable/ic_backgroundsidemenu"
+        android:isScrollContainer="false">
+    </com.google.android.material.navigation.NavigationView>
+</androidx.drawerlayout.widget.DrawerLayout>

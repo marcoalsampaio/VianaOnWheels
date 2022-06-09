@@ -15,6 +15,9 @@ public class CartItems(
     var ad_bilhetes: Int,
     var jo_bilhetes: Int,
     var se_bilhetes: Int,
+    var beginHour: String,
+    var endHour: String,
+    var company: String,
 
     ){
 

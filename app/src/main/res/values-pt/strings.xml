@@ -80,4 +80,5 @@
     <string name="icities_search_go">Viagem Ida</string>
     <string name="icities_search_cart">"Carrinho: "</string>
     <string name="icities_search_foward_button">Avançar</string>
+    <string name="title_activity_maps">Mapas</string>
 </resources>
