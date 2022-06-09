@@ -3,6 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_backgroundsidemenu.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_list_24.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_local_play_24.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.2955" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_btnbuy.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_dots_y_svgrepo_com.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_email.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_outline_shopping_cart_24.xml" value="0.3285" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_buyticket.xml" value="0.3" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_main_page.xml" value="0.25416666666666665" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_perfil.xml" value="0.35104166666666664" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_to_use.xml" value="0.3" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/buyticket_line.xml" value="0.3" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/topbar.xml" value="0.3" />
+        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/touse_line.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.183" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/button_border.xml" value="0.183" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/gradient_color.xml" value="0.183" />
@@ -39,23 +56,6 @@
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/touse_line.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/menu/hc_menu.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.183" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_backgroundsidemenu.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_list_24.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_local_play_24.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_map_24.xml" value="0.2955" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_baseline_qr_code_scanner_24.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_btnbuy.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_dots_y_svgrepo_com.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_email.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/drawable/ic_outline_shopping_cart_24.xml" value="0.3285" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_buyticket.xml" value="0.3" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_main_page.xml" value="0.25416666666666665" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_perfil.xml" value="0.35104166666666664" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/activity_to_use.xml" value="0.3" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/buyticket_line.xml" value="0.3" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/topbar.xml" value="0.3" />
-        <entry key="..\:/ComputacaoMovel/VianaOnWheels/app/src/main/res/layout/touse_line.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1225" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/gradient_color.xml" value="0.1225" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_arrow.xml" value="0.1225" />
@@ -71,10 +71,12 @@
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_sign_up.xml" value="0.1225" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/ic_whiterectangle.xml" value="0.11" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable/qrcode.xml" value="0.1" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_about.xml" value="0.22" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_about_us.xml" value="0.16" />
-        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_buyticket.xml" value="0.33" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_buyticket.xml" value="0.25" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_qr_code.xml" value="0.1" />
+        <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/activity_sidemenu_pages.xml" value="0.1" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/layout/buyticket_line.xml" value="0.22" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/menu/options_menu.xml" value="0.22" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1225" />

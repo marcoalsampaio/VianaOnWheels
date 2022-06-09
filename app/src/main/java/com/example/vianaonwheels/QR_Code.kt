@@ -31,6 +31,7 @@ class QR_Code : AppCompatActivity() {
     private lateinit var nDrawerLayout: DrawerLayout;
     private lateinit var navView: NavigationView;
     private lateinit var tituloPagina: TextView;
+    private lateinit var TextView: TextView;
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +42,12 @@ class QR_Code : AppCompatActivity() {
         navView= findViewById(R.id.navView)
 
         tituloPagina= findViewById(R.id.tituloPagina)
-        tituloPagina.setText(R.string.carrinho)
+        tituloPagina.setText(R.string.TicketQR)
 
 
         userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
         db= FirebaseFirestore.getInstance()
+        TextView= findViewById(R.id.tv2)
         val dadosNoQR = intent.getStringExtra(EXTRA_TICKET).toString()
         val collectionTicket = db.collection("Tickets")
         collectionTicket.document(dadosNoQR).get().addOnSuccessListener { document ->
@@ -63,6 +65,7 @@ class QR_Code : AppCompatActivity() {
                         }
                     }
                     imageView!!.setImageBitmap(bitmap)
+                    TextView.text =document.data?.get("origin").toString()+" - "+document.data?.get("destiny").toString()
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

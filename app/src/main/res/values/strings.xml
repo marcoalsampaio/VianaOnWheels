@@ -89,8 +89,9 @@
     <string name="icities_search_foward_button">Advance</string>
     <string name="who_text">We are a startup made up of IPVC students</string>
     <string name="objetives_text">Our main objective is help to reduce the ecological footprint generated through transport traffic with our application</string>
-    <string name="motivation_text">The main motivation...</string>
+    <string name="credits_text">App development: Hugo Costa, Marco Sampaio, Jorge Silva and Vítor Ribeiro</string>
     <string name="who_title">Who we are:</string>
     <string name="objetives_title">Objectives:</string>
-    <string name="motivation_title">Motivation:</string>
+    <string name="credits_title">Credits:</string>
+    <string name="TicketQR">Ticket - QRcode</string>
 </resources>

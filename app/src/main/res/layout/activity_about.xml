@@ -67,7 +67,7 @@
                 android:paddingTop="20dp"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="@string/motivation_title"
+                android:text="@string/credits_title"
                 android:textColor="#333"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
-                android:text="@string/motivation_text"
+                android:text="@string/credits_text"
                 android:textColor="#333"
                 android:textSize="20sp"
                 android:justificationMode="inter_word"/>
