@@ -3,6 +3,7 @@ package com.example.vianaonwheels.models
 import java.util.*
 
 data class ToUse(
+    val id: String,
     val price: String,
     val dates: String,
     val origin_hour: String,

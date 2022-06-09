@@ -44,7 +44,7 @@ class ToUseActivity : AppCompatActivity() {
 
         db= FirebaseFirestore.getInstance()
         val rvTickets = findViewById<RecyclerView>(R.id.rvToUseItem)
-        Log.d(TAG, "Email$userEmail")
+
         db.collection("Tickets")
             .whereEqualTo("email", userEmail)
             .whereEqualTo("used", "n")
@@ -54,7 +54,7 @@ class ToUseActivity : AppCompatActivity() {
                     Toast.makeText(this@ToUseActivity, "Sem Bilhetes por Usar", Toast.LENGTH_LONG).show()
                 }else{
                     for (d in documents){
-                        tickets.add(ToUse(d.data["price"].toString(),d.data["dates"].toString(),d.data["origin_hour"].toString(),
+                        tickets.add(ToUse(d.id, d.data["price"].toString(),d.data["dates"].toString(),d.data["origin_hour"].toString(),
                             d.data["company"].toString(),d.data["destiny"].toString(),d.data["origin"].toString(),
                             d.data["qtd"].toString(),d.data["destiny_hour"].toString()))
                     }
@@ -63,15 +63,7 @@ class ToUseActivity : AppCompatActivity() {
                         override fun onItemClick(position: Int) {
                             //Intent QR Code send ticket data
                             val ticketAPI = ticketsAdapter.getItem(position)
-                            val ticketData = """
-                                |Price:${ticketAPI.price};
-                                |Origin:${ticketAPI.origin};
-                                |Destiny:${ticketAPI.destiny};
-                                |Company:${ticketAPI.company};
-                                |Date:${ticketAPI.dates};
-                                |Origin_Hour:${ticketAPI.origin_hour};
-                                |Destiny_Hour:${ticketAPI.destiny_hour};
-                                |qtd:${ticketAPI.qtd};""".trimMargin()
+                            val ticketData = ticketAPI.id
                             goToQR(ticketData)
 
                         }
