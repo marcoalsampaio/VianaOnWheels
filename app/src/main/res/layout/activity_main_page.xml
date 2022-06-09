@@ -131,26 +131,24 @@
 
                         <ImageView
                             android:id="@+id/iv_map"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="35dp"
-                            android:layout_marginTop="35dp"
-                            android:layout_marginEnd="35dp"
-                            android:layout_marginBottom="35dp"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
                             android:layout_alignParentTop="true"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
                             android:src="@drawable/ic_baseline_map_24" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="25sp"
-                            android:text="@string/title_activity_maps"
-                            tools:ignore="MissingConstraints"
-                            android:textColor="@color/black"
                             android:layout_alignParentBottom="true"
                             android:layout_marginBottom="10dp"
-                            />
+                            android:gravity="center"
+                            android:text="@string/title_activity_maps"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            tools:ignore="MissingConstraints" />
                     </RelativeLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -170,10 +168,12 @@
 
                         <ImageView
                             android:id="@+id/iv_QR"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
                             android:layout_centerVertical="true"
-                            android:layout_margin="35dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
                             android:src="@drawable/ic_baseline_qr_code_scanner_24" />
 
                         <TextView
@@ -182,7 +182,7 @@
                             android:gravity="center"
                             android:text="QR Code"
                             android:textColor="@color/black"
-                            android:textSize="25sp"
+                            android:textSize="20sp"
                             tools:ignore="MissingConstraints"
                             android:layout_alignParentBottom="true"
                             android:layout_marginBottom="10dp"/>
@@ -203,18 +203,19 @@
                         android:layout_height="match_parent">
                         <ImageView
                             android:id="@+id/iv_History"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
                             android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
                             android:src="@drawable/ic_baseline_list_24"
-                            android:layout_margin="35dp"
-                            android:background="@color/full_transparent"
                             />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:textSize="25sp"
+                            android:textSize="20sp"
                             android:text="@string/travel_history"
                             tools:ignore="MissingConstraints"
                             android:textColor="@color/black"
@@ -235,17 +236,19 @@
                         android:layout_height="match_parent">
                         <ImageView
                             android:id="@+id/iv_ticket"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
                             android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
                             android:src="@drawable/ic_baseline_local_play_24"
-                            android:layout_margin="35dp"
                             />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:textSize="25sp"
+                            android:textSize="20sp"
                             android:text="@string/ticket"
                             tools:ignore="MissingConstraints"
                             android:textColor="@color/black"
@@ -267,17 +270,19 @@
                         android:layout_height="match_parent">
                         <ImageView
                             android:id="@+id/cart_IV"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_alignParentTop="true"
                             android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
                             android:src="@drawable/ic_outline_shopping_cart_24"
-                            android:layout_margin="35dp"
                             />
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
-                            android:textSize="25sp"
+                            android:textSize="20sp"
                             android:text="@string/carrinho"
                             tools:ignore="MissingConstraints"
                             android:textColor="@color/black"
