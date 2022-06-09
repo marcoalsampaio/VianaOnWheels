@@ -23,11 +23,11 @@
     <string name="forgot_password">Forgot password</string>
     <string name="send_email">Send email</string>
     <string name="contact">Contact</string>
-    <string name="have_account">Already have an account?</string>
+    <string name="have_account">Already have an account</string>
     <string name="intercity">Intercity</string>
     <string name="date">Date</string>
     <string name="save">Save</string>
-    <string name="dont_account">Don\'t have an account?</string>
+    <string name="dont_account">Don\'t have an account</string>
     <string name="password">Password</string>
     <string name="confirm_pass">Confirm Password</string>
     <string name="icities_search">Search</string>
@@ -87,4 +87,9 @@
     <string name="icities_search_back">Back Trip</string>
     <string name="icities_search_cart">Cart:</string>
     <string name="icities_search_foward_button">Advance</string>
+    <string name="f_date_hour">Date_Hour</string>
+    <string name="f_company">Company</string>
+    <string name="f_origin">Origin</string>
+    <string name="f_destiny">Destination</string>
+    <string name="f_price">Price</string>
 </resources>
