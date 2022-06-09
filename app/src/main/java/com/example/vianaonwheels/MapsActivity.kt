@@ -35,7 +35,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
 
         var arraylist=ArrayList<String>()
-        //adding String elements in the list
+        arraylist.add("Paragens")
 
         //get user data
         db.collection("BusInfo").get()
