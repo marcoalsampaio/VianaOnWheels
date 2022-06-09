@@ -68,12 +68,20 @@ class MainPage : AppCompatActivity() {
         val intent = Intent(this, HistoricActivity::class.java)
         startActivity(intent)
     }
+
+    fun goIntercities(view: View) {
+        val intent = Intent(this, Intercities::class.java)
+        startActivity(intent)
+    }
+
+
     fun goCamera(view: View) {
         val intent = Intent(this, QR_scanner::class.java)
         startActivity(intent)
     }
     fun goMap(view: View) {
-        val intent = Intent(this, MapsActivity ::class.java)
+        //val intent = Intent(this, MapsActivity ::class.java)
+        val intent = Intent(this, Intercities::class.java)
         startActivity(intent)
     }
     fun goTickets(view: View) {

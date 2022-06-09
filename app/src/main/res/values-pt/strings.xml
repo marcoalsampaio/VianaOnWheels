@@ -32,8 +32,6 @@
     <string name="icities_search">Procurar</string>
     <string name="icities_origins">Adicione Origem</string>
     <string name="icities_destination">Adicione Destino</string>
-    <string name="icities_source_date">Origem</string>
-    <string name="icities_destination_date">Destino</string>
     <string name="login_message">Por favor entre para continuar</string>
     <string name="sign_up">Registar</string>
     <string name="insert_email">Insira o seu email</string>
@@ -70,4 +68,17 @@
     <string name="carrinho">Carrinho de Compras</string>
     <string name="semBilhetes">Sem bilhetes para comprar!</string>
     <string name="compradosSucesso">Bilhetes comprados com sucesso!</string>
+    <string name="icities_source_date">Ida</string>
+    <string name="icities_destination_date">Volta</string>
+    <string name="inter_jovem">Jovens</string>
+    <string name="inter_senior">Séniores</string>
+    <string name="inter_adultos">Adultos</string>
+    <string name="inter_tickets">Selecione um bilhete</string>
+    <string name="inter_trip">Selecione a origem e destino da sua viagem</string>
+    <string name="icities_search_price">"Preço: "</string>
+    <string name="icities_search_back">Viagem Volta</string>
+    <string name="icities_search_go">Viagem Ida</string>
+    <string name="icities_search_cart">"Carrinho: "</string>
+    <string name="icities_search_foward_button">Avançar</string>
+    <string name="title_activity_maps">Mapas</string>
 </resources>

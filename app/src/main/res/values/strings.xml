@@ -33,8 +33,6 @@
     <string name="icities_search">Search</string>
     <string name="icities_origins">Add Origin</string>
     <string name="icities_destination">Add Destination</string>
-    <string name="icities_source_date">Source</string>
-    <string name="icities_destination_date">Destination</string>
     <string name="insert_data">Please insert all info to continue</string>
     <string name="sign_up">Sign up</string>
     <string name="sign_in">Sign in</string>
@@ -77,4 +75,16 @@
     <string name="carrinho">Shopping Cart</string>
     <string name="semBilhetes">No tickets to buy!</string>
     <string name="compradosSucesso">Tickets successfully purchased!</string>
+    <string name="icities_source_date">Go</string>
+    <string name="icities_destination_date">Back</string>
+    <string name="inter_jovem">Young</string>
+    <string name="inter_adultos">Adults</string>
+    <string name="inter_senior">Seniors</string>
+    <string name="inter_tickets">Select a ticket</string>
+    <string name="inter_trip">Select the origin and destination of your trip</string>
+    <string name="icities_search_price">Price:</string>
+    <string name="icities_search_go">Go Trip</string>
+    <string name="icities_search_back">Back Trip</string>
+    <string name="icities_search_cart">Cart:</string>
+    <string name="icities_search_foward_button">Advance</string>
 </resources>

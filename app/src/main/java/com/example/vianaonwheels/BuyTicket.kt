@@ -25,6 +25,7 @@ class BuyTicket : AppCompatActivity() {
     private lateinit var totalTV : TextView
     private lateinit var ticketsRV : RecyclerView
     private lateinit var userEmail : String
+    private lateinit var intercitiePage : String
     //TopBar
     private lateinit var nDrawerLayout: DrawerLayout;
     private lateinit var navView: NavigationView;
@@ -43,7 +44,7 @@ class BuyTicket : AppCompatActivity() {
 
 
         userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
-
+        intercitiePage = intent.getStringExtra("intercities").toString()
         db = FirebaseFirestore.getInstance()
 
         totalTV = findViewById(R.id.Total)
@@ -51,8 +52,8 @@ class BuyTicket : AppCompatActivity() {
 
         ticketsList = ArrayList<ticketToBuy>()
 
-        for (i in 0 until 10){
-            ticketsList.add(ticketToBuy("22/10/2022", "Av Minho","Porto de gaia", "10:00", "Maia", "11:00", 1, 10.22, 10.22))
+        for (item in cart){
+            ticketsList.add(ticketToBuy(item.ida, item.company,item.origem, item.beginHour, item.destino, item.endHour, 1, item.preco.toString().toDouble(), item.preco.toString().toDouble()))
         }
 
         ticketsRV.adapter = buyTicketAdapter(ticketsList, totalTV)
@@ -71,6 +72,7 @@ class BuyTicket : AppCompatActivity() {
                 collectionTickets.add(newTicket)
             }
             ticketsList.clear()
+            cart.clear()
             Toast.makeText(this,  getString(R.string.compradosSucesso), Toast.LENGTH_LONG).show()
 
             val intent = Intent(this, MainPage::class.java).apply {
@@ -120,11 +122,19 @@ class BuyTicket : AppCompatActivity() {
     }
     fun backIcon(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
-        val intent = Intent(this, MainPage::class.java).apply {
-            putExtra(EXTRA_USEREMAIL, userEmail)
+        val intent : Intent = if (intercitiePage != "true") {
+            Intent(this, MainPage::class.java).apply {
+                putExtra(EXTRA_USEREMAIL, userEmail)
+            }
+        }else{
+            Intent(this, Intercities::class.java).apply {
+                putExtra(EXTRA_USEREMAIL, userEmail)
+            }
         }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out) }
+
+
     fun menuIcon(view: View) {
         nDrawerLayout.openDrawer(navView)
     }
