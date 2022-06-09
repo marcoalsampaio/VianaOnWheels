@@ -91,7 +91,9 @@ class MainPage : AppCompatActivity() {
 
     fun aboutUS(view: View) {
         findViewById<AppCompatButton>(R.id.sign_up)
-        val intent = Intent(this, AboutUsActivity::class.java)
+        val intent = Intent(this, AboutUsActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
     }
