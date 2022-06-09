@@ -1,7 +1,9 @@
 package com.example.vianaonwheels
 
+import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -34,9 +36,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         var arraylist=ArrayList<String>()
         //adding String elements in the list
-        arraylist.add("Geeks")
-        arraylist.add("For")
-        arraylist.add("Geeks")
+
+        //get user data
+        db.collection("BusInfo").get()
+            .addOnSuccessListener{ documents ->
+                for (document in documents) {
+                    arraylist.add(document.data["name"].toString())
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.w(ContentValues.TAG, "Error getting user data: ", exception)
+            }
+
+
         // access the spinner
         val spinner = findViewById<Spinner>(R.id.spinnerOrigem)
         if (spinner != null) {
