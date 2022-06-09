@@ -81,4 +81,10 @@
     <string name="icities_search_cart">"Carrinho: "</string>
     <string name="icities_search_foward_button">Avançar</string>
     <string name="title_activity_maps">Mapas</string>
+    <string name="who_title">Quem somos:</string>
+    <string name="objetives_title">Objetivos:</string>
+    <string name="motivation_title">Motivações:</string>
+    <string name="who_text">Somos uma startup constituida por alunos de IPVC</string>
+    <string name="objetives_text">O nosso principal objetivo é conseguir que esta aplicação ajude a reduzir a pegada ecologica gerada através trafego de transportes</string>
+    <string name="motivation_text">A principal motivação ...</string>
 </resources>

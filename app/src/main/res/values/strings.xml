@@ -87,4 +87,10 @@
     <string name="icities_search_back">Back Trip</string>
     <string name="icities_search_cart">Cart:</string>
     <string name="icities_search_foward_button">Advance</string>
+    <string name="who_text">We are a startup made up of IPVC students</string>
+    <string name="objetives_text">Our main objective is help to reduce the ecological footprint generated through transport traffic with our application</string>
+    <string name="motivation_text">The main motivation...</string>
+    <string name="who_title">Who we are:</string>
+    <string name="objetives_title">Objectives:</string>
+    <string name="motivation_title">Motivation:</string>
 </resources>
