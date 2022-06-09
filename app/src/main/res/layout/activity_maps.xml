@@ -15,6 +15,11 @@
         tools:context=".Maps">
     </fragment>
 
+    <Spinner
+        android:layout_below="@id/map"
+        android:id="@+id/spinnerOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
     <RelativeLayout
         android:layout_width="120dp"
