@@ -97,22 +97,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     fun searchBus(view: View) {
+        mMap.clear()
         val spinner = findViewById<Spinner>(R.id.spinnerOrigem)
+        val spinner2 = findViewById<Spinner>(R.id.spinnerDestino)
 
         val text: String = spinner.getSelectedItem().toString()
+        val text1: String = spinner2.getSelectedItem().toString()
 
         db.collection("BusInfo").whereEqualTo("name", text).get()
             .addOnSuccessListener{ documents ->
                 for (document in documents) {
                     var geoPoint= document.getGeoPoint("paragem")
                     var point= LatLng(geoPoint!!.latitude, geoPoint!!.longitude)
-                    mMap.addMarker(MarkerOptions().position(point).title("Viana"))
+                    mMap.addMarker(MarkerOptions().position(point).title("origem"))
                 }
             }
             .addOnFailureListener {exception ->
                 Log.w(ContentValues.TAG, "Error getting user data: ", exception)
             }
-
+        db.collection("BusInfo").whereEqualTo("name", text1).get()
+            .addOnSuccessListener{ documents ->
+                for (document in documents) {
+                    var geoPoint1= document.getGeoPoint("paragem")
+                    var point1= LatLng(geoPoint1!!.latitude, geoPoint1!!.longitude)
+                    mMap.addMarker(MarkerOptions().position(point1).title("destino"))
+                }
+            }
+            .addOnFailureListener {exception ->
+                Log.w(ContentValues.TAG, "Error getting user data: ", exception)
+            }
 
 
     }
