@@ -4,10 +4,7 @@ import android.content.ContentValues
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.Spinner
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.example.vianaonwheels.databinding.ActivityMapsBinding
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -100,6 +97,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.clear()
         val spinner = findViewById<Spinner>(R.id.spinnerOrigem)
         val spinner2 = findViewById<Spinner>(R.id.spinnerDestino)
+        val texOrigem = findViewById<TextView>(R.id.origemTX)
+        val texDestino = findViewById<TextView>(R.id.destinoTX)
+        val texValor = findViewById<TextView>(R.id.valorTX)
+
+
 
         val text: String = spinner.getSelectedItem().toString()
         val text1: String = spinner2.getSelectedItem().toString()
@@ -110,6 +112,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     var geoPoint= document.getGeoPoint("paragem")
                     var point= LatLng(geoPoint!!.latitude, geoPoint!!.longitude)
                     mMap.addMarker(MarkerOptions().position(point).title("origem"))
+                    texOrigem.text=document.data["name"].toString()
+
                 }
             }
             .addOnFailureListener {exception ->
@@ -121,12 +125,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     var geoPoint1= document.getGeoPoint("paragem")
                     var point1= LatLng(geoPoint1!!.latitude, geoPoint1!!.longitude)
                     mMap.addMarker(MarkerOptions().position(point1).title("destino"))
+                    texDestino.text=document.data["name"].toString()
                 }
             }
             .addOnFailureListener {exception ->
                 Log.w(ContentValues.TAG, "Error getting user data: ", exception)
             }
-
+        texValor.text="233"
 
     }
 }
