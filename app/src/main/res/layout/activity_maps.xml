@@ -3,9 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MapsActivity"
-    android:background="@drawable/ic_menu"
-    >
+    android:background="@drawable/ic_menu">
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/map"
@@ -14,7 +14,45 @@
         android:layout_height="500dp"
         tools:context=".Maps">
     </fragment>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/TicketInfo"
+        android:layout_width="175dp"
+        android:layout_height="75dp"
+        app:cardCornerRadius="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:id="@+id/origemTX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Viana"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/destinoTX"
+                android:layout_below="@id/origemTX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ponte de Lima"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:id="@+id/valorTX"
+                android:layout_below="@id/destinoTX"
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preço: 6,00"
+                />
 
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
     <Spinner
         android:layout_below="@id/map"
         android:id="@+id/spinnerOrigem"
