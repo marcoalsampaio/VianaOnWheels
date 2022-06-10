@@ -29,6 +29,7 @@
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1995" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_baseline_remove_24.xml" value="0.1995" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_check_date.xml" value="0.1995" />
+        <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_back_button.xml" value="0.1995" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_email.xml" value="0.183" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_filter_order.xml" value="0.1995" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/drawable/ic_hc_filter.xml" value="0.208" />
@@ -40,6 +41,7 @@
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_buyticket.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_historic.xml" value="0.37474541751527496" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_intercieties_search.xml" value="0.33" />
+        <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_historic.xml" value="0.37474541751527496" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_intercities.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_intercity_search.xml" value="0.5" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/activity_login.xml" value="0.358695652173913" />
@@ -54,6 +56,7 @@
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/topbar.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/topbar_mainpage.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/touse_line.xml" value="0.371875" />
+        <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/layout/recyclerview_historic_item.xml" value="0.18085106382978725" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/menu/hc_menu.xml" value="0.371875" />
         <entry key="..\:/Users/Henrique/Documents/GitHub/VianaOnWheels/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.183" />
         <entry key="..\:/Users/vitor/Documents/VianaOnWheels/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1225" />
