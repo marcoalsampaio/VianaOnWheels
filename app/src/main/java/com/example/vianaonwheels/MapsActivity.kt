@@ -91,6 +91,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val viana = LatLng(41.69472614654766, -8.832658596566215)
         mMap.addMarker(MarkerOptions().position(viana).title("Viana"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(viana))
+        mMap.setMinZoomPreference(10.0f)
+        mMap.setMaxZoomPreference(16.0f)
     }
 
     fun searchBus(view: View) {
