@@ -19,6 +19,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
+    private  var valor1: Double=0.0
+    private  var valor2: Double=0.0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -103,11 +106,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val texDestino = findViewById<TextView>(R.id.destinoTX)
         val texValor = findViewById<TextView>(R.id.valorTX)
 
-
-
         val text: String = spinner.getSelectedItem().toString()
         val text1: String = spinner2.getSelectedItem().toString()
 
+        
         db.collection("BusInfo").whereEqualTo("name", text).get()
             .addOnSuccessListener{ documents ->
                 for (document in documents) {
@@ -115,7 +117,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     var point= LatLng(geoPoint!!.latitude, geoPoint!!.longitude)
                     mMap.addMarker(MarkerOptions().position(point).title("origem"))
                     texOrigem.text=document.data["name"].toString()
-
+                    valor1= document.getDouble("valor")!!
                 }
             }
             .addOnFailureListener {exception ->
@@ -128,12 +130,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     var point1= LatLng(geoPoint1!!.latitude, geoPoint1!!.longitude)
                     mMap.addMarker(MarkerOptions().position(point1).title("destino"))
                     texDestino.text=document.data["name"].toString()
+                    valor2= document.getDouble("valor")!!
                 }
             }
             .addOnFailureListener {exception ->
                 Log.w(ContentValues.TAG, "Error getting user data: ", exception)
             }
-        texValor.text="233"
+
+        var var3=0.0
+        if(valor1 < valor2){
+            var3 = valor2.minus(valor1)
+        }else if(valor1 > valor2){
+            var3 = valor1.minus(valor2)
+        }else{
+            var3=0.50
+        }
+        texValor.text=var3.toString()
+
 
     }
 }
