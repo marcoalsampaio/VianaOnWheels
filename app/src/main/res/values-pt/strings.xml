@@ -86,4 +86,11 @@
     <string name="f_origin">Origem</string>
     <string name="f_destiny">Destino</string>
     <string name="f_price">Preço</string>
+    <string name="who_title">Quem somos:</string>
+    <string name="objetives_title">Objetivos:</string>
+    <string name="credits_title">Creditos:</string>
+    <string name="who_text">Somos uma startup constituida por alunos de IPVC</string>
+    <string name="objetives_text">O nosso principal objetivo é conseguir que esta aplicação ajude a reduzir a pegada ecologica gerada através trafego de transportes</string>
+    <string name="credits_text">Desenvolvimento da App: Hugo Costa, Marco Sampaio, Jorge Silva e Vítor Ribeiro</string>
+    <string name="TicketQR">Bilhete - Código QR</string>
 </resources>

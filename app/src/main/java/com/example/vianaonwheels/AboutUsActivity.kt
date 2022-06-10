@@ -19,7 +19,7 @@ class AboutUsActivity : AppCompatActivity() {
     private lateinit var nDrawerLayout: DrawerLayout;
     private lateinit var navView: NavigationView;
     private lateinit var tituloPagina: TextView;
-
+    private lateinit var userEmail: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +30,7 @@ class AboutUsActivity : AppCompatActivity() {
         tituloPagina= findViewById(R.id.tituloPagina)
         tituloPagina.setText(R.string.about_us)
 
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
     }
 
     fun aboutUS(view: View) {
@@ -59,7 +60,6 @@ class AboutUsActivity : AppCompatActivity() {
                 Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
     }
     fun logout(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
@@ -67,8 +67,9 @@ class AboutUsActivity : AppCompatActivity() {
         finish()
     }
     fun backIcon(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
-        val intent = Intent(this, MainPage::class.java)
+        val intent = Intent(this, MainPage::class.java).apply{
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out) }
     fun menuIcon(view: View) {

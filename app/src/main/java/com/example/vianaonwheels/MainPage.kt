@@ -80,8 +80,7 @@ class MainPage : AppCompatActivity() {
         startActivity(intent)
     }
     fun goMap(view: View) {
-        //val intent = Intent(this, MapsActivity ::class.java)
-        val intent = Intent(this, Intercities::class.java)
+        val intent = Intent(this, MapsActivity ::class.java)
         startActivity(intent)
     }
     fun goTickets(view: View) {
@@ -98,8 +97,9 @@ class MainPage : AppCompatActivity() {
     }
 
     fun aboutUS(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
-        val intent = Intent(this, AboutUsActivity::class.java)
+        val intent = Intent(this, AboutUsActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
     }
@@ -127,7 +127,6 @@ class MainPage : AppCompatActivity() {
                 Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
     }
     fun logout(view: View) {
-        findViewById<AppCompatButton>(R.id.sign_up)
         val intent = Intent(this, Login::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent)
