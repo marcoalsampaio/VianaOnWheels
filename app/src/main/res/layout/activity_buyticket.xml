@@ -13,13 +13,13 @@
 
         <include layout="@layout/topbar" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ticketsRV"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/ll1"
-        android:layout_marginTop="50dp"
-        tools:listitem="@layout/buyticket_line" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/ticketsRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ll1"
+            android:layout_marginTop="50dp"
+            tools:listitem="@layout/buyticket_line" />
 
     <LinearLayout
         android:id="@+id/ll1"

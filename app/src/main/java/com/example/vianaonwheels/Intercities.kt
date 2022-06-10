@@ -48,7 +48,7 @@ class Intercities : AppCompatActivity() {
         navView= findViewById(R.id.navView)
 
         tituloPagina= findViewById(R.id.tituloPagina)
-        tituloPagina.setText("Inter-Cities")
+        tituloPagina.text = getString(R.string.icities_title)
 
         cities = getCities()
 
@@ -130,7 +130,7 @@ class Intercities : AppCompatActivity() {
                     startActivity(intent);
 
                 }else{
-                    Toast.makeText(this, R.string.inter_tickets, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, R.string.icities_datefield, Toast.LENGTH_SHORT).show()
                 }
             }else{
                 Toast.makeText(this, R.string.inter_trip, Toast.LENGTH_SHORT).show()

@@ -93,4 +93,8 @@
     <string name="objetives_text">O nosso principal objetivo é conseguir que esta aplicação ajude a reduzir a pegada ecologica gerada através trafego de transportes</string>
     <string name="credits_text">Desenvolvimento da App: Hugo Costa, Marco Sampaio, Jorge Silva e Vítor Ribeiro</string>
     <string name="TicketQR">Bilhete - Código QR</string>
+    <string name="icities_title">Intercidades</string>
+    <string name="historic_title">Histórico</string>
+    <string name="icities_search_titile">Procura Intercidades</string>
+    <string name="icities_datefield">Selecione uma data de partida</string>
 </resources>

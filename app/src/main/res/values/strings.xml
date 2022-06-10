@@ -99,4 +99,8 @@
     <string name="f_origin">Origin</string>
     <string name="f_destiny">Destination</string>
     <string name="f_price">Price</string>
+    <string name="historic_title">Historic</string>
+    <string name="icities_title">Intercities</string>
+    <string name="icities_search_titile">Intercities Search</string>
+    <string name="icities_datefield">Select a departure date</string>
 </resources>

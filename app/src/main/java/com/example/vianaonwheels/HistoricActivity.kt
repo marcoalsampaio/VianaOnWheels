@@ -1,17 +1,24 @@
 package com.example.vianaonwheels
 
+import android.app.AlertDialog
+import android.content.ContentValues
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.core.view.isVisible
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.adapter.HistoricAdapter
 import com.example.vianaonwheels.adapters.ToUseAdapter
 import com.example.vianaonwheels.models.Historic
+import com.google.android.material.navigation.NavigationView
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlin.collections.ArrayList
@@ -20,6 +27,10 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
     private var db =  Firebase.firestore
     val filtros = listOf("Date_Hour", "Company", "Origin", "Destination", "Price")
     private lateinit var userEmail: String
+    //TopBar
+    private lateinit var nDrawerLayout: DrawerLayout;
+    private lateinit var navView: NavigationView;
+    private lateinit var tituloPagina: TextView;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,9 +39,14 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         //Carrega os filtros
         getFilters()
-        //Apresenta o back button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
+
+        nDrawerLayout = findViewById(R.id.drawerLayout)
+        navView= findViewById(R.id.navView)
+
+        tituloPagina= findViewById(R.id.tituloPagina)
+        tituloPagina.text = getString(R.string.historic_title)
 
         //Atribui o recycleview a uma variavel
         val recyclerView = findViewById<RecyclerView>(R.id.rl_source)
@@ -158,6 +174,55 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
 
+    }
+
+    fun aboutUS(view: View) {
+        val intent = Intent(this, AboutUsActivity::class.java)
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+    }
+    fun deleteAcc(view: View) {
+        val dialogBuilder = AlertDialog.Builder(this)
+
+        com.example.vianaonwheels.db = FirebaseFirestore.getInstance()
+        com.example.vianaonwheels.db.collection("User").document(userID).delete()
+            .addOnSuccessListener { Log.d(ContentValues.TAG, getString(R.string.account_deleted))
+                //Mensagem após Eliminar Conta
+                dialogBuilder.setPositiveButton(/*getString(R.string.ok)*/"OK") { _, _ ->
+                    //Redirect to Login
+                    val intent = Intent(this, Login::class.java)
+                    startActivity(intent)
+                    overridePendingTransition(R.anim.out_in,R.anim.in_out)
+                }
+                // create dialog box
+                val alert = dialogBuilder.create()
+                // set title for alert dialog box
+                alert.setTitle(getString(R.string.account_deleted))
+                // show alert dialog
+                alert.show()
+            }
+            .addOnFailureListener { e -> Log.w(ContentValues.TAG, getString(R.string.error_deleting), e)
+                Toast.makeText(this,  getString(R.string.error_deleting), Toast.LENGTH_LONG).show()}
+    }
+    fun logout(view: View) {
+        val intent = Intent(this, Login::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+        finish()
+    }
+
+
+    fun backIcon(view: View) {
+        val intent = Intent(this, MainPage::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
+        startActivity(intent)
+        overridePendingTransition(R.anim.out_in,R.anim.in_out) }
+
+
+    fun menuIcon(view: View) {
+        nDrawerLayout.openDrawer(navView)
     }
 
 

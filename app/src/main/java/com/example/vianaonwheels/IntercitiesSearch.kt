@@ -58,7 +58,7 @@ class IntercitiesSearch : AppCompatActivity() {
         navView= findViewById(R.id.navView)
 
         tituloPagina= findViewById(R.id.tituloPagina)
-        tituloPagina.text = "Teste"
+        tituloPagina.text = getString(R.string.icities_search_titile)
 
 
         val intent = intent
@@ -80,10 +80,9 @@ class IntercitiesSearch : AppCompatActivity() {
         destinyCity = intent.getStringExtra("destiny_city").toString()
         dateGo = intent.getStringExtra("date_origin").toString()
         dateBack = intent.getStringExtra("date_destiny").toString()
-        Toast.makeText(this, dateBack, Toast.LENGTH_SHORT).show()
         val dateSelected = findViewById<TextView>(R.id.tv_date)
         dateSelected.text = dateGo
-        if (dateBack.isEmpty() && cart.size == 0){
+        if (dateBack.isEmpty()){
             fab.isVisible = false
         }
 
@@ -112,8 +111,7 @@ class IntercitiesSearch : AppCompatActivity() {
 
             dateSelected.text = dayOfWeek + ", " + day + " " + monthOfYear + " " + year
             val newDate = "$day-$month-$year"
-            getInfo()
-            Toast.makeText(this, "$dayOfWeek, $day $monthOfYear $year", Toast.LENGTH_SHORT).show()
+            searchTicketsDate(newDate)
         }
     }
 
@@ -166,6 +164,75 @@ class IntercitiesSearch : AppCompatActivity() {
                 .whereEqualTo("origin", destinyCity)
                 .whereEqualTo("destiny", originCity)
                 .whereEqualTo("Date", dateBack)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        tickets.add(Trips(
+                            document.data["Date"].toString(),
+                            document.data["basePrice"].toString().toFloat(),
+                            document.data["beginHour"].toString(),
+                            document.data["endHour"].toString(),
+                            document.data["company"].toString(),
+                            document.data["connections"].toString().toInt(),
+                            document.data["destiny"].toString(),
+                            document.data["totalKms"].toString().toInt(),
+                            document.data["origin"].toString()
+                        ))
+                    }
+
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+                }
+                .addOnFailureListener { exeception ->
+                    Log.d("DataNotRecieve", "teste$exeception")
+
+                }
+        }
+
+    }
+
+    fun searchTicketsDate(date: String){
+        val cartCount = findViewById<TextView>(R.id.cart_count)
+        val priceCart = findViewById<TextView>(R.id.total_price)
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
+        val tickets: ArrayList<Trips> = ArrayList()
+        if (dateGo != null && !checkGoDone) {
+            db.collection("Intercities")
+                .whereEqualTo("origin", originCity)
+                .whereEqualTo("destiny", destinyCity)
+                .whereEqualTo("Date", date)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        tickets.add(Trips(
+                            document.data["Date"].toString(),
+                            document.data["basePrice"].toString().toFloat(),
+                            document.data["beginHour"].toString(),
+                            document.data["endHour"].toString(),
+                            document.data["company"].toString(),
+                            document.data["connections"].toString().toInt(),
+                            document.data["destiny"].toString(),
+                            document.data["totalKms"].toString().toInt(),
+                            document.data["origin"].toString()
+                        ))
+                    }
+
+                    val adapter = IntercitiesAdapter(tickets, cartCount, priceCart, cart)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+                }
+                .addOnFailureListener { exeception ->
+                    Log.d("DataNotRecieve", "teste$exeception")
+
+                }
+        }else if(dateBack != null && checkGoDone){
+            db.collection("Intercities")
+                .whereEqualTo("origin", destinyCity)
+                .whereEqualTo("destiny", originCity)
+                .whereEqualTo("Date", date)
                 .get()
                 .addOnSuccessListener { documents ->
                     for (document in documents) {
