@@ -8,11 +8,13 @@ import com.google.firebase.ktx.Firebase
 import java.util.*;
 
 public class Historic(
+    var beginhour: String,
+    var destinyHour: String,
     var company: String,
-    var date_hour: Date?,
+    var date_hour: String,
     var destination: String,
     var origin: String?,
-    var price: Double,
+    var price: String,
     var c_email: String,
 ){
 

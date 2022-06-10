@@ -1,6 +1,5 @@
 package com.example.vianaonwheels
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vianaonwheels.adapter.HistoricAdapter
+import com.example.vianaonwheels.adapters.ToUseAdapter
 import com.example.vianaonwheels.models.Historic
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -19,7 +19,7 @@ import kotlin.collections.ArrayList
 class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
     private var db =  Firebase.firestore
     val filtros = listOf("Date_Hour", "Company", "Origin", "Destination", "Price")
-
+    private lateinit var userEmail: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,41 +30,44 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         getFilters()
         //Apresenta o back button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
 
         //Atribui o recycleview a uma variavel
         val recyclerView = findViewById<RecyclerView>(R.id.rl_source)
 
         //OBTEM E EVNIA OS DADOS PARA O ADAPTAR DO RECYCLER VIEW
         val historic: ArrayList<Historic> = ArrayList()
-        db.collection("Historic")
-            .whereEqualTo("c_email", "marcosampaio@ipvc.pt")
+        db.collection("Tickets")
+            .whereEqualTo("email", userEmail)
+            .whereEqualTo("used", "s")
             .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-
-                    historic.add(
-                        Historic(
-                            document.data["Company"].toString(),
-                            document.getTimestamp("Date_Hour")?.toDate(),
-                            document.data["Destination"].toString(),
-                            document.data["Origin"].toString(),
-                            document.data["Price"] as Double,
-                            document.data["c_email"].toString()
+            .addOnSuccessListener{ documents ->
+                if(documents.isEmpty) {
+                    Toast.makeText(this, "Sem Histórico", Toast.LENGTH_LONG).show()
+                }else{
+                    for (d in documents){
+                        historic.add(
+                            Historic(
+                                d.data["origin_hour"].toString(),
+                                d.data["destiny_hour"].toString(),
+                                d.data["company"].toString(),
+                                d.data["dates"].toString(),
+                                d.data["destiny"].toString(),
+                                d.data["origin"].toString(),
+                                d.data["price"].toString(),
+                                d.data["email"].toString())
                         )
-                    )
+                    }
+                    val adapter = HistoricAdapter(historic)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+
 
                 }
-
-                val adapter = HistoricAdapter(historic)
-                recyclerView.adapter = adapter
-
-                recyclerView.layoutManager = LinearLayoutManager(this)
-
+            }.addOnFailureListener {
+                Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
             }
-            .addOnFailureListener { exception ->
-
-            }
-
     }
 
                             /* SECÇÃO FILTROS */
@@ -120,36 +123,36 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
         val recyclerView = findViewById<RecyclerView>(R.id.rl_source)
         val historic: ArrayList<Historic> = ArrayList()
-        db.collection("Historic")
-            .whereEqualTo("c_email", "marcosampaio@ipvc.pt")
-            .orderBy(filtros[position])
+        db.collection("Tickets")
+            .whereEqualTo("email", userEmail)
+            .whereEqualTo("used", "s")
             .get()
-            .addOnSuccessListener { documents ->
-                for (document in documents) {
-
-                    historic.add(
-                        Historic(
-                            document.data["Company"].toString(),
-                            document.getTimestamp("Date_Hour")?.toDate(),
-                            document.data["Destination"].toString(),
-                            document.data["Origin"].toString(),
-                            document.data["Price"] as Double,
-                            document.data["c_email"].toString()
+            .addOnSuccessListener{ documents ->
+                if(documents.isEmpty) {
+                    Toast.makeText(this, "Sem Histórico", Toast.LENGTH_LONG).show()
+                }else{
+                    for (d in documents){
+                        historic.add(
+                            Historic(
+                                d.data["origin_hour"].toString(),
+                                d.data["destiny_hour"].toString(),
+                                d.data["company"].toString(),
+                                d.data["dates"].toString(),
+                                d.data["destiny"].toString(),
+                                d.data["origin"].toString(),
+                                d.data["price"].toString(),
+                                d.data["email"].toString())
                         )
-                    )
+                    }
+                    val adapter = HistoricAdapter(historic)
+                    recyclerView.adapter = adapter
+
+                    recyclerView.layoutManager = LinearLayoutManager(this)
+
 
                 }
-                for (element in historic) {
-                    println(element)
-                }
-                val adapter = HistoricAdapter(historic)
-                recyclerView.adapter = adapter
-
-                recyclerView.layoutManager = LinearLayoutManager(this)
-
-            }
-            .addOnFailureListener { exception ->
-
+            }.addOnFailureListener {
+                Toast.makeText(this, getString(R.string.warning), Toast.LENGTH_LONG).show()
             }
     }
 

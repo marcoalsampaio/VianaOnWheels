@@ -18,7 +18,7 @@ class HistoricAdapter(private val list: ArrayList<Historic>): RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: HistoricViewHolder, position: Int) {
         val current = list[position]
-        holder.bind(current.company, current.date_hour, current.origin, current.destination, current.price)
+        holder.bind(current.company, current.date_hour, current.origin, current.destination, current.price, current.beginhour, current.destinyHour)
     }
 
     class HistoricViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,14 +28,11 @@ class HistoricAdapter(private val list: ArrayList<Historic>): RecyclerView.Adapt
         private val originItemView: TextView = itemView.findViewById(R.id.tv_origin)
         private val destinationItemView: TextView = itemView.findViewById(R.id.tv_destiny)
         private val priceItemView: TextView = itemView.findViewById(R.id.tv_priceValue)
-        fun bind(company: String?, date_hour: Date?, origin: String?, destination: String, price: Double) {
-            val cal = Calendar.getInstance()
-            cal.time = date_hour
-            val hora = cal.get(Calendar.HOUR_OF_DAY).toString() + ':' + cal.get(Calendar.MINUTE).toString()
-            val data = cal.get(Calendar.DAY_OF_MONTH).toString() + '/' + cal.get(Calendar.MONTH).toString() + '/' + cal.get(Calendar.YEAR).toString()
+        fun bind(company: String?, date_hour: String, origin: String?, destination: String, price: String, beginHour: String, destinyHour: String) {
+
             companyItemView.text = companyItemView.text.toString() + ' ' + company
-            dateItemView.text =' ' +  dateItemView.text.toString() + data
-            hourItemView.text = hourItemView.text.toString() + ' ' + hora
+            dateItemView.text =' ' +  dateItemView.text.toString() + date_hour
+            hourItemView.text = hourItemView.text.toString() + ' ' + beginHour
             originItemView.text = originItemView.text.toString() +  ' ' + origin
             destinationItemView.text = destinationItemView.text.toString() + ' ' + destination
             priceItemView.text = price.toString() + '€'
