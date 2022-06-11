@@ -78,9 +78,6 @@
             android:name=".MainPage"
             android:exported="true" />
         <activity
-            android:name=".SideMenuPages"
-            android:exported="true" />
-        <activity
             android:name=".AboutUsActivity"
             android:exported="true" />
         <activity

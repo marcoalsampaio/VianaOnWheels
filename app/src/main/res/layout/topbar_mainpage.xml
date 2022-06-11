@@ -4,8 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/full_transparent"
-    android:id="@+id/toolbar"
-    tools:context=".SideMenuPages">
+    android:id="@+id/toolbar">
 
     <RelativeLayout
         android:layout_width="match_parent"
