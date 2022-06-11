@@ -65,7 +65,7 @@ class ToUseActivity : AppCompatActivity() {
                             val ticketAPI = ticketsAdapter.getItem(position)
                             val ticketData = ticketAPI.id
                             goToQR(ticketData)
-
+                            finish()
                         }
                     })
                     rvTickets.adapter = ticketsAdapter
@@ -87,7 +87,9 @@ class ToUseActivity : AppCompatActivity() {
     }
 
     fun aboutUS(view: View) {
-        val intent = Intent(this, AboutUsActivity::class.java)
+        val intent = Intent(this, AboutUsActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
     }
