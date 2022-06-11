@@ -26,4 +26,5 @@
         <item name="colorPrimary">@color/cinza_claro</item>
         <item name="android:statusBarColor">@color/full_transparent</item>
     </style>
+
 </resources>
