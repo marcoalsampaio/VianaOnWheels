@@ -86,7 +86,9 @@ class QR_Code : AppCompatActivity() {
         }
     }
     fun aboutUS(view: View) {
-        val intent = Intent(this, AboutUsActivity::class.java)
+        val intent = Intent(this, AboutUsActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
         overridePendingTransition(R.anim.out_in,R.anim.in_out)
     }
