@@ -42,6 +42,7 @@ class ToUseActivity : AppCompatActivity() {
 
         userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
 
+
         db= FirebaseFirestore.getInstance()
         val rvTickets = findViewById<RecyclerView>(R.id.rvToUseItem)
 
@@ -51,7 +52,7 @@ class ToUseActivity : AppCompatActivity() {
             .get()
             .addOnSuccessListener{ documents ->
                 if(documents.isEmpty) {
-                    Toast.makeText(this@ToUseActivity, "Sem Bilhetes por Usar", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@ToUseActivity, getString(R.string.noTicket), Toast.LENGTH_LONG).show()
                 }else{
                     for (d in documents){
                         tickets.add(ToUse(d.id, d.data["price"].toString(),d.data["dates"].toString(),d.data["origin_hour"].toString(),
@@ -79,9 +80,10 @@ class ToUseActivity : AppCompatActivity() {
     }
 
     fun goToQR(ticket: String){
-        val intent = Intent(this, QR_Code::class.java).apply {
-            putExtra(EXTRA_TICKET, ticket)
-        }
+        val intent = Intent(this, QR_Code::class.java)
+        intent.putExtra("dadosQR", ticket)
+        intent.putExtra(EXTRA_USEREMAIL, userEmail)
+
         startActivity(intent)
         finish()
     }

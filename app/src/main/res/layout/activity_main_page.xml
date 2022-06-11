@@ -108,7 +108,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/main_pageProfil"
-            android:fillViewport="true">
+            android:fillViewport="true"
+            android:layout_marginStart="-560dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

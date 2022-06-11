@@ -127,6 +127,7 @@ class Intercities : AppCompatActivity() {
                     intent.putExtra("destiny_city", back.text.toString())
                     intent.putExtra("date_origin", tv1_go.text.toString())
                     intent.putExtra("date_destiny", tv2_back.text.toString())
+                    intent.putExtra(EXTRA_USEREMAIL, userEmail)
                     startActivity(intent);
 
                 }else{

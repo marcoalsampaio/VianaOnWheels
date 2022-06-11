@@ -103,4 +103,5 @@
     <string name="icities_title">Intercities</string>
     <string name="icities_search_titile">Intercities Search</string>
     <string name="icities_datefield">Select a departure date</string>
+    <string name="noTicket">Without Tickets To Use!</string>
 </resources>

@@ -2,7 +2,7 @@
 <resources>
     <string name="welcome">Bem-vindo</string>
     <string name="logout">Sair</string>
-    <string name="ticket">Bilhete</string>
+    <string name="ticket">Bilhetes</string>
     <string name="create_account">Criar conta</string>
     <string name="schedule">Horário</string>
     <string name="estimated_time">Tempo previsto</string>
@@ -97,4 +97,5 @@
     <string name="historic_title">Histórico</string>
     <string name="icities_search_titile">Procura Intercidades</string>
     <string name="icities_datefield">Selecione uma data de partida</string>
+    <string name="noTicket">Sem Bilhetes Para Usar!</string>
 </resources>

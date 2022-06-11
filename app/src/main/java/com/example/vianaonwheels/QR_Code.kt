@@ -23,6 +23,7 @@ import com.google.zxing.EncodeHintType
 import com.google.zxing.MultiFormatWriter
 import com.google.zxing.common.BitMatrix
 import com.google.zxing.qrcode.QRCodeWriter
+import kotlin.math.log
 
 class QR_Code : AppCompatActivity() {
     private var imageView: ImageView? = null
@@ -45,10 +46,12 @@ class QR_Code : AppCompatActivity() {
         tituloPagina.setText(R.string.TicketQR)
 
 
+
+
         userEmail = intent.getStringExtra(EXTRA_USEREMAIL).toString()
         db= FirebaseFirestore.getInstance()
         TextView= findViewById(R.id.tv2)
-        val dadosNoQR = intent.getStringExtra(EXTRA_TICKET).toString()
+        val dadosNoQR = intent.getStringExtra("dadosQR").toString()
         val collectionTicket = db.collection("Tickets")
         collectionTicket.document(dadosNoQR).get().addOnSuccessListener { document ->
             if (document != null){
@@ -127,7 +130,8 @@ class QR_Code : AppCompatActivity() {
             putExtra(EXTRA_USEREMAIL, userEmail)
         }
         startActivity(intent)
-        overridePendingTransition(R.anim.out_in,R.anim.in_out) }
+        overridePendingTransition(R.anim.out_in,R.anim.in_out)
+    }
 
 
     fun menuIcon(view: View) {

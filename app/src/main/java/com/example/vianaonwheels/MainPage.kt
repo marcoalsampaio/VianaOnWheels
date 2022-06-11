@@ -65,22 +65,30 @@ class MainPage : AppCompatActivity() {
     }
 
     fun goHistory(view: View) {
-        val intent = Intent(this, HistoricActivity::class.java)
+        val intent = Intent(this, HistoricActivity::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
 
     fun goIntercities(view: View) {
-        val intent = Intent(this, Intercities::class.java)
+        val intent = Intent(this, Intercities::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
 
 
     fun goCamera(view: View) {
-        val intent = Intent(this, QR_scanner::class.java)
+        val intent = Intent(this, QR_scanner::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
     fun goMap(view: View) {
-        val intent = Intent(this, MapsActivity ::class.java)
+        val intent = Intent(this, MapsActivity ::class.java).apply {
+            putExtra(EXTRA_USEREMAIL, userEmail)
+        }
         startActivity(intent)
     }
     fun goTickets(view: View) {

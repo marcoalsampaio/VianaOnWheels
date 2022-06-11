@@ -332,8 +332,8 @@ class IntercitiesSearch : AppCompatActivity() {
         }
         val intent = Intent(this, BuyTicket::class.java)
         intent.putExtra("intercities", "true")
+        intent.putExtra(EXTRA_USEREMAIL, userEmail)
         startActivity(intent)
-
     }
 
 
