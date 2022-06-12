@@ -29,8 +29,7 @@
             android:layout_alignParentRight="true"
             android:layout_marginTop="80dp"
             android:layout_marginRight="10dp"
-            app:cardCornerRadius="10dp"
-            >
+            app:cardCornerRadius="10dp">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -63,7 +62,68 @@
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_below="@id/TicketInfo"
+            android:layout_width="175dp"
+            android:layout_height="150dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            app:cardCornerRadius="10dp">
 
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Horarios Linha 1" />
+                <TextView
+                    android:id="@+id/BusStop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/time"
+                    android:text="@string/time" />
+                <TextView
+                    android:id="@+id/BusStop1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/BusStop"
+                    android:text="@string/time" />
+                <TextView
+                    android:id="@+id/time1"
+                    android:layout_below="@id/BusStop1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:text="Horarios Linha 2" />
+                <TextView
+                    android:id="@+id/BusStop2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/time1"
+                    android:text="@string/time" />
+                <TextView
+                    android:id="@+id/BusStop3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@id/BusStop2"
+                    android:text="@string/time" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
         <Spinner
             android:id="@+id/spinnerOrigem"
             android:layout_width="wrap_content"

@@ -24,8 +24,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
-    private  var valor1: Double=0.0
-    private  var valor2: Double=0.0
+    private var valor1: Double=0.0
+    private var valor2: Double=0.0
 
     private lateinit var userEmail : String
     //TopBar
@@ -127,6 +127,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val texDestino = findViewById<TextView>(R.id.destinoTX)
         val texValor = findViewById<TextView>(R.id.valorTX)
 
+        val stopBus = findViewById<TextView>(R.id.BusStop)
+        val stopBus1 = findViewById<TextView>(R.id.BusStop1)
+        val stopBus2 = findViewById<TextView>(R.id.BusStop2)
+        val stopBus3 = findViewById<TextView>(R.id.BusStop3)
         val text: String = spinner.getSelectedItem().toString()
         val text1: String = spinner2.getSelectedItem().toString()
 
@@ -138,7 +142,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     var point= LatLng(geoPoint!!.latitude, geoPoint!!.longitude)
                     mMap.addMarker(MarkerOptions().position(point).title("origem"))
                     texOrigem.text=document.data["name"].toString()
+                    stopBus.text=document.data["origemManha"].toString()
+                    stopBus1.text=document.data["origemTarde"].toString()
+                    stopBus2.text=document.data["destinoManha"].toString()
+                    stopBus3.text=document.data["destinoTarde"].toString()
                     valor1= document.getDouble("valor")!!
+
                 }
             }
             .addOnFailureListener {exception ->
@@ -163,6 +172,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             var3 = valor2.minus(valor1)
         }else if(valor1 > valor2){
             var3 = valor1.minus(valor2)
+
         }else{
             var3=0.50
         }
