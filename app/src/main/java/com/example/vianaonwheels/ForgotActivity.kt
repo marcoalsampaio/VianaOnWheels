@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
@@ -57,12 +58,12 @@ class ForgotActivity : AppCompatActivity() {
                                     override fun onResponse(call: Call<OutputPost>, response: Response<OutputPost>) {
                                         if (response.isSuccessful){
                                             val c: OutputPost = response.body()!!
-                                            //Toast.makeText(this@ForgotActivity, c.toString(), Toast.LENGTH_SHORT).show()
+                                            Toast.makeText(this@ForgotActivity, c.toString(), Toast.LENGTH_SHORT).show()
                                             Log.d(TAG, c.toString())
                                         }
                                     }
                                     override fun onFailure(call: Call<OutputPost>, t: Throwable) {
-                                        //Toast.makeText(this@ForgotActivity, "${t.message}", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(this@ForgotActivity, "${t.message}", Toast.LENGTH_SHORT).show()
                                         Log.d(TAG, "${t.message}")
                                     }
                                 })
