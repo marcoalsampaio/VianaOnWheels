@@ -71,7 +71,6 @@
                     android:layout_below="@id/birthTX"
                     android:backgroundTint="@color/black"
                     android:hint="18/03/199"
-                    android:inputType="date"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black" />
                 <TextView
