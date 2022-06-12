@@ -25,7 +25,7 @@ import kotlin.collections.ArrayList
 
 class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener{
     private var db =  Firebase.firestore
-    val filtros = listOf("Date_Hour", "Company", "Origin", "Destination", "Price")
+    val filtros = listOf("origin_hour", "destiny", "origin", "company", "dates", "price")
     private lateinit var userEmail: String
     //TopBar
     private lateinit var nDrawerLayout: DrawerLayout;
@@ -142,6 +142,7 @@ class HistoricActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         db.collection("Tickets")
             .whereEqualTo("email", userEmail)
             .whereEqualTo("used", "s")
+            .orderBy(filtros[position])
             .get()
             .addOnSuccessListener{ documents ->
                 if(documents.isEmpty) {
